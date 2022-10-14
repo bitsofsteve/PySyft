@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>syft.core.node.common.action.run_class_method_action &#8212; PySyft  documentation</title>
     
-    <link href="../../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="../../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="../../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="../../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/pysyft.css" />
     
-    <link rel="preload" as="script" href="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="../../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../../_static/jquery.js"></script>
     <script src="../../../../../../_static/underscore.js"></script>
@@ -78,13 +78,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../../../../getting_started/index.html">
-  Getting started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../../../user_guide/index.html">
-  User guide
+  Getting Started
  </a>
 </li>
 
@@ -106,6 +100,18 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -117,12 +123,16 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -138,8 +148,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -147,9 +156,6 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -181,26 +187,28 @@
 <span class="kn">from</span> <span class="nn">nacl.signing</span> <span class="kn">import</span> <span class="n">VerifyKey</span>
 
 <span class="c1"># syft absolute</span>
-<span class="kn">import</span> <span class="nn">syft</span> <span class="k">as</span> <span class="nn">sy</span>
+<span class="kn">from</span> <span class="nn">syft.core.plan.plan</span> <span class="kn">import</span> <span class="n">Plan</span>
 
-<span class="c1"># relative</span>
+<span class="c1"># syft relative</span>
 <span class="kn">from</span> <span class="nn">.....</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">.....</span> <span class="kn">import</span> <span class="n">serialize</span>
+<span class="kn">from</span> <span class="nn">.....logger</span> <span class="kn">import</span> <span class="n">critical</span>
 <span class="kn">from</span> <span class="nn">.....logger</span> <span class="kn">import</span> <span class="n">traceback_and_raise</span>
 <span class="kn">from</span> <span class="nn">.....logger</span> <span class="kn">import</span> <span class="n">warning</span>
 <span class="kn">from</span> <span class="nn">.....proto.core.node.common.action.run_class_method_pb2</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">RunClassMethodAction</span> <span class="k">as</span> <span class="n">RunClassMethodAction_PB</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">.....util</span> <span class="kn">import</span> <span class="n">inherit_tags</span>
-<span class="kn">from</span> <span class="nn">....common.serde.serializable</span> <span class="kn">import</span> <span class="n">serializable</span>
+<span class="kn">from</span> <span class="nn">....common.serde.deserialize</span> <span class="kn">import</span> <span class="n">_deserialize</span>
+<span class="kn">from</span> <span class="nn">....common.serde.serializable</span> <span class="kn">import</span> <span class="n">bind_protobuf</span>
 <span class="kn">from</span> <span class="nn">....common.uid</span> <span class="kn">import</span> <span class="n">UID</span>
 <span class="kn">from</span> <span class="nn">....io.address</span> <span class="kn">import</span> <span class="n">Address</span>
 <span class="kn">from</span> <span class="nn">....store.storeable_object</span> <span class="kn">import</span> <span class="n">StorableObject</span>
 <span class="kn">from</span> <span class="nn">...abstract.node</span> <span class="kn">import</span> <span class="n">AbstractNode</span>
 <span class="kn">from</span> <span class="nn">.common</span> <span class="kn">import</span> <span class="n">ImmediateActionWithoutReply</span>
-<span class="kn">from</span> <span class="nn">.greenlets_switch</span> <span class="kn">import</span> <span class="n">retrieve_object</span>
 
 
-<div class="viewcode-block" id="RunClassMethodAction"><a class="viewcode-back" href="../../../../../../api_reference/syft.core.node.common.action.run_class_method_action.html#syft.core.node.common.action.run_class_method_action.RunClassMethodAction">[docs]</a><span class="nd">@serializable</span><span class="p">()</span>
+<div class="viewcode-block" id="RunClassMethodAction"><a class="viewcode-back" href="../../../../../../api_reference/syft.core.node.common.action.run_class_method_action.html#syft.core.node.common.action.run_class_method_action.RunClassMethodAction">[docs]</a><span class="nd">@bind_protobuf</span>
 <span class="k">class</span> <span class="nc">RunClassMethodAction</span><span class="p">(</span><span class="n">ImmediateActionWithoutReply</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    When executing a RunClassMethodAction, a :class:`Node` will run a method defined</span>
@@ -255,11 +263,9 @@
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">method_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">self_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-        <span class="n">arg_names</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">])</span>
-        <span class="n">kwargs_names</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-            <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-        <span class="p">)</span>
+        <span class="n">self_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="o">.</span><span class="n">class_name</span>
+        <span class="n">arg_names</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">a</span><span class="o">.</span><span class="n">class_name</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">])</span>
+        <span class="n">kwargs_names</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">class_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;RunClassMethodAction </span><span class="si">{</span><span class="n">self_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">arg_names</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">kwargs_names</span><span class="si">}</span><span class="s2">)&quot;</span>
 
     <span class="k">def</span> <span class="nf">execute_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">AbstractNode</span><span class="p">,</span> <span class="n">verify_key</span><span class="p">:</span> <span class="n">VerifyKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -279,29 +285,36 @@
 
         <span class="n">resolved_self</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_static</span><span class="p">:</span>
-            <span class="n">resolved_self</span> <span class="o">=</span> <span class="n">retrieve_object</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
-            <span class="n">result_read_permissions</span> <span class="o">=</span> <span class="n">resolved_self</span><span class="o">.</span><span class="n">read_permissions</span>  <span class="c1"># type: ignore</span>
+            <span class="n">resolved_self</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">resolved_self</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">critical</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;execute_action on </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2"> failed due to missing object&quot;</span>
+                    <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; at: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="o">.</span><span class="n">id_at_location</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">return</span>
+            <span class="n">result_read_permissions</span> <span class="o">=</span> <span class="n">resolved_self</span><span class="o">.</span><span class="n">read_permissions</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">result_read_permissions</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="n">resolved_args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="n">tag_args</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">:</span>
-            <span class="n">r_arg</span> <span class="o">=</span> <span class="n">retrieve_object</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">arg</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">r_arg</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">]</span>
             <span class="n">result_read_permissions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_keys</span><span class="p">(</span>
-                <span class="n">result_read_permissions</span><span class="p">,</span> <span class="n">r_arg</span><span class="o">.</span><span class="n">read_permissions</span>  <span class="c1"># type: ignore</span>
+                <span class="n">result_read_permissions</span><span class="p">,</span> <span class="n">r_arg</span><span class="o">.</span><span class="n">read_permissions</span>
             <span class="p">)</span>
-            <span class="n">resolved_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_arg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="n">resolved_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_arg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
             <span class="n">tag_args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r_arg</span><span class="p">)</span>
 
         <span class="n">resolved_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">tag_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">arg_name</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="n">r_arg</span> <span class="o">=</span> <span class="n">retrieve_object</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">arg</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">r_arg</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="n">arg</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">]</span>
             <span class="n">result_read_permissions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">intersect_keys</span><span class="p">(</span>
-                <span class="n">result_read_permissions</span><span class="p">,</span> <span class="n">r_arg</span><span class="o">.</span><span class="n">read_permissions</span>  <span class="c1"># type: ignore</span>
+                <span class="n">result_read_permissions</span><span class="p">,</span> <span class="n">r_arg</span><span class="o">.</span><span class="n">read_permissions</span>
             <span class="p">)</span>
-            <span class="n">resolved_kwargs</span><span class="p">[</span><span class="n">arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_arg</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># type: ignore</span>
+            <span class="n">resolved_kwargs</span><span class="p">[</span><span class="n">arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_arg</span><span class="o">.</span><span class="n">data</span>
             <span class="n">tag_kwargs</span><span class="p">[</span><span class="n">arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_arg</span>
 
         <span class="p">(</span>
@@ -309,7 +322,6 @@
             <span class="n">upcasted_kwargs</span><span class="p">,</span>
         <span class="p">)</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">upcast_args_and_kwargs</span><span class="p">(</span><span class="n">resolved_args</span><span class="p">,</span> <span class="n">resolved_kwargs</span><span class="p">)</span>
 
-        <span class="n">resolved_self_previous_bytes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_static</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">upcasted_args</span><span class="p">,</span> <span class="o">**</span><span class="n">upcasted_kwargs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -318,22 +330,45 @@
                     <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Method </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2"> called, but self is None.&quot;</span><span class="p">)</span>
                 <span class="p">)</span>
 
-            <span class="n">resolved_self_previous_bytes</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span>
-                <span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span>
-            <span class="p">)</span>
             <span class="n">method_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
-            <span class="n">target_method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="n">target_method</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
-                <span class="n">warning</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Method </span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2"> overwritten on object </span><span class="si">{</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">Plan</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="n">method_name</span> <span class="o">==</span> <span class="s2">&quot;__call__&quot;</span>
+                <span class="ow">or</span> <span class="p">(</span>
+                    <span class="nb">hasattr</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="s2">&quot;forward&quot;</span><span class="p">)</span>
+                    <span class="ow">and</span> <span class="p">(</span>
+                        <span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">forward</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;Plan&quot;</span>
+                        <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="s2">&quot;__name__&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                        <span class="o">==</span> <span class="s2">&quot;_compile_and_forward&quot;</span>
+                    <span class="p">)</span>
+                    <span class="ow">and</span> <span class="n">method_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;__call__&quot;</span><span class="p">,</span> <span class="s2">&quot;forward&quot;</span><span class="p">]</span>
                 <span class="p">)</span>
-                <span class="n">method</span> <span class="o">=</span> <span class="n">target_method</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">method</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="p">):</span>
 
-            <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">upcasted_args</span><span class="p">,</span> <span class="o">**</span><span class="n">upcasted_kwargs</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">traceback_and_raise</span><span class="p">(</span>
+                        <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="s2">&quot;You passed args to Plan.__call__, while it only accepts kwargs&quot;</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">method</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;_forward_unimplemented&quot;</span><span class="p">:</span>
+                    <span class="n">method</span> <span class="o">=</span> <span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">forward</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">verify_key</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">verify_key</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">target_method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="n">target_method</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+                    <span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Method </span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="s2"> overwritten on object </span><span class="si">{</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                    <span class="n">method</span> <span class="o">=</span> <span class="n">target_method</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">method</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+                <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">upcasted_args</span><span class="p">,</span> <span class="o">**</span><span class="n">upcasted_kwargs</span><span class="p">)</span>
 
         <span class="c1"># TODO: add numpy support https://github.com/OpenMined/PySyft/issues/5164</span>
         <span class="k">if</span> <span class="s2">&quot;numpy.&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)):</span>
@@ -365,17 +400,6 @@
                     <span class="n">err</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unable to set id on result </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
                     <span class="n">traceback_and_raise</span><span class="p">(</span><span class="ne">Exception</span><span class="p">(</span><span class="n">err</span><span class="p">))</span>
 
-        <span class="c1"># check if resolved_self has changed and if so mark as mutating_internal</span>
-        <span class="c1"># this prevents someone from mutating an object they own with something they</span>
-        <span class="c1"># do not own and the read_permissions not flowing backwards</span>
-        <span class="k">if</span> <span class="p">(</span>
-            <span class="n">resolved_self_previous_bytes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-            <span class="ow">and</span> <span class="n">resolved_self</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-            <span class="ow">and</span> <span class="n">resolved_self_previous_bytes</span>
-            <span class="o">!=</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">resolved_self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="p">):</span>
-            <span class="n">mutating_internal</span> <span class="o">=</span> <span class="kc">True</span>
-
         <span class="k">if</span> <span class="n">mutating_internal</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">resolved_self</span><span class="p">,</span> <span class="n">StorableObject</span><span class="p">):</span>
                 <span class="n">resolved_self</span><span class="o">.</span><span class="n">read_permissions</span> <span class="o">=</span> <span class="n">result_read_permissions</span>
@@ -394,13 +418,6 @@
             <span class="n">kwargs</span><span class="o">=</span><span class="n">tag_kwargs</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="c1"># if we have mutated resolved_self we need to save it back since the store</span>
-        <span class="c1"># might be in SQL and not in memory where the update is automatic</span>
-        <span class="c1"># but if the method was static then we might not have a _self</span>
-        <span class="k">if</span> <span class="n">resolved_self</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mutating_internal</span><span class="p">:</span>
-            <span class="c1"># write the original resolved_self back to _self.id_at_location</span>
-            <span class="n">node</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">]</span> <span class="o">=</span> <span class="n">resolved_self</span>  <span class="c1"># type: ignore</span>
-
         <span class="n">node</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
 
     <span class="k">def</span> <span class="nf">_object2proto</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RunClassMethodAction_PB</span><span class="p">:</span>
@@ -414,19 +431,19 @@
 <span class="sd">        :rtype: RunClassMethodAction_PB</span>
 
 <span class="sd">        .. note::</span>
-<span class="sd">            This method is purely an internal method. Please use sy.serialize(object) or one of</span>
+<span class="sd">            This method is purely an internal method. Please use serialize(object) or one of</span>
 <span class="sd">            the other public serialization methods if you wish to serialize an</span>
 <span class="sd">            object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">return</span> <span class="n">RunClassMethodAction_PB</span><span class="p">(</span>
             <span class="n">path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
-            <span class="n">_self</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">args</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)),</span>
-            <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
-            <span class="n">id_at_location</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">),</span>
-            <span class="n">address</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">),</span>
-            <span class="n">msg_id</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
+            <span class="n">_self</span><span class="o">=</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_self</span><span class="p">),</span>
+            <span class="n">args</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">serialize</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)),</span>
+            <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">serialize</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+            <span class="n">id_at_location</span><span class="o">=</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">),</span>
+            <span class="n">address</span><span class="o">=</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">),</span>
+            <span class="n">msg_id</span><span class="o">=</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">),</span>
         <span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
@@ -446,17 +463,12 @@
 
         <span class="k">return</span> <span class="n">RunClassMethodAction</span><span class="p">(</span>
             <span class="n">path</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
-            <span class="n">_self</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">_self</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">args</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span>
-                <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">proto</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-            <span class="p">),</span>
-            <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span>
-                <span class="n">k</span><span class="p">:</span> <span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">proto</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-            <span class="p">},</span>
-            <span class="n">id_at_location</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">),</span>
-            <span class="n">address</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">address</span><span class="p">),</span>
-            <span class="n">msg_id</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">msg_id</span><span class="p">),</span>
+            <span class="n">_self</span><span class="o">=</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">_self</span><span class="p">),</span>
+            <span class="n">args</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">x</span><span class="p">),</span> <span class="n">proto</span><span class="o">.</span><span class="n">args</span><span class="p">)),</span>
+            <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">proto</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+            <span class="n">id_at_location</span><span class="o">=</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">),</span>
+            <span class="n">address</span><span class="o">=</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">address</span><span class="p">),</span>
+            <span class="n">msg_id</span><span class="o">=</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">msg_id</span><span class="p">),</span>
         <span class="p">)</span>
 
 <div class="viewcode-block" id="RunClassMethodAction.get_protobuf_schema"><a class="viewcode-back" href="../../../../../../api_reference/syft.core.node.common.action.run_class_method_action.html#syft.core.node.common.action.run_class_method_action.RunClassMethodAction.get_protobuf_schema">[docs]</a>    <span class="nd">@staticmethod</span>
@@ -506,8 +518,8 @@
       </div>
     </div>
   
-    <script src="../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -518,7 +530,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     

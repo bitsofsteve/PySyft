@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>syft.core.node.domain.client &#8212; PySyft  documentation</title>
     
-    <link href="../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/css/pysyft.css" />
     
-    <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
@@ -78,13 +78,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../../../getting_started/index.html">
-  Getting started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../../user_guide/index.html">
-  User guide
+  Getting Started
  </a>
 </li>
 
@@ -106,6 +100,18 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -117,12 +123,16 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -138,8 +148,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -147,9 +156,6 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -170,89 +176,44 @@
                 
   <h1>Source code for syft.core.node.domain.client</h1><div class="highlight"><pre>
 <span></span><span class="c1"># stdlib</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
 
 <span class="c1"># third party</span>
 <span class="kn">from</span> <span class="nn">nacl.signing</span> <span class="kn">import</span> <span class="n">SigningKey</span>
 <span class="kn">from</span> <span class="nn">nacl.signing</span> <span class="kn">import</span> <span class="n">VerifyKey</span>
-<span class="kn">import</span> <span class="nn">names</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># relative</span>
-<span class="kn">from</span> <span class="nn">....</span> <span class="kn">import</span> <span class="n">deserialize</span>
+<span class="c1"># syft relative</span>
 <span class="kn">from</span> <span class="nn">....logger</span> <span class="kn">import</span> <span class="n">traceback_and_raise</span>
 <span class="kn">from</span> <span class="nn">....util</span> <span class="kn">import</span> <span class="n">validate_field</span>
-<span class="kn">from</span> <span class="nn">...common.message</span> <span class="kn">import</span> <span class="n">SyftMessage</span>
-<span class="kn">from</span> <span class="nn">...common.serde.serialize</span> <span class="kn">import</span> <span class="n">_serialize</span> <span class="k">as</span> <span class="n">serialize</span>  <span class="c1"># noqa: F401</span>
 <span class="kn">from</span> <span class="nn">...common.uid</span> <span class="kn">import</span> <span class="n">UID</span>
-<span class="kn">from</span> <span class="nn">...io.address</span> <span class="kn">import</span> <span class="n">Address</span>
 <span class="kn">from</span> <span class="nn">...io.location</span> <span class="kn">import</span> <span class="n">Location</span>
-<span class="kn">from</span> <span class="nn">...io.location.specific</span> <span class="kn">import</span> <span class="n">SpecificLocation</span>
+<span class="kn">from</span> <span class="nn">...io.location</span> <span class="kn">import</span> <span class="n">SpecificLocation</span>
 <span class="kn">from</span> <span class="nn">...io.route</span> <span class="kn">import</span> <span class="n">Route</span>
-<span class="kn">from</span> <span class="nn">...node.common.node_service.network_search.network_search_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">NetworkSearchMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">...pointer.pointer</span> <span class="kn">import</span> <span class="n">Pointer</span>
-<span class="kn">from</span> <span class="nn">...tensor.autodp.adp_tensor</span> <span class="kn">import</span> <span class="n">ADPTensor</span>
-<span class="kn">from</span> <span class="nn">...tensor.tensor</span> <span class="kn">import</span> <span class="n">Tensor</span>
-<span class="kn">from</span> <span class="nn">..abstract.node</span> <span class="kn">import</span> <span class="n">AbstractNodeClient</span>
-<span class="kn">from</span> <span class="nn">..common.action.exception_action</span> <span class="kn">import</span> <span class="n">ExceptionMessage</span>
 <span class="kn">from</span> <span class="nn">..common.client</span> <span class="kn">import</span> <span class="n">Client</span>
-<span class="kn">from</span> <span class="nn">..common.client_manager.association_api</span> <span class="kn">import</span> <span class="n">AssociationRequestAPI</span>
-<span class="kn">from</span> <span class="nn">..common.client_manager.dataset_api</span> <span class="kn">import</span> <span class="n">DatasetRequestAPI</span>
-<span class="kn">from</span> <span class="nn">..common.client_manager.role_api</span> <span class="kn">import</span> <span class="n">RoleRequestAPI</span>
-<span class="kn">from</span> <span class="nn">..common.client_manager.user_api</span> <span class="kn">import</span> <span class="n">UserRequestAPI</span>
-<span class="kn">from</span> <span class="nn">..common.client_manager.vpn_api</span> <span class="kn">import</span> <span class="n">VPNAPI</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.get_remaining_budget.get_remaining_budget_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">GetRemainingBudgetMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.node_setup.node_setup_messages</span> <span class="kn">import</span> <span class="n">GetSetUpMessage</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.object_request.object_request_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">CreateBudgetRequestMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.object_transfer.object_transfer_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">LoadObjectMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.request_receiver.request_receiver_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RequestMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.simple.obj_exists</span> <span class="kn">import</span> <span class="n">DoesObjectExistMessage</span>
-<span class="kn">from</span> <span class="nn">.enums</span> <span class="kn">import</span> <span class="n">PyGridClientEnums</span>
-<span class="kn">from</span> <span class="nn">.enums</span> <span class="kn">import</span> <span class="n">RequestAPIFields</span>
+<span class="kn">from</span> <span class="nn">.service</span> <span class="kn">import</span> <span class="n">RequestMessage</span>
 
 
-<span class="k">class</span> <span class="nc">RequestQueueClient</span><span class="p">(</span><span class="n">AbstractNodeClient</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">RequestQueueClient</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Client</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">handlers</span> <span class="o">=</span> <span class="n">RequestHandlerQueueClient</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="n">UserRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">roles</span> <span class="o">=</span> <span class="n">RoleRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">association</span> <span class="o">=</span> <span class="n">AssociationRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span> <span class="o">=</span> <span class="n">DatasetRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">requests</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RequestMessage</span><span class="p">]:</span>
-
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">..common.node_service.get_all_requests.get_all_requests_messages</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="c1"># syft absolute</span>
+        <span class="kn">from</span> <span class="nn">syft.core.node.domain.service.get_all_requests_service</span> <span class="kn">import</span> <span class="p">(</span>
             <span class="n">GetAllRequestsMessage</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="n">msg</span> <span class="o">=</span> <span class="n">GetAllRequestsMessage</span><span class="p">(</span>
             <span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="n">reply_to</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">address</span>
         <span class="p">)</span>
-
-        <span class="n">blob</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="n">requests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_immediate_msg_with_reply</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">requests</span>  <span class="c1"># type: ignore</span>
 
@@ -287,34 +248,17 @@
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pandas</span><span class="o">.</span><span class="n">_repr_html_</span><span class="p">()</span>
-
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">pandas</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
-        <span class="c1"># TODO:</span>
-        <span class="c1"># Replace all the hardcoded string by enums / abstractions.</span>
         <span class="n">request_lines</span> <span class="o">=</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">user_name</span><span class="p">,</span>
-                <span class="s2">&quot;Email&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">user_email</span><span class="p">,</span>
-                <span class="s2">&quot;Role&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">user_role</span><span class="p">,</span>
-                <span class="s2">&quot;Request Type&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">request_type</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span>  <span class="c1"># type: ignore</span>
-                <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
-                <span class="s2">&quot;Reason&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">request_description</span><span class="p">,</span>
-                <span class="s2">&quot;Request ID&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
-                <span class="s2">&quot;Requested Object&#39;s ID&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">object_id</span>
-                <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="n">request_type</span> <span class="o">==</span> <span class="s2">&quot;data&quot;</span>
-                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-                <span class="s2">&quot;Requested Object&#39;s tags&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">object_tags</span><span class="p">,</span>
-                <span class="s2">&quot;Requested Budget&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">requested_budget</span>
-                <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="n">request_type</span> <span class="o">==</span> <span class="s2">&quot;budget&quot;</span>
-                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-                <span class="s2">&quot;Current Budget&quot;</span><span class="p">:</span> <span class="n">req</span><span class="o">.</span><span class="n">current_budget</span>
-                <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="n">request_type</span> <span class="o">==</span> <span class="s2">&quot;budget&quot;</span>
-                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">&quot;Requested Object&#39;s tags&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">object_tags</span><span class="p">,</span>
+                <span class="s2">&quot;Reason&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">request_description</span><span class="p">,</span>
+                <span class="s2">&quot;Request ID&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                <span class="s2">&quot;Requested Object&#39;s ID&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">object_id</span><span class="p">,</span>
+                <span class="s2">&quot;Requested Object&#39;s type&quot;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">object_type</span><span class="p">,</span>
             <span class="p">}</span>
-            <span class="k">for</span> <span class="n">req</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span>
+            <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">requests</span>
         <span class="p">]</span>
         <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">request_lines</span><span class="p">)</span>
 
@@ -381,8 +325,8 @@
         <span class="k">return</span> <span class="n">handler_opts</span>
 
     <span class="k">def</span> <span class="nf">_update_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request_handler</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">keep</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">..common.node_service.request_handler.request_handler_messages</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="c1"># syft absolute</span>
+        <span class="kn">from</span> <span class="nn">syft.core.node.domain.service.request_handler_service</span> <span class="kn">import</span> <span class="p">(</span>
             <span class="n">UpdateRequestHandlerMessage</span><span class="p">,</span>
         <span class="p">)</span>
 
@@ -398,8 +342,8 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">handlers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">..common.node_service.request_handler.request_handler_messages</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="c1"># syft absolute</span>
+        <span class="kn">from</span> <span class="nn">syft.core.node.domain.service.request_handler_service</span> <span class="kn">import</span> <span class="p">(</span>
             <span class="n">GetAllRequestHandlersMessage</span><span class="p">,</span>
         <span class="p">)</span>
 
@@ -478,7 +422,6 @@
         <span class="n">vm</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Location</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">signing_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SigningKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">verify_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">VerifyKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
@@ -489,179 +432,10 @@
             <span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span>
             <span class="n">signing_key</span><span class="o">=</span><span class="n">signing_key</span><span class="p">,</span>
             <span class="n">verify_key</span><span class="o">=</span><span class="n">verify_key</span><span class="p">,</span>
-            <span class="n">version</span><span class="o">=</span><span class="n">version</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">requests</span> <span class="o">=</span> <span class="n">RequestQueueClient</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-
         <span class="bp">self</span><span class="o">.</span><span class="n">post_init</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="n">UserRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">roles</span> <span class="o">=</span> <span class="n">RoleRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">association</span> <span class="o">=</span> <span class="n">AssociationRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span> <span class="o">=</span> <span class="n">DatasetRequestAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">vpn</span> <span class="o">=</span> <span class="n">VPNAPI</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">obj_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj_id</span><span class="p">:</span> <span class="n">UID</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">DoesObjectExistMessage</span><span class="p">(</span><span class="n">obj_id</span><span class="o">=</span><span class="n">obj_id</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_immediate_msg_with_reply</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">payload</span>  <span class="c1"># type: ignore</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">privacy_budget</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">GetRemainingBudgetMessage</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="n">reply_to</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_immediate_msg_with_reply</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">budget</span>  <span class="c1"># type: ignore</span>
-
-    <span class="k">def</span> <span class="nf">request_budget</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-        <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="n">skip_checks</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_checks</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">eps</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
-                <span class="n">eps</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please specify how much more epsilon you want:&quot;</span><span class="p">))</span>
-
-            <span class="k">if</span> <span class="n">reason</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="n">reason</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span>
-                    <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Why should the domain owner give you more epsilon:&quot;</span><span class="p">)</span>
-                <span class="p">)</span>
-
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">CreateBudgetRequestMessage</span><span class="p">(</span>
-            <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
-            <span class="n">budget</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span>
-            <span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
-        <span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">send_immediate_msg_without_reply</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s2">&quot;Requested &quot;</span>
-            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">eps</span><span class="p">)</span>
-            <span class="o">+</span> <span class="s2">&quot; epsilon of budget. Call .privacy_budget to see if your budget has arrived!&quot;</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">obj_ptr</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Pointer</span><span class="p">],</span> <span class="n">address</span><span class="p">:</span> <span class="n">Address</span><span class="p">,</span> <span class="n">pointable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">:</span> <span class="n">serialize</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">SerializeToString</span><span class="p">()</span>  <span class="c1"># type: ignore</span>
-            <span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">PyGridClientEnums</span><span class="o">.</span><span class="n">ENCODING</span><span class="p">),</span>
-            <span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">UID</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">obj_ptr</span><span class="o">.</span><span class="n">id_at_location</span><span class="o">.</span><span class="n">value</span><span class="p">),</span>
-            <span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">POINTABLE</span><span class="p">:</span> <span class="n">pointable</span><span class="p">,</span>
-        <span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_perform_grid_request</span><span class="p">(</span><span class="n">grid_msg</span><span class="o">=</span><span class="n">LoadObjectMessage</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">domain_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">domain_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">domain_name</span> <span class="o">=</span> <span class="n">names</span><span class="o">.</span><span class="n">get_full_name</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&#39;s Domain&quot;</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-                <span class="s2">&quot;No Domain Name provided... picking randomly as: &quot;</span> <span class="o">+</span> <span class="n">domain_name</span>
-            <span class="p">)</span>
-
-        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;domain_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">domain_name</span>
-
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">MESSAGE</span><span class="p">])</span>
-
-    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-            <span class="s2">&quot;Node reset will delete the data, as well as the requests. Do you want to continue (y/N)?&quot;</span>
-        <span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">response</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>  <span class="c1"># type: ignore</span>
-
-    <span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="n">List</span><span class="p">,</span> <span class="n">pandas</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perform_grid_request</span><span class="p">(</span>
-            <span class="n">grid_msg</span><span class="o">=</span><span class="n">NetworkSearchMessage</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="p">{</span><span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">QUERY</span><span class="p">:</span> <span class="n">query</span><span class="p">}</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">pandas</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">response</span>
-
-    <span class="k">def</span> <span class="nf">_perform_grid_request</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">grid_msg</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">content</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftMessage</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">content</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">content</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="c1"># Build Syft Message</span>
-        <span class="n">content</span><span class="p">[</span><span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span>
-        <span class="n">content</span><span class="p">[</span><span class="n">RequestAPIFields</span><span class="o">.</span><span class="n">REPLY_TO</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span>
-        <span class="n">signed_msg</span> <span class="o">=</span> <span class="n">grid_msg</span><span class="p">(</span><span class="o">**</span><span class="n">content</span><span class="p">)</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">signing_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">signing_key</span><span class="p">)</span>
-        <span class="c1"># Send to the dest</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_immediate_msg_with_reply</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">signed_msg</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">ExceptionMessage</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="n">response</span><span class="o">.</span><span class="n">exception_type</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">response</span>
-
-    <span class="k">def</span> <span class="nf">get_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_perform_grid_request</span><span class="p">(</span><span class="n">grid_msg</span><span class="o">=</span><span class="n">GetSetUpMessage</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">apply_to_network</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">client</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AbstractNodeClient</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">metadata</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="c1"># joining the network might take some time and won&#39;t block</span>
-
-            <span class="c1"># Check if the version of the network client is same as the domain client</span>
-            <span class="k">if</span> <span class="n">client</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s2">&quot;version&quot;</span><span class="p">):</span>
-                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">!=</span> <span class="n">client</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
-                    <span class="nb">print</span><span class="p">(</span>
-                        <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">**Warning**: The syft version on your domain and the network are different.&quot;</span>
-                    <span class="p">)</span>
-                    <span class="nb">print</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;Domain version: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="se">\n</span><span class="s2">Network Version: </span><span class="si">{</span><span class="n">client</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># type: ignore</span>
-                    <span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">join_network</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">)</span>
-
-            <span class="n">timeout</span> <span class="o">=</span> <span class="mi">30</span>
-            <span class="n">connected</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="n">network_vpn_ip</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-            <span class="n">domain_vpn_ip</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-
-            <span class="c1"># get the vpn ips</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Waiting to connect to VPN.&quot;</span><span class="p">)</span>
-            <span class="k">while</span> <span class="n">timeout</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">connected</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
-                <span class="n">timeout</span> <span class="o">-=</span> <span class="mi">1</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">vpn_status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vpn_status</span><span class="p">()</span>
-                    <span class="k">if</span> <span class="n">vpn_status</span><span class="p">[</span><span class="s2">&quot;connected&quot;</span><span class="p">]:</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected to VPN&quot;</span><span class="p">)</span>
-                        <span class="n">connected</span> <span class="o">=</span> <span class="kc">True</span>
-                        <span class="k">continue</span>
-                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get vpn status. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-            <span class="k">for</span> <span class="n">peer</span> <span class="ow">in</span> <span class="n">vpn_status</span><span class="p">[</span><span class="s2">&quot;peers&quot;</span><span class="p">]:</span>
-                <span class="k">if</span> <span class="n">peer</span><span class="p">[</span><span class="s2">&quot;hostname&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>  <span class="c1"># type: ignore</span>
-                    <span class="n">network_vpn_ip</span> <span class="o">=</span> <span class="n">peer</span><span class="p">[</span><span class="s2">&quot;ip&quot;</span><span class="p">]</span>
-            <span class="k">try</span><span class="p">:</span>
-                <span class="n">domain_vpn_ip</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vpn_status</span><span class="p">()[</span><span class="s2">&quot;host&quot;</span><span class="p">][</span><span class="s2">&quot;ip&quot;</span><span class="p">]</span>
-            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to get vpn host ip. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">network_vpn_ip</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Cant find the network node </span><span class="si">{</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">vpn_status</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># type: ignore</span>
-                <span class="p">)</span>
-            <span class="k">if</span> <span class="n">domain_vpn_ip</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No host ip in </span><span class="si">{</span><span class="n">vpn_status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="bp">self</span><span class="o">.</span><span class="n">association</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-                <span class="n">source</span><span class="o">=</span><span class="n">domain_vpn_ip</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">network_vpn_ip</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span>
-            <span class="p">)</span>
-
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Application submitted.&quot;</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to apply to network with </span><span class="si">{</span><span class="n">client</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UID</span><span class="p">:</span>
@@ -711,7 +485,7 @@
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">no_dash</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">no_dash</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">no_dash</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
 
     <span class="k">def</span> <span class="nf">update_vars</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">ptr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">store</span><span class="p">:</span>
@@ -719,225 +493,7 @@
             <span class="k">if</span> <span class="n">tags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
                     <span class="n">state</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptr</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">pandas</span>
-
-    <span class="k">def</span> <span class="nf">vpn_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">vpn</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">load_dataset</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">assets</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">skip_checks</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Loading dataset...&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">assets</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Missing Assets: Oops!... You forgot to include your data! (or you passed it in the wrong way) </span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;You must call load_dataset() with a dictionary of assets which are the &quot;</span>
-                <span class="s2">&quot;private dataset objects (tensors) you wish to allow someone else to study &quot;</span>
-                <span class="s2">&quot;while PySyft protects it using various privacy enhancing technologies. </span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;For example, the MNIST dataset is comprised of 6 tensors, so we would create an assets &quot;</span>
-                <span class="s2">&quot;dictionary with 6 keys (strings) mapping to the 6 tensors of MNIST.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Please pass in a dictionary where the key is the name of the asset and the value is &quot;</span>
-                <span class="s2">&quot;the private dataset object (tensor) itself. We recommend uploading assets which &quot;</span>
-                <span class="s2">&quot;are differential-privacy trackable objects, such as a syft.Tensor() wrapped &quot;</span>
-                <span class="s2">&quot;numpy.int32 or numpy.float32 object which you then call .private() on. </span><span class="se">\n\n</span><span class="s2">Once &quot;</span>
-                <span class="s2">&quot;you have an assets dictionary call load_dataset(assets=&lt;your dict of objects&gt;).&quot;</span>
-            <span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Loading dataset... checking assets...&quot;</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Missing Name: Oops!... You forgot to name your dataset!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It&#39;s important to give your dataset a clear and descriptive name because&quot;</span>
-                <span class="s2">&quot; the name is the primary way in which potential users of the dataset will&quot;</span>
-                <span class="s2">&quot; identify it.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s1">&#39;Retry with a string name. I.e., .load_dataset(name=&quot;&lt;your name here&gt;)&quot;&#39;</span>
-            <span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Loading dataset... checking dataset name for uniqueness...&quot;</span><span class="p">)</span>
-
-        <span class="c1"># Disabling this for now until we have a more efficient means of querying dataset metadata.</span>
-        <span class="c1"># TODO: enforce name uniqueness through more efficient means.</span>
-        <span class="c1"># datasets = self.datasets</span>
-        <span class="c1"># if not skip_checks:</span>
-        <span class="c1">#     for i in range(len(datasets)):</span>
-        <span class="c1">#         d = datasets[i]</span>
-        <span class="c1">#         sys.stdout.write(&quot;.&quot;)</span>
-        <span class="c1">#         if name == d.name:</span>
-        <span class="c1">#             print(</span>
-        <span class="c1">#                 &quot;\n\nWARNING - Dataset Name Conflict: A dataset named &#39;&quot;</span>
-        <span class="c1">#                 + name</span>
-        <span class="c1">#                 + &quot;&#39; already exists.\n&quot;</span>
-        <span class="c1">#             )</span>
-        <span class="c1">#             pref = input(&quot;Do you want to upload this dataset anyway? (y/n)&quot;)</span>
-        <span class="c1">#             while pref != &quot;y&quot; and pref != &quot;n&quot;:</span>
-        <span class="c1">#                 pref = input(</span>
-        <span class="c1">#                     &quot;Invalid input &#39;&quot; + pref + &quot;&#39;, please specify &#39;y&#39; or &#39;n&#39;.&quot;</span>
-        <span class="c1">#                 )</span>
-        <span class="c1">#             if pref == &quot;n&quot;:</span>
-        <span class="c1">#                 raise Exception(&quot;Dataset loading cancelled.&quot;)</span>
-        <span class="c1">#             else:</span>
-        <span class="c1">#                 print()  # just for the newline</span>
-        <span class="c1">#                 break</span>
-
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Loading dataset... checking dataset name for uniqueness...&quot;</span>
-            <span class="s2">&quot;                                                          &quot;</span>
-            <span class="s2">&quot;                                                          &quot;</span>
-        <span class="p">)</span>
-
-        <span class="k">if</span> <span class="n">description</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Missing Description: Oops!... You forgot to describe your dataset!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It&#39;s *very* important to give your dataset a very clear and complete description&quot;</span>
-                <span class="s2">&quot; because your users will need to be able to find this dataset (the description is used for search)&quot;</span>
-                <span class="s2">&quot; AND they will need enough information to be able to know that the dataset is what they&#39;re&quot;</span>
-                <span class="s2">&quot; looking for AND how to use it.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Start by describing where the dataset came from, how it was collected, and how its formatted.&quot;</span>
-                <span class="s2">&quot;Refer to each object in &#39;assets&#39; individually so that your users will know which is which. Don&#39;t&quot;</span>
-                <span class="s2">&quot; be afraid to be longwinded. :) Your users will thank you.&quot;</span>
-            <span class="p">)</span>
-
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Loading dataset... checking asset types...                              &quot;</span>
-        <span class="p">)</span>
-
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">....lib.python.util</span> <span class="kn">import</span> <span class="n">downcast</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_checks</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">asset_name</span><span class="p">,</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">assets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-
-                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">asset</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span>
-                    <span class="nb">getattr</span><span class="p">(</span><span class="n">asset</span><span class="p">,</span> <span class="s2">&quot;child&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">ADPTensor</span>
-                <span class="p">):</span>
-                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                        <span class="s2">&quot;ERROR: all private assets must be NumPy ndarray.int32 assets &quot;</span>
-                        <span class="o">+</span> <span class="s2">&quot;with proper Differential Privacy metadata applied.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                        <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-                        <span class="o">+</span> <span class="s2">&quot;Example: syft.Tensor(np.ndarray([1,2,3,4]).astype(np.int32)).private()</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                        <span class="o">+</span> <span class="s2">&quot;or</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                        <span class="o">+</span> <span class="s2">&quot;Example: syft.Tensor([1,2,3,4]).private()</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                        <span class="o">+</span> <span class="s2">&quot;and then follow the wizard. 🧙&quot;</span>
-                    <span class="p">)</span>
-                    <span class="c1"># print(</span>
-                    <span class="c1">#     &quot;\n\nWARNING - Non-DP Asset: You just passed in a asset &#39;&quot;</span>
-                    <span class="c1">#     + asset_name</span>
-                    <span class="c1">#     + &quot;&#39; which cannot be tracked with differential privacy because it is a &quot;</span>
-                    <span class="c1">#     + str(type(asset))</span>
-                    <span class="c1">#     + &quot; object.\n\n&quot;</span>
-                    <span class="c1">#     + &quot;This means you&#39;ll need to manually approve any requests which &quot;</span>
-                    <span class="c1">#     + &quot;leverage this data. If this is ok with you, proceed. If you&#39;d like to use &quot;</span>
-                    <span class="c1">#     + &quot;automatic differential privacy budgeting, please pass in a DP-compatible tensor type &quot;</span>
-                    <span class="c1">#     + &quot;such as by calling .private() on a sy.Tensor with a np.int32 or np.float32 inside.&quot;</span>
-                    <span class="c1"># )</span>
-                    <span class="c1">#</span>
-                    <span class="c1"># pref = input(&quot;Are you sure you want to proceed? (y/n)&quot;)</span>
-                    <span class="c1">#</span>
-                    <span class="c1"># while pref != &quot;y&quot; and pref != &quot;n&quot;:</span>
-                    <span class="c1">#     pref = input(</span>
-                    <span class="c1">#         &quot;Invalid input &#39;&quot; + pref + &quot;&#39;, please specify &#39;y&#39; or &#39;n&#39;.&quot;</span>
-                    <span class="c1">#     )</span>
-                    <span class="c1"># if pref == &quot;n&quot;:</span>
-                    <span class="c1">#     raise Exception(&quot;Dataset loading cancelled.&quot;)</span>
-
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">metadata</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
-                <span class="n">metadata</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-
-        <span class="n">assets</span> <span class="o">=</span> <span class="n">downcast</span><span class="p">(</span><span class="n">assets</span><span class="p">)</span>
-        <span class="n">metadata</span> <span class="o">=</span> <span class="n">downcast</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
-
-        <span class="n">binary_dataset</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Loading dataset... uploading...                        &quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">create_syft</span><span class="p">(</span>
-            <span class="n">dataset</span><span class="o">=</span><span class="n">binary_dataset</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;syft&quot;</span>
-        <span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">Loading dataset... uploading... SUCCESS!                        &quot;</span>
-        <span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Run &lt;your client variable&gt;.datasets to see your new dataset loaded into your machine!&quot;</span>
-        <span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">create_dataset</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">skip_checks</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">....lib.python.util</span> <span class="kn">import</span> <span class="n">downcast</span>
-
-        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Missing Name: Oops!... You forgot to name your dataset!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It&#39;s important to give your dataset a clear and descriptive name because&quot;</span>
-                <span class="s2">&quot; the name is the primary way in which potential users of the dataset will&quot;</span>
-                <span class="s2">&quot; identify it.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s1">&#39;Retry with a string name. I.e., .load_dataset(name=&quot;&lt;your name here&gt;)&quot;&#39;</span>
-            <span class="p">)</span>
-
-        <span class="n">datasets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">skip_checks</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datasets</span><span class="p">)):</span>
-                <span class="n">d</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-                <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
-                    <span class="nb">print</span><span class="p">(</span>
-                        <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">WARNING - Dataset Name Conflict: A dataset named &#39;&quot;</span>
-                        <span class="o">+</span> <span class="n">name</span>
-                        <span class="o">+</span> <span class="s2">&quot;&#39; already exists.</span><span class="se">\n</span><span class="s2">&quot;</span>
-                    <span class="p">)</span>
-                    <span class="n">pref</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Do you want to upload this dataset anyway? (y/n)&quot;</span><span class="p">)</span>
-                    <span class="k">while</span> <span class="n">pref</span> <span class="o">!=</span> <span class="s2">&quot;y&quot;</span> <span class="ow">and</span> <span class="n">pref</span> <span class="o">!=</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
-                        <span class="n">pref</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span>
-                            <span class="s2">&quot;Invalid input &#39;&quot;</span> <span class="o">+</span> <span class="n">pref</span> <span class="o">+</span> <span class="s2">&quot;&#39;, please specify &#39;y&#39; or &#39;n&#39;.&quot;</span>
-                        <span class="p">)</span>
-                    <span class="k">if</span> <span class="n">pref</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Dataset loading cancelled.&quot;</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="nb">print</span><span class="p">()</span>  <span class="c1"># just for the newline</span>
-                        <span class="k">break</span>
-
-        <span class="k">if</span> <span class="n">description</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="s2">&quot;Missing Description: Oops!... You forgot to describe your dataset!</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;It&#39;s *very* important to give your dataset a very clear and complete description&quot;</span>
-                <span class="s2">&quot; because your users will need to be able to find this dataset (the description is used for search)&quot;</span>
-                <span class="s2">&quot; AND they will need enough information to be able to know that the dataset is what they&#39;re&quot;</span>
-                <span class="s2">&quot; looking for AND how to use it.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-                <span class="s2">&quot;Start by describing where the dataset came from, how it was collected, and how its formatted.&quot;</span>
-                <span class="s2">&quot;Refer to each object in &#39;assets&#39; individually so that your users will know which is which. Don&#39;t&quot;</span>
-                <span class="s2">&quot; be afraid to be longwinded. :) Your users will thank you.&quot;</span>
-            <span class="p">)</span>
-
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">description</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">metadata</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># type: ignore</span>
-                <span class="n">metadata</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-
-        <span class="n">assets</span> <span class="o">=</span> <span class="n">downcast</span><span class="p">({})</span>
-        <span class="n">binary_dataset</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">assets</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-        <span class="n">metadata</span> <span class="o">=</span> <span class="n">downcast</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">create_syft</span><span class="p">(</span>
-            <span class="n">dataset</span><span class="o">=</span><span class="n">binary_dataset</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s2">&quot;syft&quot;</span>
-        <span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Creating an empty dataset... Creating... SUCCESS!&quot;</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">pandas</span></div>
 </pre></div>
 
               </div>
@@ -953,8 +509,8 @@
       </div>
     </div>
   
-    <script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -965,7 +521,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     

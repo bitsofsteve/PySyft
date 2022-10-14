@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>syft.core.node.domain.domain &#8212; PySyft  documentation</title>
     
-    <link href="../../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="../../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="../../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/css/pysyft.css" />
     
-    <link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
@@ -78,13 +78,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../../../getting_started/index.html">
-  Getting started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../../user_guide/index.html">
-  User guide
+  Getting Started
  </a>
 </li>
 
@@ -106,6 +100,18 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -117,12 +123,16 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -138,8 +148,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -147,9 +156,6 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -169,12 +175,8 @@
               <div>
                 
   <h1>Source code for syft.core.node.domain.domain</h1><div class="highlight"><pre>
-<span></span><span class="c1"># future</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-
-<span class="c1"># stdlib</span>
+<span></span><span class="c1"># stdlib</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
@@ -184,19 +186,15 @@
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
 
 <span class="c1"># third party</span>
-<span class="kn">import</span> <span class="nn">ascii_magic</span>
 <span class="kn">from</span> <span class="nn">nacl.signing</span> <span class="kn">import</span> <span class="n">SigningKey</span>
 <span class="kn">from</span> <span class="nn">nacl.signing</span> <span class="kn">import</span> <span class="n">VerifyKey</span>
-<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseSettings</span>
 
-<span class="c1"># relative</span>
+<span class="c1"># syft relative</span>
 <span class="kn">from</span> <span class="nn">....lib.python</span> <span class="kn">import</span> <span class="n">String</span>
 <span class="kn">from</span> <span class="nn">....logger</span> <span class="kn">import</span> <span class="n">critical</span>
 <span class="kn">from</span> <span class="nn">....logger</span> <span class="kn">import</span> <span class="n">debug</span>
 <span class="kn">from</span> <span class="nn">....logger</span> <span class="kn">import</span> <span class="n">info</span>
 <span class="kn">from</span> <span class="nn">....logger</span> <span class="kn">import</span> <span class="n">traceback</span>
-<span class="kn">from</span> <span class="nn">...adp.adversarial_accountant</span> <span class="kn">import</span> <span class="n">AdversarialAccountant</span>
-<span class="kn">from</span> <span class="nn">...common.message</span> <span class="kn">import</span> <span class="n">SignedImmediateSyftMessageWithReply</span>
 <span class="kn">from</span> <span class="nn">...common.message</span> <span class="kn">import</span> <span class="n">SignedMessage</span>
 <span class="kn">from</span> <span class="nn">...common.message</span> <span class="kn">import</span> <span class="n">SyftMessage</span>
 <span class="kn">from</span> <span class="nn">...common.uid</span> <span class="kn">import</span> <span class="n">UID</span>
@@ -205,54 +203,17 @@
 <span class="kn">from</span> <span class="nn">..common.action.get_object_action</span> <span class="kn">import</span> <span class="n">GetObjectAction</span>
 <span class="kn">from</span> <span class="nn">..common.client</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="kn">from</span> <span class="nn">..common.node</span> <span class="kn">import</span> <span class="n">Node</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.association_request_manager</span> <span class="kn">import</span> <span class="n">AssociationRequestManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.dataset_manager</span> <span class="kn">import</span> <span class="n">DatasetManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.environment_manager</span> <span class="kn">import</span> <span class="n">EnvironmentManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.node_manager</span> <span class="kn">import</span> <span class="n">NodeManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.node_route_manager</span> <span class="kn">import</span> <span class="n">NodeRouteManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.request_manager</span> <span class="kn">import</span> <span class="n">RequestManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.role_manager</span> <span class="kn">import</span> <span class="n">RoleManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_manager.user_manager</span> <span class="kn">import</span> <span class="n">UserManager</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.association_request.association_request_service</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">AssociationRequestService</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.dataset_manager.dataset_manager_service</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">DatasetManagerService</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.get_remaining_budget.get_remaining_budget_service</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">GetRemainingBudgetService</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.node_setup.node_setup_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">CreateInitialSetUpMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.node_setup.node_setup_service</span> <span class="kn">import</span> <span class="n">NodeSetupService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.object_request.object_request_service</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">ObjectRequestServiceWithoutReply</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.object_request.object_request_service</span> <span class="kn">import</span> <span class="n">RequestService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.ping.ping_service</span> <span class="kn">import</span> <span class="n">PingService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.publish.publish_service</span> <span class="kn">import</span> <span class="n">PublishScalarsService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.request_answer.request_answer_messages</span> <span class="kn">import</span> <span class="n">RequestStatus</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.request_answer.request_answer_service</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RequestAnswerService</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.request_receiver.request_receiver_messages</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">RequestMessage</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.role_manager.role_manager_service</span> <span class="kn">import</span> <span class="n">RoleManagerService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.simple.simple_service</span> <span class="kn">import</span> <span class="n">SimpleService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.tensor_manager.tensor_manager_service</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">TensorManagerService</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.user_auth.user_auth_service</span> <span class="kn">import</span> <span class="n">UserLoginService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.user_manager.user_manager_service</span> <span class="kn">import</span> <span class="n">UserManagerService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.vpn.vpn_service</span> <span class="kn">import</span> <span class="n">VPNConnectService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.vpn.vpn_service</span> <span class="kn">import</span> <span class="n">VPNJoinService</span>
-<span class="kn">from</span> <span class="nn">..common.node_service.vpn.vpn_service</span> <span class="kn">import</span> <span class="n">VPNStatusService</span>
-<span class="kn">from</span> <span class="nn">..common.node_table.utils</span> <span class="kn">import</span> <span class="n">create_memory_db_engine</span>
 <span class="kn">from</span> <span class="nn">..device</span> <span class="kn">import</span> <span class="n">Device</span>
 <span class="kn">from</span> <span class="nn">..device</span> <span class="kn">import</span> <span class="n">DeviceClient</span>
 <span class="kn">from</span> <span class="nn">.client</span> <span class="kn">import</span> <span class="n">DomainClient</span>
+<span class="kn">from</span> <span class="nn">.service</span> <span class="kn">import</span> <span class="n">RequestAnswerMessageService</span>
+<span class="kn">from</span> <span class="nn">.service</span> <span class="kn">import</span> <span class="n">RequestMessage</span>
+<span class="kn">from</span> <span class="nn">.service</span> <span class="kn">import</span> <span class="n">RequestService</span>
+<span class="kn">from</span> <span class="nn">.service</span> <span class="kn">import</span> <span class="n">RequestStatus</span>
+<span class="kn">from</span> <span class="nn">.service.accept_or_deny_request_service</span> <span class="kn">import</span> <span class="n">AcceptOrDenyRequestService</span>
+<span class="kn">from</span> <span class="nn">.service.get_all_requests_service</span> <span class="kn">import</span> <span class="n">GetAllRequestsService</span>
+<span class="kn">from</span> <span class="nn">.service.request_handler_service</span> <span class="kn">import</span> <span class="n">GetAllRequestHandlersService</span>
+<span class="kn">from</span> <span class="nn">.service.request_handler_service</span> <span class="kn">import</span> <span class="n">UpdateRequestHandlerService</span>
 
 
 <div class="viewcode-block" id="Domain"><a class="viewcode-back" href="../../../../../api_reference/syft.core.node.domain.domain.html#syft.core.node.domain.Domain">[docs]</a><span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
@@ -273,13 +234,8 @@
         <span class="n">signing_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SigningKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">verify_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">VerifyKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">root_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">VerifyKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">db_engine</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="n">settings</span><span class="p">:</span> <span class="n">BaseSettings</span> <span class="o">=</span> <span class="n">BaseSettings</span><span class="p">(),</span>
+        <span class="n">db_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-
-        <span class="k">if</span> <span class="n">db_engine</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">db_engine</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create_memory_db_engine</span><span class="p">()</span>
-
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
             <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
@@ -288,56 +244,19 @@
             <span class="n">vm</span><span class="o">=</span><span class="n">vm</span><span class="p">,</span>
             <span class="n">signing_key</span><span class="o">=</span><span class="n">signing_key</span><span class="p">,</span>
             <span class="n">verify_key</span><span class="o">=</span><span class="n">verify_key</span><span class="p">,</span>
-            <span class="n">db_engine</span><span class="o">=</span><span class="n">db_engine</span><span class="p">,</span>
+            <span class="n">db_path</span><span class="o">=</span><span class="n">db_path</span><span class="p">,</span>
         <span class="p">)</span>
-
-        <span class="c1"># share settings with the FastAPI application level</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span>
-
         <span class="c1"># specific location with name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="n">SpecificLocation</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">root_key</span> <span class="o">=</span> <span class="n">root_key</span>
 
-        <span class="c1"># Database Management Instances</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="n">UserManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">roles</span> <span class="o">=</span> <span class="n">RoleManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">environments</span> <span class="o">=</span> <span class="n">EnvironmentManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">association_requests</span> <span class="o">=</span> <span class="n">AssociationRequestManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data_requests</span> <span class="o">=</span> <span class="n">RequestManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span> <span class="o">=</span> <span class="n">DatasetManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node</span> <span class="o">=</span> <span class="n">NodeManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node_route</span> <span class="o">=</span> <span class="n">NodeRouteManager</span><span class="p">(</span><span class="n">db_engine</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">acc</span> <span class="o">=</span> <span class="n">AdversarialAccountant</span><span class="p">(</span><span class="n">db_engine</span><span class="o">=</span><span class="n">db_engine</span><span class="p">,</span> <span class="n">max_budget</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_without_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RequestService</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_without_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AcceptOrDenyRequestService</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_without_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UpdateRequestHandlerService</span><span class="p">)</span>
 
-        <span class="c1"># self.immediate_services_without_reply.append(RequestReceiverService)</span>
-        <span class="c1"># self.immediate_services_without_reply.append(AcceptOrDenyRequestService)</span>
-        <span class="c1"># self.immediate_services_without_reply.append(UpdateRequestHandlerService)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_without_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PublishScalarsService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RequestAnswerService</span><span class="p">)</span>
-        <span class="c1"># self.immediate_services_with_reply.append(GetAllRequestHandlersService)</span>
-
-        <span class="c1"># Grid Domain Services</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AssociationRequestService</span><span class="p">)</span>
-        <span class="c1"># self.immediate_services_with_reply.append(DomainInfrastructureService)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GetRemainingBudgetService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SimpleService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PingService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VPNConnectService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VPNJoinService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">VPNStatusService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NodeSetupService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">TensorManagerService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RoleManagerService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UserManagerService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">DatasetManagerService</span><span class="p">)</span>
-        <span class="c1"># self.immediate_services_with_reply.append(TransferObjectService)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RequestService</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">UserLoginService</span><span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_without_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ObjectRequestServiceWithoutReply</span><span class="p">)</span>
-
-        <span class="c1"># TODO: @Madhava change to a map of accountants that are created on first</span>
-        <span class="c1"># use of the DS key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">RequestAnswerMessageService</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GetAllRequestsService</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">immediate_services_with_reply</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GetAllRequestHandlersService</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">requests</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">RequestMessage</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
         <span class="c1"># available_device_types = set()</span>
@@ -354,53 +273,6 @@
 
         <span class="c1"># run the handlers in an asyncio future</span>
         <span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">run_handlers</span><span class="p">())</span>
-
-    <span class="k">def</span> <span class="nf">post_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">post_init</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">set_node_uid</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">initial_setup</span><span class="p">(</span>  <span class="c1"># nosec</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">first_superuser_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span>
-        <span class="n">first_superuser_email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;info@openmined.org&quot;</span><span class="p">,</span>
-        <span class="n">first_superuser_password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;changethis&quot;</span><span class="p">,</span>
-        <span class="n">first_superuser_budget</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">5.55</span><span class="p">,</span>
-        <span class="n">domain_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;BigHospital&quot;</span><span class="p">,</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Domain</span><span class="p">:</span>
-
-        <span class="c1"># Build Syft Message</span>
-        <span class="n">msg</span><span class="p">:</span> <span class="n">SignedImmediateSyftMessageWithReply</span> <span class="o">=</span> <span class="n">CreateInitialSetUpMessage</span><span class="p">(</span>
-            <span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
-            <span class="n">name</span><span class="o">=</span><span class="n">first_superuser_name</span><span class="p">,</span>
-            <span class="n">email</span><span class="o">=</span><span class="n">first_superuser_email</span><span class="p">,</span>
-            <span class="n">password</span><span class="o">=</span><span class="n">first_superuser_password</span><span class="p">,</span>
-            <span class="n">domain_name</span><span class="o">=</span><span class="n">domain_name</span><span class="p">,</span>
-            <span class="n">budget</span><span class="o">=</span><span class="n">first_superuser_budget</span><span class="p">,</span>
-            <span class="n">reply_to</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">signing_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">signing_key</span><span class="p">)</span>
-
-        <span class="c1"># Process syft message</span>
-        <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recv_immediate_msg_with_reply</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">message</span>
-
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="nf">loud_print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">install_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s2">&quot;../../../../img/&quot;</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">ascii_magic</span><span class="o">.</span><span class="n">to_terminal</span><span class="p">(</span>
-            <span class="n">ascii_magic</span><span class="o">.</span><span class="n">from_image_file</span><span class="p">(</span>
-                <span class="n">img_path</span><span class="o">=</span><span class="n">install_path</span> <span class="o">+</span> <span class="s2">&quot;/pygrid.png&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="mi">83</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-
-        <span class="nb">print</span><span class="p">(</span>
-            <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                                                     __</span>
-<span class="sd">                                                    |  \  _   _   _  .  _</span>
-<span class="sd">                                                    |__/ (_) ||| (_| | | )</span>
-<span class="sd">&quot;&quot;&quot;</span>
-        <span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">icon</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -596,20 +468,6 @@
                 <span class="n">alive_handlers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">request_handlers</span> <span class="o">=</span> <span class="n">alive_handlers</span>
 
-    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_role</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="c1"># Cleanup database tables</span>
-        <span class="k">if</span> <span class="n">user_role</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">roles</span><span class="o">.</span><span class="n">owner_role</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">data_requests</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">environments</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">association_requests</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">initial_setup</span><span class="p">()</span>
-            <span class="k">return</span> <span class="kc">True</span>
-
-        <span class="k">return</span> <span class="kc">False</span>
-
     <span class="k">def</span> <span class="nf">clean_up_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># this allows a request to be re-handled if the handler somehow failed</span>
         <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
@@ -671,8 +529,8 @@
       </div>
     </div>
   
-    <script src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -683,7 +541,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     

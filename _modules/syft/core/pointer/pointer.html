@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>syft.core.pointer.pointer &#8212; PySyft  documentation</title>
     
-    <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/pysyft.css" />
     
-    <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
@@ -78,13 +78,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../../getting_started/index.html">
-  Getting started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../user_guide/index.html">
-  User guide
+  Getting Started
  </a>
 </li>
 
@@ -106,6 +100,18 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -117,12 +123,16 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -138,8 +148,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -147,9 +156,6 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -269,28 +275,27 @@
 <span class="c1"># syft absolute</span>
 <span class="kn">import</span> <span class="nn">syft</span> <span class="k">as</span> <span class="nn">sy</span>
 
-<span class="c1"># relative</span>
+<span class="c1"># syft relative</span>
 <span class="kn">from</span> <span class="nn">...logger</span> <span class="kn">import</span> <span class="n">debug</span>
 <span class="kn">from</span> <span class="nn">...logger</span> <span class="kn">import</span> <span class="n">error</span>
 <span class="kn">from</span> <span class="nn">...logger</span> <span class="kn">import</span> <span class="n">warning</span>
 <span class="kn">from</span> <span class="nn">...proto.core.pointer.pointer_pb2</span> <span class="kn">import</span> <span class="n">Pointer</span> <span class="k">as</span> <span class="n">Pointer_PB</span>
-<span class="kn">from</span> <span class="nn">...util</span> <span class="kn">import</span> <span class="n">obj2pointer_type</span>
 <span class="kn">from</span> <span class="nn">..common.pointer</span> <span class="kn">import</span> <span class="n">AbstractPointer</span>
 <span class="kn">from</span> <span class="nn">..common.serde.deserialize</span> <span class="kn">import</span> <span class="n">_deserialize</span>
-<span class="kn">from</span> <span class="nn">..common.serde.serializable</span> <span class="kn">import</span> <span class="n">serializable</span>
+<span class="kn">from</span> <span class="nn">..common.serde.serializable</span> <span class="kn">import</span> <span class="n">bind_protobuf</span>
 <span class="kn">from</span> <span class="nn">..common.uid</span> <span class="kn">import</span> <span class="n">UID</span>
 <span class="kn">from</span> <span class="nn">..io.address</span> <span class="kn">import</span> <span class="n">Address</span>
 <span class="kn">from</span> <span class="nn">..node.abstract.node</span> <span class="kn">import</span> <span class="n">AbstractNode</span>
 <span class="kn">from</span> <span class="nn">..node.common.action.get_object_action</span> <span class="kn">import</span> <span class="n">GetObjectAction</span>
-<span class="kn">from</span> <span class="nn">..node.common.node_service.get_repr.get_repr_service</span> <span class="kn">import</span> <span class="n">GetReprMessage</span>
-<span class="kn">from</span> <span class="nn">..node.common.node_service.object_search_permission_update.obj_search_permission_messages</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span> <span class="nn">..node.common.service.get_repr_service</span> <span class="kn">import</span> <span class="n">GetReprMessage</span>
+<span class="kn">from</span> <span class="nn">..node.common.service.obj_search_permission_service</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">ObjectSearchPermissionUpdateMessage</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">..store.storeable_object</span> <span class="kn">import</span> <span class="n">StorableObject</span>
 
 
 <span class="c1"># TODO: Fix the Client, Address, Location confusion</span>
-<div class="viewcode-block" id="Pointer"><a class="viewcode-back" href="../../../../api_reference/syft.core.pointer.pointer.html#syft.core.pointer.pointer.Pointer">[docs]</a><span class="nd">@serializable</span><span class="p">()</span>
+<div class="viewcode-block" id="Pointer"><a class="viewcode-back" href="../../../../api_reference/syft.core.pointer.pointer.html#syft.core.pointer.pointer.Pointer">[docs]</a><span class="nd">@bind_protobuf</span>
 <span class="k">class</span> <span class="nc">Pointer</span><span class="p">(</span><span class="n">AbstractPointer</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    The pointer is the handler when interacting with remote data.</span>
@@ -308,7 +313,6 @@
 
     <span class="n">path_and_name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">_pointable</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;DefaultPointerDunderNamePleaseChangeMe&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -329,38 +333,6 @@
         <span class="c1"># when delete_obj is True and network call</span>
         <span class="c1"># has already been made</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_exhausted</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">block</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractPointer</span><span class="p">:</span>
-        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="nf">block_with_timeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">secs_per_poll</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AbstractPointer</span><span class="p">:</span>
-
-        <span class="n">total_secs</span> <span class="o">=</span> <span class="n">secs</span>
-
-        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span> <span class="ow">and</span> <span class="n">secs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">secs_per_poll</span><span class="p">)</span>
-            <span class="n">secs</span> <span class="o">-=</span> <span class="n">secs_per_poll</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">exists</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Object with id </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="si">}</span><span class="s2"> still doesn&#39;t exist after </span><span class="si">{</span><span class="n">total_secs</span><span class="si">}</span><span class="s2"> second timeout.&quot;</span>
-            <span class="p">)</span>
-
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">exists</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Sometimes pointers can point to objects which either have not yet</span>
-<span class="sd">        been created or were created but have now been destroyed. This method</span>
-<span class="sd">        asks a remote node whether the object this pointer is pointing to can be</span>
-<span class="sd">        found in the database.&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">obj_exists</span><span class="p">(</span><span class="n">obj_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="o">.</span><span class="n">no_dash</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
 
     <span class="k">def</span> <span class="nf">_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">delete_obj</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StorableObject</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Method to download a remote object from a pointer object if you have the right</span>
@@ -423,11 +395,8 @@
             <span class="k">if</span> <span class="s2">&quot;You do not have permission to .get()&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span>
                 <span class="n">e</span>
             <span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;UnknownPrivateException&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
-
-                <span class="c1"># relative</span>
-                <span class="kn">from</span> <span class="nn">..node.common.node_service.request_receiver.request_receiver_messages</span> <span class="kn">import</span> <span class="p">(</span>
-                    <span class="n">RequestStatus</span><span class="p">,</span>
-                <span class="p">)</span>
+                <span class="c1"># syft relative</span>
+                <span class="kn">from</span> <span class="nn">..node.domain.service</span> <span class="kn">import</span> <span class="n">RequestStatus</span>
 
                 <span class="n">response_status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
                     <span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Calling remote print&quot;</span><span class="p">,</span>
@@ -451,41 +420,6 @@
 
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">...lib.python</span> <span class="kn">import</span> <span class="n">Float</span>
-        <span class="kn">from</span> <span class="nn">..node.common.node_service.publish.publish_service</span> <span class="kn">import</span> <span class="p">(</span>
-            <span class="n">PublishScalarsAction</span><span class="p">,</span>
-        <span class="p">)</span>
-
-        <span class="c1"># TODO: make publish genuinely asynchronous (not sure why it isn&#39;t already but</span>
-        <span class="c1"># if you call publish on an object before it exists it complains.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">block</span>
-
-        <span class="n">id_at_location</span> <span class="o">=</span> <span class="n">UID</span><span class="p">()</span>
-
-        <span class="n">obj_msg</span> <span class="o">=</span> <span class="n">PublishScalarsAction</span><span class="p">(</span>
-            <span class="n">id_at_location</span><span class="o">=</span><span class="n">id_at_location</span><span class="p">,</span>
-            <span class="n">address</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
-            <span class="n">publish_ids_at_location</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">],</span>
-            <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span>
-        <span class="p">)</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_immediate_msg_without_reply</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">obj_msg</span><span class="p">)</span>
-        <span class="c1"># create pointer which will point to float result</span>
-
-        <span class="n">afloat</span> <span class="o">=</span> <span class="n">Float</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
-        <span class="n">ptr_type</span> <span class="o">=</span> <span class="n">obj2pointer_type</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">afloat</span><span class="p">)</span>
-        <span class="n">ptr</span> <span class="o">=</span> <span class="n">ptr_type</span><span class="p">(</span>
-            <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
-            <span class="n">id_at_location</span><span class="o">=</span><span class="n">id_at_location</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="n">ptr</span><span class="o">.</span><span class="n">_pointable</span> <span class="o">=</span> <span class="kc">True</span>
-
-        <span class="c1"># return pointer</span>
-        <span class="k">return</span> <span class="n">ptr</span>
-
 <div class="viewcode-block" id="Pointer.get"><a class="viewcode-back" href="../../../../api_reference/syft.core.pointer.pointer.html#syft.core.pointer.pointer.Pointer.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">request_block</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -500,11 +434,8 @@
 <span class="sd">        :return: returns the downloaded data</span>
 <span class="sd">        :rtype: Optional[StorableObject]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">..node.common.node_service.request_receiver.request_receiver_messages</span> <span class="kn">import</span> <span class="p">(</span>
-            <span class="n">RequestStatus</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="c1"># syft relative</span>
+        <span class="kn">from</span> <span class="nn">..node.domain.service</span> <span class="kn">import</span> <span class="n">RequestStatus</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exhausted</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ReferenceError</span><span class="p">(</span>
@@ -549,7 +480,6 @@
 <span class="sd">            the other public serialization methods if you wish to serialize an</span>
 <span class="sd">            object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="k">return</span> <span class="n">Pointer_PB</span><span class="p">(</span>
             <span class="n">points_to_object_with_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">path_and_name</span><span class="p">,</span>
             <span class="n">pointer_name</span><span class="o">=</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
@@ -559,9 +489,6 @@
             <span class="n">description</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
             <span class="n">object_type</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object_type</span><span class="p">,</span>
             <span class="n">attribute_name</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;attribute_name&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">),</span>
-            <span class="n">public_shape</span><span class="o">=</span><span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span>
-                <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;public_shape&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span>
-            <span class="p">),</span>
         <span class="p">)</span>
 
     <span class="nd">@staticmethod</span>
@@ -584,20 +511,15 @@
 
         <span class="n">points_to_type</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">lib_ast</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">points_to_object_with_path</span><span class="p">)</span>
         <span class="n">pointer_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">points_to_type</span><span class="p">,</span> <span class="n">proto</span><span class="o">.</span><span class="n">pointer_name</span><span class="p">)</span>
-
         <span class="c1"># WARNING: This is sending a serialized Address back to the constructor</span>
         <span class="c1"># which currently depends on a Client for send_immediate_msg_with_reply</span>
-        <span class="n">out</span> <span class="o">=</span> <span class="n">pointer_type</span><span class="p">(</span>
+        <span class="k">return</span> <span class="n">pointer_type</span><span class="p">(</span>
             <span class="n">id_at_location</span><span class="o">=</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">id_at_location</span><span class="p">),</span>
             <span class="n">client</span><span class="o">=</span><span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">location</span><span class="p">),</span>
             <span class="n">tags</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">tags</span><span class="p">,</span>
             <span class="n">description</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
             <span class="n">object_type</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">object_type</span><span class="p">,</span>
         <span class="p">)</span>
-
-        <span class="n">out</span><span class="o">.</span><span class="n">public_shape</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">proto</span><span class="o">.</span><span class="n">public_shape</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">out</span>
 
 <div class="viewcode-block" id="Pointer.get_protobuf_schema"><a class="viewcode-back" href="../../../../api_reference/syft.core.pointer.pointer.html#syft.core.pointer.pointer.Pointer.get_protobuf_schema">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_protobuf_schema</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">GeneratedProtocolMessageType</span><span class="p">:</span>
@@ -657,11 +579,8 @@
 <span class="sd">            This method should be used when the remote data associated with the pointer wants to be</span>
 <span class="sd">            downloaded locally (or use .get() on the pointer).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="c1"># relative</span>
-        <span class="kn">from</span> <span class="nn">..node.common.node_service.request_receiver.request_receiver_messages</span> <span class="kn">import</span> <span class="p">(</span>
-            <span class="n">RequestMessage</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="c1"># syft relative</span>
+        <span class="kn">from</span> <span class="nn">..node.domain.service</span> <span class="kn">import</span> <span class="n">RequestMessage</span>
 
         <span class="c1"># if you request non-blocking you don&#39;t need a timeout</span>
         <span class="c1"># if you request blocking you need a timeout, so lets set a default on here</span>
@@ -692,13 +611,9 @@
             <span class="k">if</span> <span class="n">timeout_secs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">timeout_secs</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># default if not explicitly set</span>
 
-            <span class="c1"># relative</span>
-            <span class="kn">from</span> <span class="nn">..node.common.node_service.request_answer.request_answer_service</span> <span class="kn">import</span> <span class="p">(</span>
-                <span class="n">RequestAnswerMessage</span><span class="p">,</span>
-            <span class="p">)</span>
-            <span class="kn">from</span> <span class="nn">..node.common.node_service.request_receiver.request_receiver_messages</span> <span class="kn">import</span> <span class="p">(</span>
-                <span class="n">RequestStatus</span><span class="p">,</span>
-            <span class="p">)</span>
+            <span class="c1"># syft relative</span>
+            <span class="kn">from</span> <span class="nn">..node.domain.service</span> <span class="kn">import</span> <span class="n">RequestAnswerMessage</span>
+            <span class="kn">from</span> <span class="nn">..node.domain.service</span> <span class="kn">import</span> <span class="n">RequestStatus</span>
 
             <span class="n">output_string</span> <span class="o">=</span> <span class="s2">&quot;&gt; Waiting for Blocking Request: &quot;</span>
             <span class="n">output_string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id_at_location</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -829,8 +744,7 @@
 <span class="sd">        :param request_id: The request on which you are querying the status.</span>
 <span class="sd">        :type request_id: UID</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="c1"># relative</span>
+        <span class="c1"># syft relative</span>
         <span class="kn">from</span> <span class="nn">..node.domain.service</span> <span class="kn">import</span> <span class="n">RequestAnswerMessage</span>
 
         <span class="n">msg</span> <span class="o">=</span> <span class="n">RequestAnswerMessage</span><span class="p">(</span>
@@ -863,8 +777,8 @@
       </div>
     </div>
   
-    <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -875,7 +789,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     

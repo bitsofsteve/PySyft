@@ -8,30 +8,30 @@
 
     <title>Glossary &#8212; PySyft  documentation</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/pysyft.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -41,8 +41,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API reference" href="../api_reference/index.html" />
-    <link rel="prev" title="User guide" href="../user_guide/index.html" />
+    <link rel="next" title="Resources" href="../resources/index.html" />
+    <link rel="prev" title="Contributor Guidelines" href="../developer_guide/index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -81,13 +81,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../getting_started/index.html">
-  Getting started
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../user_guide/index.html">
-  User guide
+  Getting Started
  </a>
 </li>
 
@@ -109,6 +103,18 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -120,12 +126,16 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -141,32 +151,14 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Glossary
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
- </li>
-</ul>
-
+    
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -356,7 +348,7 @@
 </section>
 <section id="differential-privacy">
 <h3>Differential Privacy<a class="headerlink" href="#differential-privacy" title="Permalink to this headline">¶</a></h3>
-<p>While the textbook definition can be found here, within the context of remote data science, <code class="docutils literal notranslate"><span class="pre">differential</span> <span class="pre">privacy</span></code> is a set of algorithms which empower a data owner to limit the probability that a data scientist will be able to use their statistical results to reverse engineer the data owner’s def. of too much information about the underlying data that generated those results.</p>
+<p>While the textbook definition can be found <a class="reference external" href="https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf">here</a>, within the context of remote data science, <code class="docutils literal notranslate"><span class="pre">differential</span> <span class="pre">privacy</span></code> is a set of algorithms which empower a data owner to limit the probability that a data scientist will be able to use their statistical results to reverse engineer the data owner’s def. of too much information about the underlying data that generated those results. In a nutshell, its aim is to prevent a Data Scientist from identifying any individual from the dataset through reverse-engineering.</p>
 </section>
 <section id="domain-node">
 <h3>Domain Node<a class="headerlink" href="#domain-node" title="Permalink to this headline">¶</a></h3>
@@ -364,7 +356,7 @@
 </section>
 <section id="network-node">
 <h3>Network Node<a class="headerlink" href="#network-node" title="Permalink to this headline">¶</a></h3>
-<p>A server which exists outside of any data owner’s institution, providing services to the network of data owners and data scientists such as dataset search and bulk project approval (simultaneous legal/technical approval to participate in a project across groups of domains and data scientists at a time). A Network acts a bridge between between its members and subscribers. The members are <code class="docutils literal notranslate"><span class="pre">Domains</span></code> while subscribers are the <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">users</span></code> (e.g. Data Scientist) who explore and perform analysis on the datasets hosted by the members.
+<p>A server which exists outside of any data owner’s institution, providing services to the network of data owners and data scientists such as dataset search and bulk project approval (simultaneous legal/technical approval to participate in a project across groups of domains and data scientists at a time). A Network acts as a bridge between between its members and subscribers. The members are <code class="docutils literal notranslate"><span class="pre">Domains</span></code> while subscribers are the <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">users</span></code> (e.g. Data Scientist) who explore and perform analysis on the datasets hosted by the members.
 A network is used to provide access to a collection of domains at once i.e. if a user agrees to a <code class="docutils literal notranslate"><span class="pre">Network</span> <span class="pre">Agreement</span></code>, then they automatically agree to the conditions to the Domains enlisted in that Network.</p>
 </section>
 <section id="privacy-budget">
@@ -417,7 +409,7 @@ In our specific setup the privacy budget is measured against data subjects, not 
 </section>
 <section id="network-compliance-officer">
 <h3>Network Compliance Officer<a class="headerlink" href="#network-compliance-officer" title="Permalink to this headline">¶</a></h3>
-<p><em>to be added</em></p>
+<p>All the personas in an institution that are in charge of making sure that the access and utilization of data between their network’s domains and members (data scientists) fall within the bounds outlined in the network’s legal agreements.</p>
 </section>
 </section>
 <section id="user-roles">
@@ -452,7 +444,7 @@ In our specific setup the privacy budget is measured against data subjects, not 
 </section>
 <section id="owner">
 <h4>Owner<a class="headerlink" href="#owner" title="Permalink to this headline">¶</a></h4>
-<p>There is only one Owner account assigned to any one domain node. The owner account is the highest level permission and is a requirement for deploying a domain node. If you should ever want to transfer ownership of your domain node to someone, you might follow these steps (<em>to be added</em>).</p>
+<p>There is only one Owner account assigned to any one domain node. The owner account is the highest level permission and is a requirement for deploying a domain node. If you should ever want to transfer ownership of your domain node to someone, please contact us at <a class="reference external" href="mailto:support&#37;&#52;&#48;openmined&#46;org">support<span>&#64;</span>openmined<span>&#46;</span>org</a>.</p>
 <p>Default permissions:</p>
 <ul class="simple">
 <li><p>All</p></li>
@@ -468,7 +460,7 @@ In our specific setup the privacy budget is measured against data subjects, not 
 </section>
 <section id="member">
 <h4>Member<a class="headerlink" href="#member" title="Permalink to this headline">¶</a></h4>
-<p>The highest level of <code class="docutils literal notranslate"><span class="pre">network</span> <span class="pre">membership</span></code>, a full domain member is greater than a guest member because, beyond its listing within a network node’s registry, the domain has entered into a legal relationship with the network owner such that the network owner can unilaterally give its full data scientists access to data hosted by the domain. Note that this does not mean that the network can control access to all potential users of the <code class="docutils literal notranslate"><span class="pre">registered</span> <span class="pre">domain</span></code>, because the domain’s membership in the network is non-exclusive (domains can register in multiple networks and also accept direct data-scientist users on the side). A network node only has authority to give its own full data scientists access to the any full domain within its registry.</p>
+<p>The highest level of <code class="docutils literal notranslate"><span class="pre">network</span> <span class="pre">membership</span></code>, a full domain member is greater than a guest member because, beyond its listing within a network node’s registry, the domain has entered into a legal relationship with the network owner such that the network owner can unilaterally give its full data scientists access to data hosted by the domain. Note that this does not mean that the network can control access to all potential users of the <code class="docutils literal notranslate"><span class="pre">registered</span> <span class="pre">domain</span></code>, because the domain’s membership in the network is non-exclusive (domains can register in multiple networks and also accept direct data-scientist users on the side). A network node only has authority to give its own full data scientists access to any full domain within its registry.</p>
 </section>
 </section>
 </section>
@@ -479,18 +471,18 @@ In our specific setup the privacy budget is measured against data subjects, not 
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../user_guide/index.html" title="previous page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../developer_guide/index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">User guide</p>
+            <p class="prev-next-title">Contributor Guidelines</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../api_reference/index.html" title="next page">
+    <a class='right-next' id="next-link" href="../resources/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">API reference</p>
+        <p class="prev-next-title">Resources</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -502,8 +494,8 @@ In our specific setup the privacy budget is measured against data subjects, not 
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -514,7 +506,7 @@ In our specific setup the privacy budget is measured against data subjects, not 
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     

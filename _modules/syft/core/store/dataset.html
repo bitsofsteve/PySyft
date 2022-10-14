@@ -7,30 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>syft.core.store.dataset &#8212; PySyft  documentation</title>
     
-    <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
     
-    <link rel="stylesheet"
-      href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     
       
-  
+
     
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/pysyft.css" />
     
-    <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
@@ -78,13 +78,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../../getting_started/index.html">
-  Getting started
- </a>
-</li>
-
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../user_guide/index.html">
-  User guide
+  Getting Started
  </a>
 </li>
 
@@ -106,6 +100,18 @@
  </a>
 </li>
 
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
     
 </ul>
       </div>
@@ -117,12 +123,16 @@
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label></a>
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter"><span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label></a>
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
         </li>
       </ul>
       </div>
@@ -138,8 +148,7 @@
           
             
             <!-- Only show if we have sidebars configured, else just a small margin  -->
-            <div class="col-12 col-md-3 bd-sidebar">
-              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -147,9 +156,6 @@
     
   </div>
 </nav>
-              </div>
-              <div class="sidebar-end-items">
-              </div>
             </div>
             
           
@@ -169,10 +175,7 @@
               <div>
                 
   <h1>Source code for syft.core.store.dataset</h1><div class="highlight"><pre>
-<span></span><span class="c1"># future</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
-
-<span class="c1"># stdlib</span>
+<span></span><span class="c1"># stdlib</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
 
@@ -182,16 +185,19 @@
 <span class="c1"># syft absolute</span>
 <span class="kn">import</span> <span class="nn">syft</span> <span class="k">as</span> <span class="nn">sy</span>
 
-<span class="c1"># relative</span>
+<span class="c1"># syft relative</span>
+<span class="kn">from</span> <span class="nn">...</span> <span class="kn">import</span> <span class="n">serialize</span>
 <span class="kn">from</span> <span class="nn">...proto.core.store.dataset_pb2</span> <span class="kn">import</span> <span class="n">Dataset</span> <span class="k">as</span> <span class="n">Dataset_PB</span>
 <span class="kn">from</span> <span class="nn">...util</span> <span class="kn">import</span> <span class="n">get_fully_qualified_name</span>
-<span class="kn">from</span> <span class="nn">..common.serde.serializable</span> <span class="kn">import</span> <span class="n">serializable</span>
+<span class="kn">from</span> <span class="nn">..common.serde.deserialize</span> <span class="kn">import</span> <span class="n">_deserialize</span>
+<span class="kn">from</span> <span class="nn">..common.serde.serializable</span> <span class="kn">import</span> <span class="n">Serializable</span>
+<span class="kn">from</span> <span class="nn">..common.serde.serializable</span> <span class="kn">import</span> <span class="n">bind_protobuf</span>
 <span class="kn">from</span> <span class="nn">..common.uid</span> <span class="kn">import</span> <span class="n">UID</span>
 <span class="kn">from</span> <span class="nn">.storeable_object</span> <span class="kn">import</span> <span class="n">StorableObject</span>
 
 
-<div class="viewcode-block" id="Dataset"><a class="viewcode-back" href="../../../../api_reference/syft.core.store.dataset.html#syft.core.store.dataset.Dataset">[docs]</a><span class="nd">@serializable</span><span class="p">()</span>
-<span class="k">class</span> <span class="nc">Dataset</span><span class="p">:</span>
+<div class="viewcode-block" id="Dataset"><a class="viewcode-back" href="../../../../api_reference/syft.core.store.dataset.html#syft.core.store.Dataset">[docs]</a><span class="nd">@bind_protobuf</span>
+<span class="k">class</span> <span class="nc">Dataset</span><span class="p">(</span><span class="n">Serializable</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Dataset is a wrapper over a collection of Serializable objects.</span>
 
@@ -272,7 +278,7 @@
         <span class="n">proto</span> <span class="o">=</span> <span class="n">Dataset_PB</span><span class="p">()</span>
 
         <span class="c1"># Step 1: Serialize the id to protobuf and copy into protobuf</span>
-        <span class="nb">id</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
         <span class="n">proto</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">CopyFrom</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
 
         <span class="c1"># Step 2: Save the type of wrapper to use to deserialize</span>
@@ -301,22 +307,22 @@
             <span class="n">permission_data</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_permissions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">permission_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
-            <span class="n">proto</span><span class="o">.</span><span class="n">read_permissions</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">permission_data</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">proto</span><span class="o">.</span><span class="n">read_permissions</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">permission_data</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="c1"># Step 7: save search permissions</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">search_permissions</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">permission_data</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">Dict</span><span class="p">()</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_permissions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                 <span class="n">permission_data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
-            <span class="n">proto</span><span class="o">.</span><span class="n">search_permissions</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">permission_data</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">proto</span><span class="o">.</span><span class="n">search_permissions</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="n">permission_data</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">proto</span>
 
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">_proto2object</span><span class="p">(</span><span class="n">proto</span><span class="p">:</span> <span class="n">Dataset_PB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Dataset&quot;</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">_proto2object</span><span class="p">(</span><span class="n">proto</span><span class="p">:</span> <span class="n">Dataset_PB</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Serializable</span><span class="p">:</span>
 
         <span class="c1"># Step 1: deserialize the ID</span>
-        <span class="nb">id</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">blob</span><span class="o">=</span><span class="n">proto</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">UID</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;TODO&quot;</span><span class="p">)</span>
@@ -334,7 +340,7 @@
         <span class="n">result</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="n">tags</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
 
-<div class="viewcode-block" id="Dataset.get_protobuf_schema"><a class="viewcode-back" href="../../../../api_reference/syft.core.store.dataset.html#syft.core.store.dataset.Dataset.get_protobuf_schema">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Dataset.get_protobuf_schema"><a class="viewcode-back" href="../../../../api_reference/syft.core.store.dataset.html#syft.core.store.Dataset.get_protobuf_schema">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_protobuf_schema</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">GeneratedProtocolMessageType</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the type of protobuf object which stores a class of this type</span>
 
@@ -367,8 +373,8 @@
       </div>
     </div>
   
-    <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -379,7 +385,7 @@
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
 </p>
     </div>
     
