@@ -1,0 +1,1369 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>syft.service.action.action_object &#8212; PySyft  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pysyft.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="syft.service.action.action_permissions" href="syft.service.action.action_permissions.html" />
+    <link rel="prev" title="syft.service.action.action_graph_service" href="syft.service.action.action_graph_service.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../developer_guide/index.html">
+  Contributor Guidelines
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../deployment/glossary.html">
+  Glossary
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syft.capnp.html">
+   syft.capnp package
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.client.html">
+   syft.client
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.api.html">
+     syft.client.api
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.client.html">
+     syft.client.client
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.connection.html">
+     syft.client.connection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.deploy.html">
+     syft.client.deploy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.registry.html">
+     syft.client.registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.search.html">
+     syft.client.search
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.user_settings.html">
+     syft.client.user_settings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="syft.external.html">
+   syft.external
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.node.html">
+   syft.node
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.credentials.html">
+     syft.node.credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.domain.html">
+     syft.node.domain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.gateway.html">
+     syft.node.gateway
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.node.html">
+     syft.node.node
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.routes.html">
+     syft.node.routes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.run.html">
+     syft.node.run
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.server.html">
+     syft.node.server
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.worker.html">
+     syft.node.worker
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.worker_settings.html">
+     syft.node.worker_settings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.serde.html">
+   syft.serde
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.array.html">
+     syft.serde.array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.arrow.html">
+     syft.serde.arrow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.capnp.html">
+     syft.serde.capnp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.deserialize.html">
+     syft.serde.deserialize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.lib_permissions.html">
+     syft.serde.lib_permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.lib_service_registry.html">
+     syft.serde.lib_service_registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.mock.html">
+     syft.serde.mock
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.recursive.html">
+     syft.serde.recursive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.recursive_primitives.html">
+     syft.serde.recursive_primitives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.serializable.html">
+     syft.serde.serializable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.serialize.html">
+     syft.serde.serialize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.signature.html">
+     syft.serde.signature
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.third_party.html">
+     syft.serde.third_party
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="syft.service.html">
+   syft.service
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="syft.service.action.html">
+     syft.service.action
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_data_empty.html">
+       syft.service.action.action_data_empty
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_graph.html">
+       syft.service.action.action_graph
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_graph_service.html">
+       syft.service.action.action_graph_service
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       syft.service.action.action_object
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_permissions.html">
+       syft.service.action.action_permissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_service.html">
+       syft.service.action.action_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_store.html">
+       syft.service.action.action_store
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_types.html">
+       syft.service.action.action_types
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.numpy.html">
+       syft.service.action.numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.pandas.html">
+       syft.service.action.pandas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.plan.html">
+       syft.service.action.plan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.verification.html">
+       syft.service.action.verification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.code.html">
+     syft.service.code
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.code_parse.html">
+       syft.service.code.code_parse
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.unparse.html">
+       syft.service.code.unparse
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code.html">
+       syft.service.code.user_code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code_parse.html">
+       syft.service.code.user_code_parse
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code_service.html">
+       syft.service.code.user_code_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code_stash.html">
+       syft.service.code.user_code_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.service.context.html">
+     syft.service.context
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.data_subject.html">
+     syft.service.data_subject
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject.html">
+       syft.service.data_subject.data_subject
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject_member.html">
+       syft.service.data_subject.data_subject_member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject_member_service.html">
+       syft.service.data_subject.data_subject_member_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject_service.html">
+       syft.service.data_subject.data_subject_service
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.dataset.html">
+     syft.service.dataset
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.dataset.dataset.html">
+       syft.service.dataset.dataset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.dataset.dataset_service.html">
+       syft.service.dataset.dataset_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.dataset.dataset_stash.html">
+       syft.service.dataset.dataset_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.message.html">
+     syft.service.message
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.message.message_service.html">
+       syft.service.message.message_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.message.message_stash.html">
+       syft.service.message.message_stash
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.message.messages.html">
+       syft.service.message.messages
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.policy.html">
+     syft.service.policy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.policy.policy.html">
+       syft.service.policy.policy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.policy.policy_service.html">
+       syft.service.policy.policy_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.policy.user_policy_stash.html">
+       syft.service.policy.user_policy_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.project.html">
+     syft.service.project
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.project.project.html">
+       syft.service.project.project
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.project.project_service.html">
+       syft.service.project.project_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.project.project_stash.html">
+       syft.service.project.project_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.request.html">
+     syft.service.request
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.request.request.html">
+       syft.service.request.request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.request.request_service.html">
+       syft.service.request.request_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.request.request_stash.html">
+       syft.service.request.request_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.service.response.html">
+     syft.service.response
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.service.service.html">
+     syft.service.service
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.user.html">
+     syft.service.user
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.roles.html">
+       syft.service.user.roles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user.html">
+       syft.service.user.user
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user_roles.html">
+       syft.service.user.user_roles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user_service.html">
+       syft.service.user.user_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user_stash.html">
+       syft.service.user.user_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.store.html">
+   syft.store
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.dict_document_store.html">
+     syft.store.dict_document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.document_store.html">
+     syft.store.document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.kv_document_store.html">
+     syft.store.kv_document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.linked_obj.html">
+     syft.store.linked_obj
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.locks.html">
+     syft.store.locks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.mongo_client.html">
+     syft.store.mongo_client
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.mongo_codecs.html">
+     syft.store.mongo_codecs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.mongo_document_store.html">
+     syft.store.mongo_document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.sqlite_document_store.html">
+     syft.store.sqlite_document_store
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.types.html">
+   syft.types
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.base.html">
+     syft.types.base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.datetime.html">
+     syft.types.datetime
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.grid_url.html">
+     syft.types.grid_url
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.syft_metaclass.html">
+     syft.types.syft_metaclass
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.syft_object.html">
+     syft.types.syft_object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.transforms.html">
+     syft.types.transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.twin_object.html">
+     syft.types.twin_object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.uid.html">
+     syft.types.uid
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.util.html">
+   syft.util
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.autoreload.html">
+     syft.util.autoreload
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.colors.html">
+     syft.util.colors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.decorators.html">
+     syft.util.decorators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.experimental_flags.html">
+     syft.util.experimental_flags
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.filterwarnings.html">
+     syft.util.filterwarnings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.fonts.html">
+     syft.util.fonts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.jax_settings.html">
+     syft.util.jax_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.logger.html">
+     syft.util.logger
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.markdown.html">
+     syft.util.markdown
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.options.html">
+     syft.util.options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.schema.html">
+     syft.util.schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.telemetry.html">
+     syft.util.telemetry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.trace_decorator.html">
+     syft.util.trace_decorator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.util.html">
+     syft.util.util
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.version_compare.html">
+     syft.util.version_compare
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-syft.service.action.action_object">
+<span id="syft-service-action-action-object"></span><h1>syft.service.action.action_object<a class="headerlink" href="#module-syft.service.action.action_object" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_to_pointers</span></code>(api[, node_uid, args, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">debox_args_and_kwargs</span></code>(args, kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">debug_original_func</span></code>(name, func)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_action_data_empty</span></code>(args, kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_action_data_empty</span></code>(obj)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.service.action.action_object.make_action_side_effect" title="syft.service.action.action_object.make_action_side_effect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_action_side_effect</span></code></a>(context, *args, **kwargs)</p></td>
+<td><p>Create a new action from context_op_name, and add it to the PreHookContext</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syft.service.action.action_object.propagate_node_uid" title="syft.service.action.action_object.propagate_node_uid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">propagate_node_uid</span></code></a>(context, op, result)</p></td>
+<td><p>Patch the result to include the syft_node_uid</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.service.action.action_object.send_action_side_effect" title="syft.service.action.action_object.send_action_side_effect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_action_side_effect</span></code></a>(context, *args, **kwargs)</p></td>
+<td><p>Create a new action from the context.op_name, and execute it on the remote node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_action_side_effect</span></code>(context, *args, ...)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syft.service.action.action_object.Action" title="syft.service.action.action_object.Action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Action</span></code></a>(*[, syft_node_location, ...])</p></td>
+<td><p>Serializable Action object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.service.action.action_object.ActionObject" title="syft.service.action.action_object.ActionObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ActionObject</span></code></a>(*[, syft_node_location, ...])</p></td>
+<td><p>Action object for remote execution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ActionObjectPointer</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.service.action.action_object.ActionType" title="syft.service.action.action_object.ActionType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ActionType</span></code></a>(value[, names, module, qualname, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#syft.service.action.action_object.AnyActionObject" title="syft.service.action.action_object.AnyActionObject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AnyActionObject</span></code></a>(*[, syft_node_location, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.service.action.action_object.PreHookContext" title="syft.service.action.action_object.PreHookContext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PreHookContext</span></code></a>(*[, syft_node_location, ...])</p></td>
+<td><p>Hook context</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">TraceResult</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.service.action.action_object.TwinMode" title="syft.service.action.action_object.TwinMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TwinMode</span></code></a>(value[, names, module, qualname, ...])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.service.action.action_object.TwinMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">TwinMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#TwinMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.TwinMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">ActionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.service.action.action_object.Action">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">Action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_node_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_client_verify_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_self</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#Action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">syft.types.syft_object.SyftObject</span></code></p>
+<p>Serializable Action object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – str
+The path of the Type of the remote object.</p></li>
+<li><p><strong>op</strong> – str
+The method to be executed from the remote object.</p></li>
+<li><p><strong>remote_self</strong> – Optional[LineageID]
+The extended UID of the SyftObject</p></li>
+<li><p><strong>args</strong> – List[LineageID]
+<cite>op</cite> args</p></li>
+<li><p><strong>kwargs</strong> – Dict[str, LineageID]
+<cite>op</cite> kwargs</p></li>
+<li><p><strong>result_id</strong> – Optional[LineageID]
+Extended UID of the resulted SyftObject</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.Action.make_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#Action.make_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.Action.make_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate or reuse an UID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.Action.make_result_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_result_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#Action.make_result_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.Action.make_result_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate or reuse a LineageID</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="syft.service.action.action_object.Action.full_path">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">full_path</span></span><a class="headerlink" href="#syft.service.action.action_object.Action.full_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action path and operation</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="syft.service.action.action_object.Action.syft_history_hash">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">syft_history_hash</span></span><a class="headerlink" href="#syft.service.action.action_object.Action.syft_history_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a unique hash for the operations applied on the object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.service.action.action_object.PreHookContext">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">PreHookContext</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_node_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_client_verify_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_uid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_twin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#PreHookContext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.PreHookContext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">syft.types.syft_object.SyftBaseObject</span></code></p>
+<p>Hook context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> – Any
+The ActionObject to use for the action</p></li>
+<li><p><strong>op_name</strong> – str
+The method name to use for the action</p></li>
+<li><p><strong>node_uid</strong> – Optional[UID]
+Optional Syft node UID</p></li>
+<li><p><strong>result_id</strong> – Optional[Union[UID, LineageID]]
+Optional result Syft UID</p></li>
+<li><p><strong>action</strong> – Optional[Action]
+The action generated by the current hook</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="syft.service.action.action_object.make_action_side_effect">
+<span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">make_action_side_effect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#make_action_side_effect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.make_action_side_effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new action from context_op_name, and add it to the PreHookContext</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> – PreHookContext
+PreHookContext object</p></li>
+<li><p><strong>*args</strong> – Operation <a href="#id1"><span class="problematic" id="id2">*</span></a>args</p></li>
+<li><p><strong>**kwargs</strong> – Operation <a href="#id3"><span class="problematic" id="id4">*</span></a>kwargs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Ok[[Tuple[PreHookContext, Tuple[Any, …], Dict[str, Any]]] on success</p></li>
+<li><p>Err[str] on failure</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="syft.service.action.action_object.send_action_side_effect">
+<span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">send_action_side_effect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#send_action_side_effect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.send_action_side_effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new action from the context.op_name, and execute it on the remote node.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="syft.service.action.action_object.propagate_node_uid">
+<span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">propagate_node_uid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#propagate_node_uid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.propagate_node_uid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Patch the result to include the syft_node_uid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>context</strong> – PreHookContext
+PreHookContext object</p></li>
+<li><p><strong>op</strong> – str
+Which operation was executed</p></li>
+<li><p><strong>result</strong> – Any
+The result to patch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Ok[[result] on success</p></li>
+<li><p>Err[str] on failure</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">ActionObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_node_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_client_verify_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_action_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_hashes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_op</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_history_hash</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_node_uid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_twin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">TwinMode.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_passthrough_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['is_mock',</span> <span class="pre">'is_real',</span> <span class="pre">'is_twin',</span> <span class="pre">'is_pointer',</span> <span class="pre">'request',</span> <span class="pre">'__repr__',</span> <span class="pre">'_repr_markdown_',</span> <span class="pre">'syft_twin_type',</span> <span class="pre">'_repr_debug_',</span> <span class="pre">'as_empty',</span> <span class="pre">'get']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">syft.types.syft_object.SyftObject</span></code></p>
+<p>Action object for remote execution.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_lineage_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">syft_lineage_id</span></span><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_lineage_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the LineageID of the ActionObject, using the <cite>id</cite> and the <cite>syft_history_hash</cite> memebers</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.make_id">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.make_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.make_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate or reuse an UID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_point_to">
+<span class="sig-name descname"><span class="pre">syft_point_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_uid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.syft_point_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_point_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the syft_node_uid, used in the post hooks</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_execute_action">
+<span class="sig-name descname"><span class="pre">syft_execute_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.syft_execute_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_execute_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a remote action</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>action</strong> – Action
+Which action to execute</p></li>
+<li><p><strong>sync</strong> – bool
+Run sync/async</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ActionObjectPointer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_make_action">
+<span class="sig-name descname"><span class="pre">syft_make_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_self</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.syft_make_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_make_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate new action from the information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – str
+The path of the Type of the remote object.</p></li>
+<li><p><strong>op</strong> – str
+The method to be executed from the remote object.</p></li>
+<li><p><strong>remote_self</strong> – Optional[Union[UID, LineageID]]
+The extended UID of the SyftObject</p></li>
+<li><p><strong>args</strong> – Optional[List[Union[UID, LineageID, ActionObjectPointer, ActionObject]]]
+<cite>op</cite> args</p></li>
+<li><p><strong>kwargs</strong> – Optional[Dict[str, Union[UID, LineageID, ActionObjectPointer, ActionObject]]]
+<cite>op</cite> kwargs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Action object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – For invalid args or kwargs</p></li>
+<li><p><strong>PydanticValidationError</strong> – For args and kwargs</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_make_action_with_self">
+<span class="sig-name descname"><span class="pre">syft_make_action_with_self</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.syft_make_action_with_self"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_make_action_with_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate new method action from the current object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>op</strong> – str
+The method to be executed from the remote object.</p></li>
+<li><p><strong>args</strong> – List[LineageID]
+<cite>op</cite> args</p></li>
+<li><p><strong>kwargs</strong> – Dict[str, LineageID]
+<cite>op</cite> kwargs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Action object</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – For invalid args or kwargs</p></li>
+<li><p><strong>PydanticValidationError</strong> – For args and kwargs</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_get_path">
+<span class="sig-name descname"><span class="pre">syft_get_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.syft_get_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the type path of the underlying object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.syft_remote_method">
+<span class="sig-name descname"><span class="pre">syft_remote_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">op</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.syft_remote_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.syft_remote_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a Callable object for remote calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>op</strong> – str
+he method to be executed from the remote object.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A function</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send the object to a Syft Client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.get_from">
+<span class="sig-name descname"><span class="pre">get_from</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.get_from"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.get_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the object from a Syft Client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the object from a Syft Client</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.from_obj">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">syft_action_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_lineage_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.from_obj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.from_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an ActionObject from an existing object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>syft_action_data</strong> – Any
+The object to be converted to a Syft ActionObject</p></li>
+<li><p><strong>id</strong> – Optional[UID]
+Which ID to use for the ActionObject. Optional</p></li>
+<li><p><strong>syft_lineage_id</strong> – Optional[LineageID]
+Which LineageID to use for the ActionObject. Optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="syft.service.action.action_object.ActionObject.empty">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">syft_internal_type=&lt;class</span> <span class="pre">'NoneType'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_lineage_id=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#ActionObject.empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.ActionObject.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an ActionObject from a type, using a ActionDataEmpty object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>syft_internal_type</strong> – Type
+The Type for which to create a ActionDataEmpty object</p></li>
+<li><p><strong>id</strong> – Optional[UID]
+Which ID to use for the ActionObject. Optional</p></li>
+<li><p><strong>syft_lineage_id</strong> – Optional[LineageID]
+Which LineageID to use for the ActionObject. Optional</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.service.action.action_object.AnyActionObject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.service.action.action_object.</span></span><span class="sig-name descname"><span class="pre">AnyActionObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_node_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_client_verify_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_action_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_hashes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_op</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_parent_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_history_hash</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_node_uid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_twin_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">TwinMode.NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_passthrough_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['is_mock',</span> <span class="pre">'is_real',</span> <span class="pre">'is_twin',</span> <span class="pre">'is_pointer',</span> <span class="pre">'request',</span> <span class="pre">'__repr__',</span> <span class="pre">'_repr_markdown_',</span> <span class="pre">'syft_twin_type',</span> <span class="pre">'_repr_debug_',</span> <span class="pre">'as_empty',</span> <span class="pre">'get']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">syft_dont_wrap_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['__str__',</span> <span class="pre">'__repr__']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/service/action/action_object.html#AnyActionObject"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.service.action.action_object.AnyActionObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#syft.service.action.action_object.ActionObject" title="syft.service.action.action_object.ActionObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">syft.service.action.action_object.ActionObject</span></code></a></p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="syft.service.action.action_graph_service.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">syft.service.action.action_graph_service</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="syft.service.action.action_permissions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">syft.service.action.action_permissions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Openmined Community.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

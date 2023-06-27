@@ -1,0 +1,35 @@
+syft.serde.signature
+====================
+
+.. automodule:: syft.serde.signature
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      deserialize_signature
+      generate_signature
+      get_signature
+      get_str_signature_from_docstring
+      serialize_signature
+      signature_remove_context
+      signature_remove_self
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

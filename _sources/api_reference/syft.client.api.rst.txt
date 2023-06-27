@@ -1,0 +1,46 @@
+syft.client.api
+===============
+
+.. automodule:: syft.client.api
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      generate_remote_function
+      generate_remote_lib_function
+      monkey_patch_getdef
+      validate_callable_args_and_kwargs
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      APIEndpoint
+      APIModule
+      APIRegistry
+      LibEndpoint
+      NodeView
+      SignedSyftAPICall
+      SyftAPI
+      SyftAPICall
+      SyftAPIData
+   
+   
+
+   
+   
+   
+
+
+

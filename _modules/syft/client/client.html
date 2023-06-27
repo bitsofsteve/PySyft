@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>syft.client.client &#8212; PySyft  documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/pysyft.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api_reference/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../developer_guide/index.html">
+  Contributor Guidelines
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../deployment/glossary.html">
+  Glossary
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for syft.client.client</h1><div class="highlight"><pre>
+<span></span><span class="c1"># future</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="c1"># stdlib</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">cast</span>
+
+<span class="c1"># third party</span>
+<span class="kn">import</span> <span class="nn">pydantic</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">Session</span>
+<span class="kn">from</span> <span class="nn">requests.adapters</span> <span class="kn">import</span> <span class="n">HTTPAdapter</span>
+<span class="kn">from</span> <span class="nn">requests.packages.urllib3.util.retry</span> <span class="kn">import</span> <span class="n">Retry</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Self</span>
+
+<span class="c1"># relative</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">__version__</span>
+<span class="kn">from</span> <span class="nn">..abstract_node</span> <span class="kn">import</span> <span class="n">AbstractNode</span>
+<span class="kn">from</span> <span class="nn">..img.base64</span> <span class="kn">import</span> <span class="n">base64read</span>
+<span class="kn">from</span> <span class="nn">..node.credentials</span> <span class="kn">import</span> <span class="n">SyftSigningKey</span>
+<span class="kn">from</span> <span class="nn">..node.credentials</span> <span class="kn">import</span> <span class="n">SyftVerifyKey</span>
+<span class="kn">from</span> <span class="nn">..node.credentials</span> <span class="kn">import</span> <span class="n">UserLoginCredentials</span>
+<span class="kn">from</span> <span class="nn">..serde.deserialize</span> <span class="kn">import</span> <span class="n">_deserialize</span>
+<span class="kn">from</span> <span class="nn">..serde.serializable</span> <span class="kn">import</span> <span class="n">serializable</span>
+<span class="kn">from</span> <span class="nn">..serde.serialize</span> <span class="kn">import</span> <span class="n">_serialize</span>
+<span class="kn">from</span> <span class="nn">..service.context</span> <span class="kn">import</span> <span class="n">NodeServiceContext</span>
+<span class="kn">from</span> <span class="nn">..service.dataset.dataset</span> <span class="kn">import</span> <span class="n">CreateDataset</span>
+<span class="kn">from</span> <span class="nn">..service.metadata.node_metadata</span> <span class="kn">import</span> <span class="n">NodeMetadata</span>
+<span class="kn">from</span> <span class="nn">..service.metadata.node_metadata</span> <span class="kn">import</span> <span class="n">NodeMetadataJSON</span>
+<span class="kn">from</span> <span class="nn">..service.response</span> <span class="kn">import</span> <span class="n">SyftError</span>
+<span class="kn">from</span> <span class="nn">..service.response</span> <span class="kn">import</span> <span class="n">SyftSuccess</span>
+<span class="kn">from</span> <span class="nn">..service.user.user</span> <span class="kn">import</span> <span class="n">UserCreate</span>
+<span class="kn">from</span> <span class="nn">..service.user.user</span> <span class="kn">import</span> <span class="n">UserPrivateKey</span>
+<span class="kn">from</span> <span class="nn">..service.user.user_roles</span> <span class="kn">import</span> <span class="n">ServiceRole</span>
+<span class="kn">from</span> <span class="nn">..service.user.user_service</span> <span class="kn">import</span> <span class="n">UserService</span>
+<span class="kn">from</span> <span class="nn">..types.grid_url</span> <span class="kn">import</span> <span class="n">GridURL</span>
+<span class="kn">from</span> <span class="nn">..types.syft_object</span> <span class="kn">import</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+<span class="kn">from</span> <span class="nn">..types.uid</span> <span class="kn">import</span> <span class="n">UID</span>
+<span class="kn">from</span> <span class="nn">..util.fonts</span> <span class="kn">import</span> <span class="n">fonts_css</span>
+<span class="kn">from</span> <span class="nn">..util.logger</span> <span class="kn">import</span> <span class="n">debug</span>
+<span class="kn">from</span> <span class="nn">..util.telemetry</span> <span class="kn">import</span> <span class="n">instrument</span>
+<span class="kn">from</span> <span class="nn">..util.util</span> <span class="kn">import</span> <span class="n">get_mb_size</span>
+<span class="kn">from</span> <span class="nn">..util.util</span> <span class="kn">import</span> <span class="n">thread_ident</span>
+<span class="kn">from</span> <span class="nn">..util.util</span> <span class="kn">import</span> <span class="n">verify_tls</span>
+<span class="kn">from</span> <span class="nn">.api</span> <span class="kn">import</span> <span class="n">APIModule</span>
+<span class="kn">from</span> <span class="nn">.api</span> <span class="kn">import</span> <span class="n">APIRegistry</span>
+<span class="kn">from</span> <span class="nn">.api</span> <span class="kn">import</span> <span class="n">SignedSyftAPICall</span>
+<span class="kn">from</span> <span class="nn">.api</span> <span class="kn">import</span> <span class="n">SyftAPI</span>
+<span class="kn">from</span> <span class="nn">.api</span> <span class="kn">import</span> <span class="n">SyftAPICall</span>
+<span class="kn">from</span> <span class="nn">.connection</span> <span class="kn">import</span> <span class="n">NodeConnection</span>
+
+<span class="c1"># use to enable mitm proxy</span>
+<span class="c1"># from syft.grid.connections.http_connection import HTTPConnection</span>
+<span class="c1"># HTTPConnection.proxies = {&quot;http&quot;: &quot;http://127.0.0.1:8080&quot;}</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="c1"># relative</span>
+    <span class="kn">from</span> <span class="nn">..service.project.project</span> <span class="kn">import</span> <span class="n">Project</span>
+
+
+<span class="k">def</span> <span class="nf">upgrade_tls</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">GridURL</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="n">Response</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GridURL</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;https://&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">url</span><span class="o">.</span><span class="n">protocol</span> <span class="o">==</span> <span class="s2">&quot;http&quot;</span><span class="p">:</span>
+            <span class="c1"># we got redirected to https</span>
+            <span class="n">https_url</span> <span class="o">=</span> <span class="n">GridURL</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">with_path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GridURL Upgraded to HTTPS. </span><span class="si">{</span><span class="n">https_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">https_url</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to upgrade to HTTPS. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">url</span>
+
+
+<span class="n">API_PATH</span> <span class="o">=</span> <span class="s2">&quot;/api/v2&quot;</span>
+<span class="n">DEFAULT_PYGRID_PORT</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">DEFAULT_PYGRID_ADDRESS</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;http://localhost:</span><span class="si">{</span><span class="n">DEFAULT_PYGRID_PORT</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<div class="viewcode-block" id="Routes"><a class="viewcode-back" href="../../../api_reference/syft.client.client.html#syft.client.client.Routes">[docs]</a><span class="k">class</span> <span class="nc">Routes</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">ROUTE_METADATA</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_PATH</span><span class="si">}</span><span class="s2">/metadata&quot;</span>
+    <span class="n">ROUTE_API</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_PATH</span><span class="si">}</span><span class="s2">/api&quot;</span>
+    <span class="n">ROUTE_LOGIN</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_PATH</span><span class="si">}</span><span class="s2">/login&quot;</span>
+    <span class="n">ROUTE_REGISTER</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_PATH</span><span class="si">}</span><span class="s2">/register&quot;</span>
+    <span class="n">ROUTE_API_CALL</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">API_PATH</span><span class="si">}</span><span class="s2">/api_call&quot;</span></div>
+
+
+<span class="nd">@serializable</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;proxy_target_uid&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">])</span>
+<span class="k">class</span> <span class="nc">HTTPConnection</span><span class="p">(</span><span class="n">NodeConnection</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;HTTPConnection&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">proxy_target_uid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">GridURL</span>
+    <span class="n">routes</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Routes</span><span class="p">]</span> <span class="o">=</span> <span class="n">Routes</span>
+    <span class="n">session_cache</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Session</span><span class="p">]</span>
+
+    <span class="nd">@pydantic</span><span class="o">.</span><span class="n">validator</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">always</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">make_url</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">GridURL</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">GridURL</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">GridURL</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="n">as_container_host</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">with_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy_target_uid</span><span class="p">:</span> <span class="n">UID</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">HTTPConnection</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">proxy_target_uid</span><span class="o">=</span><span class="n">proxy_target_uid</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_cache_key</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">api_url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GridURL</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">with_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">ROUTE_API_CALL</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">session</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Session</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_cache</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+            <span class="n">retry</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">adapter</span> <span class="o">=</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;http://&quot;</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">&quot;https://&quot;</span><span class="p">,</span> <span class="n">adapter</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">session_cache</span> <span class="o">=</span> <span class="n">session</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_cache</span>
+
+    <span class="k">def</span> <span class="nf">_make_get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">with_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">url</span><span class="p">),</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify_tls</span><span class="p">(),</span> <span class="n">proxies</span><span class="o">=</span><span class="p">{},</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed to fetch </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">. Response returned with code </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># upgrade to tls if available</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">upgrade_tls</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+    <span class="k">def</span> <span class="nf">_make_post</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">json</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bytes</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">with_path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">url</span><span class="p">),</span> <span class="n">verify</span><span class="o">=</span><span class="n">verify_tls</span><span class="p">(),</span> <span class="n">json</span><span class="o">=</span><span class="n">json</span><span class="p">,</span> <span class="n">proxies</span><span class="o">=</span><span class="p">{},</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed to fetch </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">. Response returned with code </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># upgrade to tls if available</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">upgrade_tls</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+    <span class="k">def</span> <span class="nf">get_node_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">SyftSigningKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NodeMetadataJSON</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">:</span>
+            <span class="n">call</span> <span class="o">=</span> <span class="n">SyftAPICall</span><span class="p">(</span>
+                <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">,</span>
+                <span class="n">path</span><span class="o">=</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span>
+                <span class="n">args</span><span class="o">=</span><span class="p">[],</span>
+                <span class="n">kwargs</span><span class="o">=</span><span class="p">{},</span>
+                <span class="n">blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">signed_call</span> <span class="o">=</span> <span class="n">call</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_call</span><span class="p">(</span><span class="n">signed_call</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">response</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">NodeMetadataJSON</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">ROUTE_METADATA</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">metadata_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">NodeMetadataJSON</span><span class="p">(</span><span class="o">**</span><span class="n">metadata_json</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_api</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">SyftSigningKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftAPI</span><span class="p">:</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;verify_key&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">credentials</span><span class="o">.</span><span class="n">verify_key</span><span class="p">)}</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">ROUTE_API</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">signing_key</span> <span class="o">=</span> <span class="n">credentials</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">node_uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span>
+        <span class="k">return</span> <span class="n">cast</span><span class="p">(</span><span class="n">SyftAPI</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftSigningKey</span><span class="p">]:</span>
+        <span class="n">credentials</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="n">email</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">password</span><span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">ROUTE_LOGIN</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">credentials</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">UserPrivateKey</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">obj</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_user</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftSigningKey</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">_serialize</span><span class="p">(</span><span class="n">new_user</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">ROUTE_REGISTER</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">def</span> <span class="nf">make_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signed_call</span><span class="p">:</span> <span class="n">SignedSyftAPICall</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="n">msg_bytes</span><span class="p">:</span> <span class="nb">bytes</span> <span class="o">=</span> <span class="n">_serialize</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">signed_call</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>  <span class="c1"># nosec</span>
+            <span class="n">url</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api_url</span><span class="p">),</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">msg_bytes</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Failed to fetch metadata. Response returned with code </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">_deserialize</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">from_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">)</span> <span class="o">+</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">PythonConnection</span><span class="p">(</span><span class="n">NodeConnection</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;PythonConnection&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">node</span><span class="p">:</span> <span class="n">AbstractNode</span>
+    <span class="n">proxy_target_uid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">with_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy_target_uid</span><span class="p">:</span> <span class="n">UID</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">PythonConnection</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">,</span> <span class="n">proxy_target_uid</span><span class="o">=</span><span class="n">proxy_target_uid</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_node_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">SyftSigningKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NodeMetadataJSON</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">:</span>
+            <span class="n">call</span> <span class="o">=</span> <span class="n">SyftAPICall</span><span class="p">(</span>
+                <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">,</span>
+                <span class="n">path</span><span class="o">=</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span>
+                <span class="n">args</span><span class="o">=</span><span class="p">[],</span>
+                <span class="n">kwargs</span><span class="o">=</span><span class="p">{},</span>
+                <span class="n">blocking</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">signed_call</span> <span class="o">=</span> <span class="n">call</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">make_call</span><span class="p">(</span><span class="n">signed_call</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">response</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">NodeMetadataJSON</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">NodeMetadataJSON</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_api</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">SyftSigningKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftAPI</span><span class="p">:</span>
+        <span class="c1"># todo: its a bit odd to identify a user by its verify key maybe?</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_api</span><span class="p">(</span><span class="n">for_user</span><span class="o">=</span><span class="n">credentials</span><span class="o">.</span><span class="n">verify_key</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">signing_key</span> <span class="o">=</span> <span class="n">credentials</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">node_uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy_target_uid</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+    <span class="k">def</span> <span class="nf">get_cache_key</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">exchange_credentials</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UserPrivateKey</span><span class="p">]:</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_unauthed_context</span><span class="p">(</span>
+            <span class="n">login_credentials</span><span class="o">=</span><span class="n">UserLoginCredentials</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_method_with_context</span><span class="p">(</span>
+            <span class="n">UserService</span><span class="o">.</span><span class="n">exchange_credentials</span><span class="p">,</span> <span class="n">context</span>
+        <span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftSigningKey</span><span class="p">]:</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exchange_credentials</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">UserPrivateKey</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">obj</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_user</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftSigningKey</span><span class="p">]:</span>
+        <span class="n">service_context</span> <span class="o">=</span> <span class="n">NodeServiceContext</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_service_method</span><span class="p">(</span><span class="n">UserService</span><span class="o">.</span><span class="n">register</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">service_context</span><span class="p">,</span> <span class="n">new_user</span><span class="o">=</span><span class="n">new_user</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">def</span> <span class="nf">make_call</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signed_call</span><span class="p">:</span> <span class="n">SignedSyftAPICall</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">handle_api_call</span><span class="p">(</span><span class="n">signed_call</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="nd">@instrument</span>
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">SyftClient</span><span class="p">:</span>
+    <span class="n">connection</span><span class="p">:</span> <span class="n">NodeConnection</span>
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NodeMetadataJSON</span><span class="p">]</span>
+    <span class="n">credentials</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftSigningKey</span><span class="p">]</span>
+    <span class="n">__logged_in_user</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">__user_role</span><span class="p">:</span> <span class="n">ServiceRole</span> <span class="o">=</span> <span class="n">ServiceRole</span><span class="o">.</span><span class="n">NONE</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">NodeConnection</span><span class="p">,</span>
+        <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NodeMetadataJSON</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">credentials</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftSigningKey</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">api</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftAPI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">=</span> <span class="n">connection</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftSigningKey</span><span class="p">]</span> <span class="o">=</span> <span class="n">credentials</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_api</span> <span class="o">=</span> <span class="n">api</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">post_init</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">post_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_node_metadata</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">authed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">logged_in_user</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__logged_in_user</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">user_role</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ServiceRole</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__user_role</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">verify_key</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftVerifyKey</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;SigningKey not set on client&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">verify_key</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_url</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">GridURL</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">SyftClient</span><span class="p">(</span><span class="n">connection</span><span class="o">=</span><span class="n">HTTPConnection</span><span class="p">(</span><span class="n">GridURL</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)))</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_node</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">AbstractNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">SyftClient</span><span class="p">(</span><span class="n">connection</span><span class="o">=</span><span class="n">PythonConnection</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">))</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">name</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">UID</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">icon</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;📡&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">api</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftAPI</span><span class="p">:</span>
+        <span class="c1"># invalidate API</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_api</span><span class="o">.</span><span class="n">signing_key</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_api</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_api</span>
+
+    <span class="k">def</span> <span class="nf">guest</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">SyftClient</span><span class="p">(</span>
+            <span class="n">connection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span>
+            <span class="n">credentials</span><span class="o">=</span><span class="n">SyftSigningKey</span><span class="o">.</span><span class="n">generate</span><span class="p">(),</span>
+            <span class="n">metadata</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">upload_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">:</span> <span class="n">CreateDataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">..types.twin_object</span> <span class="kn">import</span> <span class="n">TwinObject</span>
+
+        <span class="n">dataset</span><span class="o">.</span><span class="n">_check_asset_must_contain_mock</span><span class="p">()</span>
+        <span class="n">dataset_size</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">asset_list</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Uploading: </span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">twin</span> <span class="o">=</span> <span class="n">TwinObject</span><span class="p">(</span><span class="n">private_obj</span><span class="o">=</span><span class="n">asset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">mock_obj</span><span class="o">=</span><span class="n">asset</span><span class="o">.</span><span class="n">mock</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Failed to create twin. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">twin</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to upload asset</span><span class="se">\n</span><span class="s2">: </span><span class="si">{</span><span class="n">asset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">response</span>
+            <span class="n">asset</span><span class="o">.</span><span class="n">action_id</span> <span class="o">=</span> <span class="n">twin</span><span class="o">.</span><span class="n">id</span>
+            <span class="n">asset</span><span class="o">.</span><span class="n">node_uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+            <span class="n">dataset_size</span> <span class="o">+=</span> <span class="n">get_mb_size</span><span class="p">(</span><span class="n">asset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">dataset</span><span class="o">.</span><span class="n">mb_size</span> <span class="o">=</span> <span class="n">dataset_size</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">valid</span><span class="o">.</span><span class="n">ok</span><span class="p">():</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valid</span><span class="o">.</span><span class="n">err</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">valid</span><span class="o">.</span><span class="n">err</span><span class="p">())</span>
+            <span class="k">return</span> <span class="n">valid</span><span class="o">.</span><span class="n">err</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">exchange_route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">..service.network.routes</span> <span class="kn">import</span> <span class="n">connection_to_route</span>
+
+        <span class="n">self_node_route</span> <span class="o">=</span> <span class="n">connection_to_route</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">)</span>
+        <span class="n">remote_node_route</span> <span class="o">=</span> <span class="n">connection_to_route</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">connection</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">exchange_credentials_with</span><span class="p">(</span>
+            <span class="n">self_node_route</span><span class="o">=</span><span class="n">self_node_route</span><span class="p">,</span>
+            <span class="n">remote_node_route</span><span class="o">=</span><span class="n">remote_node_route</span><span class="p">,</span>
+            <span class="n">remote_node_verify_key</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">NodeMetadata</span><span class="p">)</span><span class="o">.</span><span class="n">verify_key</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">apply_to_gateway</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exchange_route</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data_subject_registry</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;data_subject&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">data_subject</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">settings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">settings</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;code&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">code</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">requests</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;request&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">request</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">datasets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;dataset&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">dataset</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">notifications</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;WARNING: Notifications is currently is in a beta state, so use carefully!&quot;</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If possible try using client.requests/client.projects&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;messages&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">messages</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">domains</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;network&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">get_all_peers</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">projects</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">APIModule</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;project&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">project</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">get_project</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">uid</span><span class="p">:</span> <span class="n">UID</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Project</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get project by name or UID&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">has_service</span><span class="p">(</span><span class="s2">&quot;project&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">get_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">uid</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">get_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">project</span><span class="o">.</span><span class="n">get_all</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="n">user_private_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+        <span class="n">signing_key</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">user_private_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">signing_key</span> <span class="o">=</span> <span class="n">user_private_key</span><span class="o">.</span><span class="n">signing_key</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__user_role</span> <span class="o">=</span> <span class="n">user_private_key</span><span class="o">.</span><span class="n">role</span>
+        <span class="k">if</span> <span class="n">signing_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span> <span class="o">=</span> <span class="n">signing_key</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__logged_in_user</span> <span class="o">=</span> <span class="n">email</span>
+            <span class="c1"># TODO: How to get the role of the user?</span>
+            <span class="c1"># self.__user_role =</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_api</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Logged into </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> as &lt;</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cache</span><span class="p">:</span>
+                <span class="n">SyftClientSessionCache</span><span class="o">.</span><span class="n">add_client</span><span class="p">(</span>
+                    <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span>
+                    <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                    <span class="n">connection</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span>
+                    <span class="n">syft_client</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="c1"># Adding another cache storage</span>
+                <span class="c1"># as this would be useful in retrieving unique clients</span>
+                <span class="c1"># node uid and verify key are not individually unique</span>
+                <span class="c1"># both the combination of node uid and verify key are unique</span>
+                <span class="c1"># which could be used to identity a client uniquely of any given node</span>
+                <span class="c1"># TODO: It would be better to have a single cache storage</span>
+                <span class="c1"># combining both email, password and verify key and uid</span>
+                <span class="n">SyftClientSessionCache</span><span class="o">.</span><span class="n">add_client_by_uid_and_verify_key</span><span class="p">(</span>
+                    <span class="n">verify_key</span><span class="o">=</span><span class="n">signing_key</span><span class="o">.</span><span class="n">verify_key</span><span class="p">,</span>
+                    <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+                    <span class="n">syft_client</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                <span class="p">)</span>
+
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">..node.node</span> <span class="kn">import</span> <span class="n">CODE_RELOADER</span>
+
+        <span class="n">CODE_RELOADER</span><span class="p">[</span><span class="n">thread_ident</span><span class="p">()]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reload_user_code</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">_reload_user_code</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">..service.code.user_code</span> <span class="kn">import</span> <span class="n">load_approved_policy_code</span>
+
+        <span class="n">user_code_items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">get_all_for_user</span><span class="p">()</span>
+        <span class="n">load_approved_policy_code</span><span class="p">(</span><span class="n">user_code_items</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">institution</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">website</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">new_user</span> <span class="o">=</span> <span class="n">UserCreate</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span>
+                <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                <span class="n">password_verify</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                <span class="n">institution</span><span class="o">=</span><span class="n">institution</span><span class="p">,</span>
+                <span class="n">website</span><span class="o">=</span><span class="n">website</span><span class="p">,</span>
+                <span class="n">created_by</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">new_user</span><span class="o">=</span><span class="n">new_user</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">peer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">..service.network.network_service</span> <span class="kn">import</span> <span class="n">NodePeer</span>
+
+        <span class="k">return</span> <span class="n">NodePeer</span><span class="o">.</span><span class="n">from_client</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">route</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">route</span>
+
+    <span class="k">def</span> <span class="nf">proxy_to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">peer</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="n">connection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">with_proxy</span><span class="p">(</span><span class="n">peer</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">SyftClient</span><span class="p">(</span>
+            <span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="p">,</span>
+            <span class="n">credentials</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">client</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;api&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="p">,</span> <span class="s2">&quot;lib&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">lib</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">lib</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> object has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span> <span class="o">+</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">SyftClient</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">metadata</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">connection</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">credentials</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">credentials</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">proxy_target_uid</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">proxy_target_uid</span><span class="p">:</span>
+            <span class="n">proxy_target_uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">proxy_target_uid</span>
+        <span class="n">client_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">if</span> <span class="n">proxy_target_uid</span><span class="p">:</span>
+            <span class="n">client_type</span> <span class="o">=</span> <span class="s2">&quot;ProxyClient&quot;</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">proxy_target_uid</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">client_type</span><span class="si">}</span><span class="s2"> - &lt;</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">&gt;: via </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">client_type</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2">&gt;: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">guest_commands</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.datasets&lt;/span&gt; - list datasets&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.code&lt;/span&gt; - list code&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.login&lt;/span&gt; - list projects&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;</span>
+<span class="s2">            &lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.code.submit?&lt;/span&gt; - display function signature</span>
+<span class="s2">        &lt;/li&gt;&quot;&quot;&quot;</span>
+        <span class="n">ds_commands</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.datasets&lt;/span&gt; - list datasets&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.code&lt;/span&gt; - list code&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.projects&lt;/span&gt; - list projects&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;</span>
+<span class="s2">            &lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.code.submit?&lt;/span&gt; - display function signature</span>
+<span class="s2">        &lt;/li&gt;&quot;&quot;&quot;</span>
+
+        <span class="n">do_commands</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.projects&lt;/span&gt; - list projects&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.requests&lt;/span&gt; - list requests&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;&lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.users&lt;/span&gt; - list users&lt;/li&gt;</span>
+<span class="s2">        &lt;li&gt;</span>
+<span class="s2">            &lt;span class=&#39;syft-code-block&#39;&gt;&amp;lt;your_client&amp;gt;.requests.submit?&lt;/span&gt; - display function signature</span>
+<span class="s2">        &lt;/li&gt;&quot;&quot;&quot;</span>
+
+        <span class="c1"># TODO: how to select ds/do commands based on self.__user_role</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_role</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">ServiceRole</span><span class="o">.</span><span class="n">NONE</span><span class="o">.</span><span class="n">value</span>
+            <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_role</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">ServiceRole</span><span class="o">.</span><span class="n">GUEST</span><span class="o">.</span><span class="n">value</span>
+        <span class="p">):</span>
+            <span class="n">commands</span> <span class="o">=</span> <span class="n">guest_commands</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_role</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_role</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="n">ServiceRole</span><span class="o">.</span><span class="n">DATA_SCIENTIST</span><span class="o">.</span><span class="n">value</span>
+        <span class="p">):</span>
+            <span class="n">commands</span> <span class="o">=</span> <span class="n">ds_commands</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">user_role</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_role</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="n">ServiceRole</span><span class="o">.</span><span class="n">DATA_OWNER</span><span class="o">.</span><span class="n">value</span>
+        <span class="p">):</span>
+            <span class="n">commands</span> <span class="o">=</span> <span class="n">do_commands</span>
+
+        <span class="n">command_list</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;ul style=&#39;padding-left: 1em;&#39;&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">commands</span><span class="si">}</span>
+<span class="s2">        &lt;/ul&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="n">small_grid_symbol_logo</span> <span class="o">=</span> <span class="n">base64read</span><span class="p">(</span><span class="s2">&quot;small-grid-symbol-logo.png&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;style&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">fonts_css</span><span class="si">}</span>
+
+<span class="s2">            .syft-container </span><span class="se">{{</span>
+<span class="s2">                padding: 5px;</span>
+<span class="s2">                font-family: &#39;Open Sans&#39;;</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            .syft-alert-info </span><span class="se">{{</span>
+<span class="s2">                color: #1F567A;</span>
+<span class="s2">                background-color: #C2DEF0;</span>
+<span class="s2">                border-radius: 4px;</span>
+<span class="s2">                padding: 5px;</span>
+<span class="s2">                padding: 13px 10px</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            .syft-code-block </span><span class="se">{{</span>
+<span class="s2">                background-color: #f7f7f7;</span>
+<span class="s2">                border: 1px solid #cfcfcf;</span>
+<span class="s2">                padding: 0px 2px;</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            .syft-space </span><span class="se">{{</span>
+<span class="s2">                margin-top: 1em;</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">        &lt;/style&gt;</span>
+<span class="s2">        &lt;div class=&quot;syft-client syft-container&quot;&gt;</span>
+<span class="s2">            &lt;img src=&quot;</span><span class="si">{</span><span class="n">small_grid_symbol_logo</span><span class="si">}</span><span class="s2">&quot; alt=&quot;Logo&quot;</span>
+<span class="s2">            style=&quot;width:48px;height:48px;padding:3px;&quot;&gt;</span>
+<span class="s2">            &lt;h2&gt;Welcome to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/h2&gt;</span>
+<span class="s2">            &lt;div class=&quot;syft-space&quot;&gt;</span>
+<span class="s2">                &lt;!-- &lt;strong&gt;Institution:&lt;/strong&gt; TODO&lt;br /&gt; --&gt;</span>
+<span class="s2">                &lt;!-- &lt;strong&gt;Owner:&lt;/strong&gt; TODO&lt;br /&gt; --&gt;</span>
+<span class="s2">                &lt;strong&gt;URL:&lt;/strong&gt; </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;url&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;br /&gt;</span>
+<span class="s2">                &lt;!-- &lt;strong&gt;PyGrid Admin:&lt;/strong&gt; TODO&lt;br /&gt; --&gt;</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">            &lt;div class=&#39;syft-alert-info syft-space&#39;&gt;</span>
+<span class="s2">                &amp;#9432;&amp;nbsp;</span>
+<span class="s2">                This domain is run by the library PySyft to learn more about how it works visit</span>
+<span class="s2">                &lt;a href=&quot;https://github.com/OpenMined/PySyft&quot;&gt;github.com/OpenMined/PySyft&lt;/a&gt;.</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">            &lt;h4&gt;Commands to Get Started&lt;/h4&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">command_list</span><span class="si">}</span>
+<span class="s2">        &lt;/div&gt;&lt;br /&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_fetch_node_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">SyftSigningKey</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">get_node_metadata</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">NodeMetadataJSON</span><span class="p">):</span>
+            <span class="n">metadata</span><span class="o">.</span><span class="n">check_version</span><span class="p">(</span><span class="n">__version__</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">metadata</span>
+
+    <span class="k">def</span> <span class="nf">_fetch_api</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">SyftSigningKey</span><span class="p">):</span>
+        <span class="n">_api</span><span class="p">:</span> <span class="n">SyftAPI</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">get_api</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">refresh_callback</span><span class="p">():</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_api</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="p">)</span>
+
+        <span class="n">_api</span><span class="o">.</span><span class="n">refresh_api_callback</span> <span class="o">=</span> <span class="n">refresh_callback</span>
+        <span class="n">APIRegistry</span><span class="o">.</span><span class="n">set_api_for</span><span class="p">(</span>
+            <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="n">user_verify_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">credentials</span><span class="o">.</span><span class="n">verify_key</span><span class="p">,</span>
+            <span class="n">api</span><span class="o">=</span><span class="n">_api</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_api</span> <span class="o">=</span> <span class="n">_api</span>
+
+
+<span class="nd">@instrument</span>
+<span class="k">def</span> <span class="nf">connect</span><span class="p">(</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">GridURL</span><span class="p">]</span> <span class="o">=</span> <span class="n">DEFAULT_PYGRID_ADDRESS</span><span class="p">,</span>
+    <span class="n">node</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AbstractNode</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftClient</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+        <span class="n">connection</span> <span class="o">=</span> <span class="n">PythonConnection</span><span class="p">(</span><span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">GridURL</span><span class="o">.</span><span class="n">from_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">port</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+            <span class="n">url</span><span class="o">.</span><span class="n">set_port</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">port</span><span class="p">))</span>
+        <span class="n">connection</span> <span class="o">=</span> <span class="n">HTTPConnection</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">_client</span> <span class="o">=</span> <span class="n">SyftClient</span><span class="p">(</span><span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_client</span>
+
+
+<span class="nd">@instrument</span>
+<span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">GridURL</span><span class="p">],</span>
+    <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">institution</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">website</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">guest_client</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">guest_client</span><span class="o">.</span><span class="n">register</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span>
+        <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+        <span class="n">institution</span><span class="o">=</span><span class="n">institution</span><span class="p">,</span>
+        <span class="n">website</span><span class="o">=</span><span class="n">website</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="nd">@instrument</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">GridURL</span><span class="p">]</span> <span class="o">=</span> <span class="n">DEFAULT_PYGRID_ADDRESS</span><span class="p">,</span>
+    <span class="n">node</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">AbstractNode</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">cache</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyftClient</span><span class="p">:</span>
+    <span class="n">_client</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">node</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">)</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">_client</span><span class="o">.</span><span class="n">connection</span>
+
+    <span class="n">login_credentials</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">email</span> <span class="ow">and</span> <span class="n">password</span><span class="p">:</span>
+        <span class="n">login_credentials</span> <span class="o">=</span> <span class="n">UserLoginCredentials</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">login_credentials</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Logged into </span><span class="si">{</span><span class="n">_client</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> as GUEST&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_client</span><span class="o">.</span><span class="n">guest</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">cache</span> <span class="ow">and</span> <span class="n">login_credentials</span><span class="p">:</span>
+        <span class="n">_client_cache</span> <span class="o">=</span> <span class="n">SyftClientSessionCache</span><span class="o">.</span><span class="n">get_client</span><span class="p">(</span>
+            <span class="n">login_credentials</span><span class="o">.</span><span class="n">email</span><span class="p">,</span>
+            <span class="n">login_credentials</span><span class="o">.</span><span class="n">password</span><span class="p">,</span>
+            <span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">_client_cache</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Using cached client for </span><span class="si">{</span><span class="n">_client</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> as &lt;</span><span class="si">{</span><span class="n">login_credentials</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
+            <span class="p">)</span>
+            <span class="n">_client</span> <span class="o">=</span> <span class="n">_client_cache</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_client</span><span class="o">.</span><span class="n">authed</span> <span class="ow">and</span> <span class="n">login_credentials</span><span class="p">:</span>
+        <span class="n">_client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span>
+            <span class="n">email</span><span class="o">=</span><span class="n">login_credentials</span><span class="o">.</span><span class="n">email</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="n">login_credentials</span><span class="o">.</span><span class="n">password</span><span class="p">,</span>
+            <span class="n">cache</span><span class="o">=</span><span class="n">cache</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_client</span><span class="o">.</span><span class="n">authed</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Failed to login as </span><span class="si">{</span><span class="n">login_credentials</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_client</span>
+
+
+<span class="k">class</span> <span class="nc">SyftClientSessionCache</span><span class="p">:</span>
+    <span class="n">__credentials_store__</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">__cache_key_format__</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{email}</span><span class="s2">-</span><span class="si">{password}</span><span class="s2">-</span><span class="si">{connection}</span><span class="s2">&quot;</span>
+    <span class="n">__client_cache__</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_get_key</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__cache_key_format__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="n">connection</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_client</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">connection</span><span class="p">:</span> <span class="n">NodeConnection</span><span class="p">,</span>
+        <span class="n">syft_client</span><span class="p">:</span> <span class="n">SyftClient</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">hash_key</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_key</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">connection</span><span class="o">.</span><span class="n">get_cache_key</span><span class="p">())</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">__credentials_store__</span><span class="p">[</span><span class="n">hash_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">syft_client</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">__client_cache__</span><span class="p">[</span><span class="n">syft_client</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">syft_client</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_client_by_uid_and_verify_key</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">verify_key</span><span class="p">:</span> <span class="n">SyftVerifyKey</span><span class="p">,</span>
+        <span class="n">node_uid</span><span class="p">:</span> <span class="n">UID</span><span class="p">,</span>
+        <span class="n">syft_client</span><span class="p">:</span> <span class="n">SyftClient</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">hash_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">node_uid</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">verify_key</span><span class="p">)</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">__client_cache__</span><span class="p">[</span><span class="n">hash_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">syft_client</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_client_by_uid_and_verify_key</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">verify_key</span><span class="p">:</span> <span class="n">SyftVerifyKey</span><span class="p">,</span> <span class="n">node_uid</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftClient</span><span class="p">]:</span>
+        <span class="n">hash_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">node_uid</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">verify_key</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__client_cache__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">hash_key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_client</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">connection</span><span class="p">:</span> <span class="n">NodeConnection</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftClient</span><span class="p">]:</span>
+        <span class="c1"># we have some bugs here so lets disable until they are fixed.</span>
+        <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">hash_key</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_get_key</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">connection</span><span class="o">.</span><span class="n">get_cache_key</span><span class="p">())</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__credentials_store__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">hash_key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_client_for_node_uid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">node_uid</span><span class="p">:</span> <span class="n">UID</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftClient</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__client_cache__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node_uid</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Openmined Community.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

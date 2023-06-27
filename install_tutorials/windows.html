@@ -179,6 +179,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#alternate-way">
+   <strong>
+    Alternate way
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enable-virtual-machine-platform">
+   1. Enable Virtual Machine Platform
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-2-setting-up-linux-user-info">
    Step 2: Setting up Linux User Info
   </a>
@@ -251,6 +263,46 @@ unmodified, and without any of the drawbacks of more traditional solutions like 
 </div>
 <p>And that’s it! It’ll start installing all the dependencies and getting things in order.
 If you run into any issues here, please refer to <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/troubleshooting#installation-issues">this link</a>, which covers common WSL installation issues.</p>
+</section>
+<section id="alternate-way">
+<h2><strong>Alternate way</strong><a class="headerlink" href="#alternate-way" title="Permalink to this headline">¶</a></h2>
+<p><strong>Install WSL from Microsoft Store</strong>
+If the command line has you feeling confused, fear not! There’s a more user-friendly approach to installing WSL on Windows. We can bypass the command line altogether and download a package of all the components from the Microsoft Store. Not only that, but this method runs WSL isolated from Windows 11 and updates will be available through the Microsoft Store, so you won’t have to wait for the next version of the operating system to install the newest version.</p>
+<p>To install WSL from the Microsoft Store, use these steps:</p>
+</section>
+<section id="enable-virtual-machine-platform">
+<h2>1. Enable Virtual Machine Platform<a class="headerlink" href="#enable-virtual-machine-platform" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open <strong>Start</strong></p></li>
+<li><p>Search for <strong>Turn Windows Features on or off</strong> and click the
+top result to open the app</p></li>
+<li><p>Check the <strong>Virtual Machine Platform</strong></p></li>
+<li><p>Click the <strong>OK</strong> button</p></li>
+<li><p>Click the <strong>Restart button</strong></p></li>
+</ul>
+</div></blockquote>
+<p>After completing these steps, you can download the app from the Microsoft Store.</p>
+<blockquote>
+<div></div></blockquote>
+<ul class="simple">
+<li><p>Open the <a class="reference external" href="https://www.microsoft.com/en-us/p/windows-subsystem-for-linux-preview/9p9tqf7mrm4r?activetab=pivot:overviewtab">Windows Subsystem for Linux Store Page</a></p></li>
+<li><p>Click the <strong>Get</strong> button</p></li>
+<li><p>Click the <strong>Open</strong> button</p></li>
+<li><p>Click the <strong>Get</strong> button again</p></li>
+</ul>
+<blockquote>
+<div></div></blockquote>
+<ul class="simple">
+<li><p>Open <strong>Microsoft Store</strong> app.</p></li>
+<li><p>Search for Linux distro. For example <cite>Ubuntu &lt;https://apps.microsoft.com/store/detail/ubuntu-22041-lts/9PN20MSR04DW&gt;`_</cite></p></li>
+<li><p>Click the <strong>Get</strong> button.</p></li>
+<li><p>Click the <strong>Open</strong> button.</p></li>
+</ul>
+<p><em>Congratulations! Once you complete the steps, WSL will install on Windows 11, including the support for Linux GUI apps and the Linux distribution.</em></p>
+<p><em>To access the command line for your Linux distribution, search for “wsl” in the search bar and select the top result, which should be a penguin logo</em></p>
+<blockquote>
+<div></div></blockquote>
 </section>
 <section id="step-2-setting-up-linux-user-info">
 <h2>Step 2: Setting up Linux User Info<a class="headerlink" href="#step-2-setting-up-linux-user-info" title="Permalink to this headline">¶</a></h2>

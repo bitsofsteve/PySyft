@@ -1,0 +1,32 @@
+syft.serde.lib\_permissions
+===========================
+
+.. automodule:: syft.serde.lib_permissions
+
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CMPCRUDPermission
+      CMPCompoundPermission
+      CMPPermission
+      CMPUserPermission
+   
+   
+
+   
+   
+   
+
+
+

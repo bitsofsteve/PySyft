@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>syft.service.dataset.dataset &#8212; PySyft  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/pysyft.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../index.html">
+  <img src="../../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../api_reference/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../developer_guide/index.html">
+  Contributor Guidelines
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../deployment/glossary.html">
+  Glossary
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for syft.service.dataset.dataset</h1><div class="highlight"><pre>
+<span></span><span class="c1"># stdlib</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="c1"># third party</span>
+<span class="kn">import</span> <span class="nn">itables</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">ValidationError</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">root_validator</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">validator</span>
+<span class="kn">from</span> <span class="nn">result</span> <span class="kn">import</span> <span class="n">Err</span>
+<span class="kn">from</span> <span class="nn">result</span> <span class="kn">import</span> <span class="n">Ok</span>
+<span class="kn">from</span> <span class="nn">result</span> <span class="kn">import</span> <span class="n">Result</span>
+
+<span class="c1"># relative</span>
+<span class="kn">from</span> <span class="nn">...serde.serializable</span> <span class="kn">import</span> <span class="n">serializable</span>
+<span class="kn">from</span> <span class="nn">...store.document_store</span> <span class="kn">import</span> <span class="n">PartitionKey</span>
+<span class="kn">from</span> <span class="nn">...types.datetime</span> <span class="kn">import</span> <span class="n">DateTime</span>
+<span class="kn">from</span> <span class="nn">...types.syft_object</span> <span class="kn">import</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+<span class="kn">from</span> <span class="nn">...types.syft_object</span> <span class="kn">import</span> <span class="n">SyftObject</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">TransformContext</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">generate_id</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">transform</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">validate_url</span>
+<span class="kn">from</span> <span class="nn">...types.uid</span> <span class="kn">import</span> <span class="n">UID</span>
+<span class="kn">from</span> <span class="nn">...util</span> <span class="kn">import</span> <span class="n">options</span>
+<span class="kn">from</span> <span class="nn">...util.colors</span> <span class="kn">import</span> <span class="n">ON_SURFACE_HIGHEST</span>
+<span class="kn">from</span> <span class="nn">...util.colors</span> <span class="kn">import</span> <span class="n">SURFACE</span>
+<span class="kn">from</span> <span class="nn">...util.colors</span> <span class="kn">import</span> <span class="n">SURFACE_SURFACE</span>
+<span class="kn">from</span> <span class="nn">...util.fonts</span> <span class="kn">import</span> <span class="n">ITABLES_CSS</span>
+<span class="kn">from</span> <span class="nn">...util.fonts</span> <span class="kn">import</span> <span class="n">fonts_css</span>
+<span class="kn">from</span> <span class="nn">...util.markdown</span> <span class="kn">import</span> <span class="n">as_markdown_python_code</span>
+<span class="kn">from</span> <span class="nn">...util.notebook_ui.notebook_addons</span> <span class="kn">import</span> <span class="n">FOLDER_ICON</span>
+<span class="kn">from</span> <span class="nn">...util.util</span> <span class="kn">import</span> <span class="n">get_mb_size</span>
+<span class="kn">from</span> <span class="nn">..data_subject.data_subject</span> <span class="kn">import</span> <span class="n">DataSubject</span>
+<span class="kn">from</span> <span class="nn">..data_subject.data_subject</span> <span class="kn">import</span> <span class="n">DataSubjectCreate</span>
+<span class="kn">from</span> <span class="nn">..data_subject.data_subject_service</span> <span class="kn">import</span> <span class="n">DataSubjectService</span>
+<span class="kn">from</span> <span class="nn">..response</span> <span class="kn">import</span> <span class="n">SyftError</span>
+<span class="kn">from</span> <span class="nn">..response</span> <span class="kn">import</span> <span class="n">SyftException</span>
+<span class="kn">from</span> <span class="nn">..response</span> <span class="kn">import</span> <span class="n">SyftSuccess</span>
+
+<span class="n">DATA_SIZE_WARNING_LIMIT</span> <span class="o">=</span> <span class="mi">512</span>
+
+
+<div class="viewcode-block" id="TupleDict"><a class="viewcode-back" href="../../../../api_reference/syft.service.dataset.dataset.html#syft.service.dataset.dataset.TupleDict">[docs]</a><span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">TupleDict</span><span class="p">(</span><span class="n">OrderedDict</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">TupleDict</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></div>
+
+
+<span class="n">NamePartitionKey</span> <span class="o">=</span> <span class="n">PartitionKey</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">type_</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">Contributor</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;Contributor&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">role</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">phone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">note</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+    <span class="n">__repr_attrs__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;role&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            &lt;style&gt;</span>
+<span class="s2">            .syft-contributor </span><span class="se">{{</span><span class="s2">color: </span><span class="si">{</span><span class="n">SURFACE</span><span class="p">[</span><span class="n">options</span><span class="o">.</span><span class="n">color_theme</span><span class="p">]</span><span class="si">}</span><span class="s2">;</span><span class="se">}}</span>
+<span class="s2">            &lt;/style&gt;</span>
+<span class="s2">            &lt;div class=&#39;syft-contributor&#39; style=&quot;line-height:25%&quot;&gt;</span>
+<span class="s2">                &lt;h3&gt;Contributor&lt;/h3&gt;</span>
+<span class="s2">                &lt;p&gt;&lt;strong&gt;Name: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">                &lt;p&gt;&lt;strong&gt;Role: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">role</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">                &lt;p&gt;&lt;strong&gt;Email: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">            &quot;&quot;&quot;</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">Asset</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;Asset&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">action_id</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="n">node_uid</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">contributors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Contributor</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">data_subjects</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DataSubject</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">mock_is_real</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">DateTime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="n">__repr_attrs__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="n">itables_css</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        .itables table </span><span class="se">{{</span>
+<span class="s2">            margin: 0 auto;</span>
+<span class="s2">            float: left;</span>
+<span class="s2">            color: </span><span class="si">{</span><span class="n">ON_SURFACE_HIGHEST</span><span class="p">[</span><span class="n">options</span><span class="o">.</span><span class="n">color_theme</span><span class="p">]</span><span class="si">}</span><span class="s2">;</span>
+<span class="s2">        </span><span class="se">}}</span>
+<span class="s2">        .itables table th </span><span class="se">{{</span><span class="s2">color: </span><span class="si">{</span><span class="n">SURFACE_SURFACE</span><span class="p">[</span><span class="n">options</span><span class="o">.</span><span class="n">color_theme</span><span class="p">]</span><span class="si">}</span><span class="s2">;</span><span class="se">}}</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">...service.action.action_object</span> <span class="kn">import</span> <span class="n">ActionObject</span>
+
+        <span class="n">uploaded_by_line</span> <span class="o">=</span> <span class="s2">&quot;n/a&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">uploaded_by_line</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;&lt;p&gt;&lt;strong&gt;Uploaded by: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/p&gt;&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">ActionObject</span><span class="p">):</span>
+            <span class="n">data_table_line</span> <span class="o">=</span> <span class="n">itables</span><span class="o">.</span><span class="n">to_html_datatable</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">syft_action_data</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="n">itables_css</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">data_table_line</span> <span class="o">=</span> <span class="n">itables</span><span class="o">.</span><span class="n">to_html_datatable</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="n">itables_css</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data_table_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            &lt;style&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">fonts_css</span><span class="si">}</span>
+<span class="s2">            .syft-asset </span><span class="se">{{</span><span class="s2">color: </span><span class="si">{</span><span class="n">SURFACE</span><span class="p">[</span><span class="n">options</span><span class="o">.</span><span class="n">color_theme</span><span class="p">]</span><span class="si">}</span><span class="s2">;</span><span class="se">}}</span>
+<span class="s2">            .syft-asset h3,</span>
+<span class="s2">            .syft-asset p</span>
+<span class="s2">              </span><span class="se">{{</span><span class="s2">font-family: &#39;Open Sans&#39;</span><span class="se">}}</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">ITABLES_CSS</span><span class="si">}</span>
+<span class="s2">            &lt;/style&gt;</span>
+
+<span class="s2">            &lt;div class=&quot;syft-asset&quot;&gt;</span>
+<span class="s2">            &lt;h3&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/h3&gt;</span>
+<span class="s2">            &lt;p&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            &lt;p&gt;&lt;strong&gt;Asset ID: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            &lt;p&gt;&lt;strong&gt;Action Object ID: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">action_id</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">uploaded_by_line</span><span class="si">}</span>
+<span class="s2">            &lt;p&gt;&lt;strong&gt;Created on: &lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            &lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">data_table_line</span><span class="si">}</span>
+<span class="s2">            &lt;p&gt;&lt;strong&gt;Mock Data:&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">itables</span><span class="o">.</span><span class="n">to_html_datatable</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mock</span><span class="p">,</span><span class="w"> </span><span class="n">css</span><span class="o">=</span><span class="n">itables_css</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">            &lt;/div&gt;&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">_repr_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Asset: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Pointer Id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">action_id</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Description: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Total Data Subjects: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data_subjects</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Contributors: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">for</span> <span class="n">contributor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">contributor</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">contributor</span><span class="o">.</span><span class="n">email</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">as_markdown_python_code</span><span class="p">(</span><span class="n">_repr_str</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pointer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">...client.api</span> <span class="kn">import</span> <span class="n">APIRegistry</span>
+
+        <span class="n">api</span> <span class="o">=</span> <span class="n">APIRegistry</span><span class="o">.</span><span class="n">api_for</span><span class="p">(</span>
+            <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">node_uid</span><span class="p">,</span>
+            <span class="n">user_verify_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">syft_client_verify_key</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">get_pointer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_id</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">mock</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">...client.api</span> <span class="kn">import</span> <span class="n">APIRegistry</span>
+
+        <span class="n">api</span> <span class="o">=</span> <span class="n">APIRegistry</span><span class="o">.</span><span class="n">api_for</span><span class="p">(</span>
+            <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">node_uid</span><span class="p">,</span>
+            <span class="n">user_verify_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">syft_client_verify_key</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">get_pointer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_id</span><span class="p">)</span><span class="o">.</span><span class="n">syft_action_data</span>
+
+    <span class="k">def</span> <span class="nf">has_data_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">has_permission</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_result</span><span class="p">):</span>
+        <span class="c1"># TODO: implement in a better way</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">data_result</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">data_result</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Permission&quot;</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">data_result</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;denied&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">...client.api</span> <span class="kn">import</span> <span class="n">APIRegistry</span>
+
+        <span class="n">api</span> <span class="o">=</span> <span class="n">APIRegistry</span><span class="o">.</span><span class="n">api_for</span><span class="p">(</span>
+            <span class="n">node_uid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">node_uid</span><span class="p">,</span>
+            <span class="n">user_verify_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">syft_client_verify_key</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">action_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_permission</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">syft_action_data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_is_action_data_empty</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># just a wrapper of action_object.is_action_data_empty</span>
+    <span class="c1"># to work around circular import error</span>
+
+    <span class="c1"># relative</span>
+    <span class="kn">from</span> <span class="nn">...service.action.action_object</span> <span class="kn">import</span> <span class="n">is_action_data_empty</span>
+
+    <span class="k">return</span> <span class="n">is_action_data_empty</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">check_mock</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">mock</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">mock</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="n">_is_action_data_empty</span><span class="p">(</span><span class="n">mock</span><span class="p">)</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CreateAsset</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;CreateAsset&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">contributors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Contributor</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">data_subjects</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">DataSubjectCreate</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">node_uid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">action_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+    <span class="n">mock</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+    <span class="n">shape</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span>
+    <span class="n">mock_is_real</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DateTime</span><span class="p">]</span>
+
+    <span class="n">__repr_attrs__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">validate_assignment</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@root_validator</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">__empty_mock_cannot_be_real</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;set mock_is_real to False whenever mock is None or empty&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">mock</span> <span class="o">:=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mock&quot;</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">_is_action_data_empty</span><span class="p">(</span><span class="n">mock</span><span class="p">):</span>
+            <span class="n">values</span><span class="p">[</span><span class="s2">&quot;mock_is_real&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="n">values</span>
+
+    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;mock_is_real&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__mock_is_real_for_empty_mock_must_be_false</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="p">((</span><span class="n">mock</span> <span class="o">:=</span> <span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mock&quot;</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">_is_action_data_empty</span><span class="p">(</span><span class="n">mock</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;mock_is_real must be False if mock is not provided&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">add_data_subject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_subject</span><span class="p">:</span> <span class="n">DataSubject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_subjects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data_subject</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_contributor</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">role</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Enum</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">phone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">note</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_role_str</span> <span class="o">=</span> <span class="n">role</span><span class="o">.</span><span class="n">value</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">Enum</span><span class="p">)</span> <span class="k">else</span> <span class="n">role</span>
+            <span class="n">contributor</span> <span class="o">=</span> <span class="n">Contributor</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">_role_str</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="n">phone</span><span class="p">,</span> <span class="n">note</span><span class="o">=</span><span class="n">note</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contributor</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span>
+                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Contributor &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; added to &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; Asset.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Failed to add contributor. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">set_description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+
+    <span class="k">def</span> <span class="nf">set_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">SyftException</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">set_mock</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock_data</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">mock_is_real</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mock_data</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">SyftException</span><span class="p">(</span><span class="n">mock_data</span><span class="p">)</span>
+
+        <span class="n">current_mock</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mock</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mock</span> <span class="o">=</span> <span class="n">mock_data</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mock_is_real</span> <span class="o">=</span> <span class="n">mock_is_real</span>
+        <span class="k">except</span> <span class="n">ValidationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mock</span> <span class="o">=</span> <span class="n">current_mock</span>
+            <span class="k">raise</span> <span class="n">e</span>
+
+    <span class="k">def</span> <span class="nf">no_mock</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">..action.action_object</span> <span class="kn">import</span> <span class="n">ActionObject</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">mock</span> <span class="o">=</span> <span class="n">ActionObject</span><span class="o">.</span><span class="n">empty</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">set_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shape</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="n">shape</span>
+
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">check_mock</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mock</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span>
+                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;set_obj type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2"> must match set_mock type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mock</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_action_data_empty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mock</span><span class="p">):</span>
+            <span class="n">data_shape</span> <span class="o">=</span> <span class="n">get_shape_or_len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">mock_shape</span> <span class="o">=</span> <span class="n">get_shape_or_len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mock</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data_shape</span> <span class="o">!=</span> <span class="n">mock_shape</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span>
+                    <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;set_obj shape </span><span class="si">{</span><span class="n">data_shape</span><span class="si">}</span><span class="s2"> must match set_mock shape </span><span class="si">{</span><span class="n">mock_shape</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+        <span class="n">total_size_mb</span> <span class="o">=</span> <span class="n">get_mb_size</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">+</span> <span class="n">get_mb_size</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mock</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">total_size_mb</span> <span class="o">&gt;</span> <span class="n">DATA_SIZE_WARNING_LIMIT</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;**WARNING**: The total size for asset: &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; exceeds &#39;</span><span class="si">{</span><span class="n">DATA_SIZE_WARNING_LIMIT</span><span class="si">}</span><span class="s2"> MB&#39;. &quot;</span>
+                <span class="s2">&quot;This might result in failure to upload dataset. &quot;</span>
+                <span class="s2">&quot;Please contact #support on OpenMined slack for further assistance.&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dataset is Valid&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_shape_or_len</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">int</span><span class="p">]]:</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">):</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">shape</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">shape</span>
+    <span class="n">len_attr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">len_attr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">len_attr</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">Dataset</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;Dataset&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">node_uid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">asset_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Asset</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">contributors</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Contributor</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">citation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">updated_at</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">requests</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">mb_size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">DateTime</span> <span class="o">=</span> <span class="n">DateTime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+    <span class="n">__attr_searchable__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;citation&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="s2">&quot;action_ids&quot;</span><span class="p">]</span>
+    <span class="n">__attr_unique__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+    <span class="n">__repr_attrs__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span> <span class="s2">&quot;created_at&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">icon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">FOLDER_ICON</span>
+
+    <span class="k">def</span> <span class="nf">_coll_repr_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;Assets&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">),</span>
+            <span class="s2">&quot;Size&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mb_size</span><span class="si">}</span><span class="s2"> (MB)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Url&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+            <span class="s2">&quot;created at&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="p">),</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="n">uploaded_by_line</span> <span class="o">=</span> <span class="s2">&quot;n/a&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">uploaded_by_line</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="s2">&quot;&lt;p class=&#39;paragraph-sm&#39;&gt;&lt;strong&gt;&quot;</span>
+                <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;&lt;span class=&#39;pr-8&#39;&gt;Uploaded by:&lt;/span&gt;&lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/p&gt;&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            &lt;style&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">fonts_css</span><span class="si">}</span>
+<span class="s2">            .syft-dataset </span><span class="se">{{</span><span class="s2">color: </span><span class="si">{</span><span class="n">SURFACE</span><span class="p">[</span><span class="n">options</span><span class="o">.</span><span class="n">color_theme</span><span class="p">]</span><span class="si">}</span><span class="s2">;</span><span class="se">}}</span>
+<span class="s2">            .syft-dataset h3,</span>
+<span class="s2">            .syft-dataset p</span>
+<span class="s2">              </span><span class="se">{{</span><span class="s2">font-family: &#39;Open Sans&#39;;</span><span class="se">}}</span>
+<span class="s2">              </span><span class="si">{</span><span class="n">ITABLES_CSS</span><span class="si">}</span>
+<span class="s2">            &lt;/style&gt;</span>
+<span class="s2">            &lt;div class=&#39;syft-dataset&#39;&gt;</span>
+<span class="s2">            &lt;h3&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/h3&gt;</span>
+<span class="s2">            &lt;p&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">uploaded_by_line</span><span class="si">}</span>
+<span class="s2">            &lt;p class=&#39;paragraph-sm&#39;&gt;&lt;strong&gt;&lt;span class=&#39;pr-8&#39;&gt;Created on: &lt;/span&gt;&lt;/strong&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">            &lt;p class=&#39;paragraph-sm&#39;&gt;&lt;strong&gt;&lt;span class=&#39;pr-8&#39;&gt;URL:</span>
+<span class="s2">            &lt;/span&gt;&lt;/strong&gt;&lt;a href=&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&#39;&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&lt;/a&gt;&lt;/p&gt;</span>
+<span class="s2">            &lt;p class=&#39;paragraph-sm&#39;&gt;&lt;strong&gt;&lt;span class=&#39;pr-8&#39;&gt;Contributors:&lt;/span&gt;&lt;/strong&gt;</span>
+<span class="s2">            to see full details call &lt;strong&gt;dataset.contributors&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="s2">            </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">assets</span><span class="o">.</span><span class="n">_repr_html_</span><span class="p">()</span><span class="si">}</span>
+<span class="s2">            &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">action_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">UID</span><span class="p">]:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">asset</span><span class="o">.</span><span class="n">action_id</span><span class="p">:</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asset</span><span class="o">.</span><span class="n">action_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">assets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TupleDict</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">TupleDict</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">asset</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+    <span class="k">def</span> <span class="nf">_old_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">_repr_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Syft Dataset: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="s2">&quot;Assets:</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">citation</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Citation: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">citation</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Description: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">as_markdown_python_code</span><span class="p">(</span><span class="n">_repr_str</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="c1"># return self._old_repr_markdown_()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_markdown_</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">_repr_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Syft Dataset: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="n">_repr_str</span> <span class="o">+=</span> <span class="s2">&quot;Assets:</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">citation</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Citation: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">citation</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;URL: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">:</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Description: </span><span class="se">\n\n</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">_repr_str</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">client</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">...client.client</span> <span class="kn">import</span> <span class="n">SyftClientSessionCache</span>
+
+        <span class="n">client</span> <span class="o">=</span> <span class="n">SyftClientSessionCache</span><span class="o">.</span><span class="n">get_client_for_node_uid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">node_uid</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">client</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span>
+                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;No clients for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">node_uid</span><span class="si">}</span><span class="s2"> in memory. Please login with sy.login&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">client</span>
+
+
+<span class="n">_ASSET_WITH_NONE_MOCK_ERROR_MESSAGE</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;To be included in a Dataset, an asset must either contain a mock, &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;or have it explicitly set to be empty.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;You can create an asset without a mock with `sy.Asset(..., mock=sy.ActionObject.empty())` or</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;set the mock of an existing asset to be empty with `asset.no_mock()` or &quot;</span><span class="p">,</span>
+        <span class="s2">&quot;`asset.mock = sy.ActionObject.empty()`.&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_check_asset_must_contain_mock</span><span class="p">(</span><span class="n">asset_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CreateAsset</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">assets_without_mock</span> <span class="o">=</span> <span class="p">[</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">asset_list</span> <span class="k">if</span> <span class="n">asset</span><span class="o">.</span><span class="n">mock</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">assets_without_mock</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;These assets do not contain a mock:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="o">*</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">asset</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="n">assets_without_mock</span><span class="p">],</span>
+                    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+                    <span class="n">_ASSET_WITH_NONE_MOCK_ERROR_MESSAGE</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CreateDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;CreateDataset&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+    <span class="n">asset_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CreateAsset</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">__repr_attrs__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;url&quot;</span><span class="p">]</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">DateTime</span><span class="p">]</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">validate_assignment</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">_check_asset_must_contain_mock</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_check_asset_must_contain_mock</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">)</span>
+
+    <span class="nd">@validator</span><span class="p">(</span><span class="s2">&quot;asset_list&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__assets_must_contain_mock</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">asset_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">CreateAsset</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">CreateAsset</span><span class="p">]:</span>
+        <span class="n">_check_asset_must_contain_mock</span><span class="p">(</span><span class="n">asset_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">asset_list</span>
+
+    <span class="k">def</span> <span class="nf">set_description</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+
+    <span class="k">def</span> <span class="nf">add_citation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">citation</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">citation</span> <span class="o">=</span> <span class="n">citation</span>
+
+    <span class="k">def</span> <span class="nf">add_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+
+    <span class="k">def</span> <span class="nf">add_contributor</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">role</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Enum</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">phone</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">note</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_role_str</span> <span class="o">=</span> <span class="n">role</span><span class="o">.</span><span class="n">value</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">Enum</span><span class="p">)</span> <span class="k">else</span> <span class="n">role</span>
+            <span class="n">contributor</span> <span class="o">=</span> <span class="n">Contributor</span><span class="p">(</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">role</span><span class="o">=</span><span class="n">_role_str</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">phone</span><span class="o">=</span><span class="n">phone</span><span class="p">,</span> <span class="n">note</span><span class="o">=</span><span class="n">note</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">contributors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contributor</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span>
+                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Contributor &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; added to &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; Dataset.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Failed to add contributor. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_asset</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">asset</span><span class="p">:</span> <span class="n">CreateAsset</span><span class="p">,</span> <span class="n">force_replace</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">asset</span><span class="o">.</span><span class="n">mock</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">_ASSET_WITH_NONE_MOCK_ERROR_MESSAGE</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">existing_asset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">existing_asset</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">force_replace</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span>
+                        <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;Asset &quot;</span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot; already exists in &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; Dataset.&quot;&quot;&quot;</span>
+<span class="w">                        </span><span class="sd">&quot;&quot;&quot; Use add_asset(asset, force_replace=True) to replace.&quot;&quot;&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">asset</span>
+                    <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Asset </span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> has been successfully replaced.&quot;</span>
+                    <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">asset</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span>
+            <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Asset &#39;</span><span class="si">{</span><span class="n">asset</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; added to &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; Dataset.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">remove_asset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">asset_to_remove</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">asset</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+                <span class="n">asset_to_remove</span> <span class="o">=</span> <span class="n">asset</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">asset_to_remove</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;No asset exists with name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">asset_to_remove</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span>
+            <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Asset &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; removed from &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; Dataset.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Result</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">SyftError</span><span class="p">]]:</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">asset</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_list</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">asset</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Err</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Ok</span><span class="p">(</span><span class="n">SyftSuccess</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;Dataset is Valid&quot;</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">create_and_store_twin</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">action_id</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;action_id&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">action_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># relative</span>
+        <span class="kn">from</span> <span class="nn">...types.twin_object</span> <span class="kn">import</span> <span class="n">TwinObject</span>
+
+        <span class="n">private_obj</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">mock_obj</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;mock&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">private_obj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mock_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;No data and no action_id means this asset has no data&quot;</span><span class="p">)</span>
+
+        <span class="n">twin</span> <span class="o">=</span> <span class="n">TwinObject</span><span class="p">(</span>
+            <span class="n">private_obj</span><span class="o">=</span><span class="n">private_obj</span><span class="p">,</span>
+            <span class="n">mock_obj</span><span class="o">=</span><span class="n">mock_obj</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">action_service</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="s2">&quot;actionservice&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">action_service</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+            <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">to_node_context</span><span class="p">(),</span> <span class="n">action_object</span><span class="o">=</span><span class="n">twin</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">is_err</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to create and store twin. </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;action_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">twin</span><span class="o">.</span><span class="n">id</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">private_obj</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">mock_obj</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;mock&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">infer_shape</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_action_data_empty</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">mock</span><span class="p">):</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;shape&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_shape_or_len</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">mock</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">set_data_subjects</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">data_subjects</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;data_subjects&quot;</span><span class="p">]</span>
+    <span class="n">get_data_subject</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_service_method</span><span class="p">(</span><span class="n">DataSubjectService</span><span class="o">.</span><span class="n">get_by_name</span><span class="p">)</span>
+
+    <span class="n">resultant_data_subjects</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">data_subject</span> <span class="ow">in</span> <span class="n">data_subjects</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">get_data_subject</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">data_subject</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="n">resultant_data_subjects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;data_subjects&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">resultant_data_subjects</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">add_msg_creation_time</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;created_at&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DateTime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="nd">@transform</span><span class="p">(</span><span class="n">CreateAsset</span><span class="p">,</span> <span class="n">Asset</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">createasset_to_asset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">generate_id</span><span class="p">,</span>
+        <span class="n">add_msg_creation_time</span><span class="p">,</span>
+        <span class="n">infer_shape</span><span class="p">,</span>
+        <span class="n">create_and_store_twin</span><span class="p">,</span>
+        <span class="n">set_data_subjects</span><span class="p">,</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">convert_asset</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">assets</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;asset_list&quot;</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">create_asset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">assets</span><span class="p">):</span>
+        <span class="n">asset_context</span> <span class="o">=</span> <span class="n">TransformContext</span><span class="o">.</span><span class="n">from_context</span><span class="p">(</span><span class="n">obj</span><span class="o">=</span><span class="n">create_asset</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">assets</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_asset</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">Asset</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">asset_context</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;asset_list&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">add_current_date</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">current_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">formatted_date</span> <span class="o">=</span> <span class="n">current_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%b </span><span class="si">%d</span><span class="s2">, %Y&quot;</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;updated_at&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">formatted_date</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="nd">@transform</span><span class="p">(</span><span class="n">CreateDataset</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">createdataset_to_dataset</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">generate_id</span><span class="p">,</span>
+        <span class="n">add_msg_creation_time</span><span class="p">,</span>
+        <span class="n">validate_url</span><span class="p">,</span>
+        <span class="n">convert_asset</span><span class="p">,</span>
+        <span class="n">add_current_date</span><span class="p">,</span>
+    <span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">DatasetUpdate</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Openmined Community.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

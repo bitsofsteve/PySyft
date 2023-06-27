@@ -1,0 +1,37 @@
+syft.util.markdown
+==================
+
+.. automodule:: syft.util.markdown
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      as_markdown_code
+      as_markdown_python_code
+      markdown_as_class_with_fields
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CodeMarkdown
+   
+   
+
+   
+   
+   
+
+
+

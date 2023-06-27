@@ -1,0 +1,35 @@
+syft.util.schema
+================
+
+.. automodule:: syft.util.schema
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      convert_attribute_types
+      generate_json_schemas
+      get_type_mapping
+      get_types
+      make_fake_type
+      process_type_bank
+      resolve_references
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

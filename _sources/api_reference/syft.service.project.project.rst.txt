@@ -1,0 +1,67 @@
+syft.service.project.project
+============================
+
+.. automodule:: syft.service.project.project
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      add_code_request_to_project
+      add_members_as_owners
+      check_permissions
+      create_project_event_hash
+      create_project_hash
+      elect_leader
+      hash_object
+      metadata_to_node_identity
+      new_projectsubmit_to_project
+      poll_answer_wizard
+      poll_creation_wizard
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AnswerProjectPoll
+      ConsensusModel
+      DemocraticConsensusModel
+      Identity
+      NodeIdentity
+      Project
+      ProjectEvent
+      ProjectEventAddLink
+      ProjectEventAddObject
+      ProjectMessage
+      ProjectMultipleChoicePoll
+      ProjectRequest
+      ProjectRequestResponse
+      ProjectSubEvent
+      ProjectSubmit
+      ProjectThreadMessage
+      UserIdentity
+   
+   
+
+   
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      EventAlreadyAddedException
+   
+   
+
+
+

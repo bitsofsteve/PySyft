@@ -1,0 +1,31 @@
+syft.util.version\_compare
+==========================
+
+.. automodule:: syft.util.version_compare
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      check_rule
+      get_operator
+      make_requires
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

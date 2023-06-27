@@ -1,0 +1,36 @@
+syft.serde.recursive
+====================
+
+.. automodule:: syft.serde.recursive
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      check_fqn_alias
+      chunk_bytes
+      combine_bytes
+      get_types
+      recursive_serde_register
+      rs_bytes2object
+      rs_object2proto
+      rs_proto2object
+   
+   
+
+   
+   
+   
+
+   
+   
+   
+
+
+

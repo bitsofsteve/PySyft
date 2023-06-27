@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>syft.service.policy.policy &#8212; PySyft  documentation</title>
+    
+  <link href="../../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/pysyft.css" />
+    
+  <link rel="preload" as="script" href="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/clipboard.min.js"></script>
+    <script src="../../../../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../../index.html">
+  <img src="../../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../api_reference/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../developer_guide/index.html">
+  Contributor Guidelines
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../deployment/glossary.html">
+  Glossary
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for syft.service.policy.policy</h1><div class="highlight"><pre>
+<span></span><span class="c1"># future</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="c1"># stdlib</span>
+<span class="kn">import</span> <span class="nn">ast</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">Parameter</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">Signature</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="c1"># third party</span>
+<span class="kn">from</span> <span class="nn">RestrictedPython</span> <span class="kn">import</span> <span class="n">compile_restricted</span>
+<span class="kn">from</span> <span class="nn">result</span> <span class="kn">import</span> <span class="n">Ok</span>
+
+<span class="c1"># relative</span>
+<span class="kn">from</span> <span class="nn">...abstract_node</span> <span class="kn">import</span> <span class="n">NodeType</span>
+<span class="kn">from</span> <span class="nn">...client.api</span> <span class="kn">import</span> <span class="n">NodeView</span>
+<span class="kn">from</span> <span class="nn">...node.credentials</span> <span class="kn">import</span> <span class="n">SyftVerifyKey</span>
+<span class="kn">from</span> <span class="nn">...serde.recursive_primitives</span> <span class="kn">import</span> <span class="n">recursive_serde_register_type</span>
+<span class="kn">from</span> <span class="nn">...serde.serializable</span> <span class="kn">import</span> <span class="n">serializable</span>
+<span class="kn">from</span> <span class="nn">...store.document_store</span> <span class="kn">import</span> <span class="n">PartitionKey</span>
+<span class="kn">from</span> <span class="nn">...types.datetime</span> <span class="kn">import</span> <span class="n">DateTime</span>
+<span class="kn">from</span> <span class="nn">...types.syft_object</span> <span class="kn">import</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+<span class="kn">from</span> <span class="nn">...types.syft_object</span> <span class="kn">import</span> <span class="n">SyftObject</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">TransformContext</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">generate_id</span>
+<span class="kn">from</span> <span class="nn">...types.transforms</span> <span class="kn">import</span> <span class="n">transform</span>
+<span class="kn">from</span> <span class="nn">...types.twin_object</span> <span class="kn">import</span> <span class="n">TwinObject</span>
+<span class="kn">from</span> <span class="nn">...types.uid</span> <span class="kn">import</span> <span class="n">UID</span>
+<span class="kn">from</span> <span class="nn">...util.util</span> <span class="kn">import</span> <span class="n">is_interpreter_jupyter</span>
+<span class="kn">from</span> <span class="nn">..action.action_object</span> <span class="kn">import</span> <span class="n">ActionObject</span>
+<span class="kn">from</span> <span class="nn">..code.code_parse</span> <span class="kn">import</span> <span class="n">GlobalsVisitor</span>
+<span class="kn">from</span> <span class="nn">..code.unparse</span> <span class="kn">import</span> <span class="n">unparse</span>
+<span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="n">AuthedServiceContext</span>
+<span class="kn">from</span> <span class="nn">..context</span> <span class="kn">import</span> <span class="n">NodeServiceContext</span>
+<span class="kn">from</span> <span class="nn">..dataset.dataset</span> <span class="kn">import</span> <span class="n">Asset</span>
+<span class="kn">from</span> <span class="nn">..response</span> <span class="kn">import</span> <span class="n">SyftError</span>
+<span class="kn">from</span> <span class="nn">..response</span> <span class="kn">import</span> <span class="n">SyftSuccess</span>
+
+<span class="n">PolicyUserVerifyKeyPartitionKey</span> <span class="o">=</span> <span class="n">PartitionKey</span><span class="p">(</span>
+    <span class="n">key</span><span class="o">=</span><span class="s2">&quot;user_verify_key&quot;</span><span class="p">,</span> <span class="n">type_</span><span class="o">=</span><span class="n">SyftVerifyKey</span>
+<span class="p">)</span>
+<span class="n">PyCodeObject</span> <span class="o">=</span> <span class="n">Any</span>
+
+
+<span class="k">def</span> <span class="nf">extract_uid</span><span class="p">(</span><span class="n">v</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">UID</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ActionObject</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">id</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">TwinObject</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">id</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">UID</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s2"> must have a UID not </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+
+<span class="k">def</span> <span class="nf">filter_only_uids</span><span class="p">(</span><span class="n">results</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="s2">&quot;__len__&quot;</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">results</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">output_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="n">output_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extract_uid</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">output_list</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">output_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">output_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">extract_uid</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">output_dict</span>
+    <span class="k">return</span> <span class="n">extract_uid</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Policy</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;Policy&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="n">init_kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;init_kwargs&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">init_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;init_kwargs&quot;</span><span class="p">]</span>
+            <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;init_kwargs&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">init_kwargs</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s2">&quot;id&quot;</span> <span class="ow">in</span> <span class="n">init_kwargs</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">init_kwargs</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">init_kwargs</span><span class="o">=</span><span class="n">init_kwargs</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># noqa: B026</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">policy_code</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">mro</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">mro</span><span class="p">())</span>
+        <span class="n">op_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">klass</span> <span class="ow">in</span> <span class="n">mro</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;Policy&quot;</span> <span class="ow">in</span> <span class="n">klass</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span>
+                <span class="n">op_code</span> <span class="o">+=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+                <span class="n">op_code</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">op_code</span>
+
+    <span class="k">def</span> <span class="nf">public_state</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">valid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span><span class="n">message</span><span class="o">=</span><span class="s2">&quot;Policy is valid.&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="UserPolicyStatus"><a class="viewcode-back" href="../../../../api_reference/syft.service.policy.policy.html#syft.service.policy.policy.UserPolicyStatus">[docs]</a><span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">UserPolicyStatus</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">SUBMITTED</span> <span class="o">=</span> <span class="s2">&quot;submitted&quot;</span>
+    <span class="n">DENIED</span> <span class="o">=</span> <span class="s2">&quot;denied&quot;</span>
+    <span class="n">APPROVED</span> <span class="o">=</span> <span class="s2">&quot;approved&quot;</span></div>
+
+
+<span class="k">def</span> <span class="nf">partition_by_node</span><span class="p">(</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">UID</span><span class="p">]:</span>
+    <span class="c1"># relative</span>
+    <span class="kn">from</span> <span class="nn">...client.api</span> <span class="kn">import</span> <span class="n">APIRegistry</span>
+    <span class="kn">from</span> <span class="nn">...client.api</span> <span class="kn">import</span> <span class="n">NodeView</span>
+    <span class="kn">from</span> <span class="nn">...types.twin_object</span> <span class="kn">import</span> <span class="n">TwinObject</span>
+    <span class="kn">from</span> <span class="nn">..action.action_object</span> <span class="kn">import</span> <span class="n">ActionObject</span>
+
+    <span class="c1"># fetches the all the current api&#39;s connected</span>
+    <span class="n">api_list</span> <span class="o">=</span> <span class="n">APIRegistry</span><span class="o">.</span><span class="n">get_all_api</span><span class="p">()</span>
+    <span class="n">output_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ActionObject</span><span class="p">):</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">TwinObject</span><span class="p">):</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">id</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Asset</span><span class="p">):</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">action_id</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">UID</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> must have a UID not </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">_obj_exists</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">api</span> <span class="ow">in</span> <span class="n">api_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">api</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">action</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">uid</span><span class="p">):</span>
+                <span class="n">node_view</span> <span class="o">=</span> <span class="n">NodeView</span><span class="o">.</span><span class="n">from_api</span><span class="p">(</span><span class="n">api</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">node_view</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">output_kwargs</span><span class="p">:</span>
+                    <span class="n">output_kwargs</span><span class="p">[</span><span class="n">node_view</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">uid</span><span class="p">}</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">output_kwargs</span><span class="p">[</span><span class="n">node_view</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">uid</span><span class="p">})</span>
+
+                <span class="n">_obj_exists</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_obj_exists</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input data </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2"> does not belong to any Domain&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output_kwargs</span>
+
+
+<span class="k">class</span> <span class="nc">InputPolicy</span><span class="p">(</span><span class="n">Policy</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;InputPolicy&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;init_kwargs&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">init_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;init_kwargs&quot;</span><span class="p">]</span>
+            <span class="k">del</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;init_kwargs&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># TODO: remove this tech debt, dont remove the id mapping functionality</span>
+            <span class="n">init_kwargs</span> <span class="o">=</span> <span class="n">partition_by_node</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">init_kwargs</span><span class="o">=</span><span class="n">init_kwargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">filter_kwargs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">context</span><span class="p">:</span> <span class="n">AuthedServiceContext</span><span class="p">,</span> <span class="n">code_item_id</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">inputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">NodeView</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">init_kwargs</span>
+
+
+<span class="k">def</span> <span class="nf">retrieve_from_db</span><span class="p">(</span>
+    <span class="n">code_item_id</span><span class="p">:</span> <span class="n">UID</span><span class="p">,</span> <span class="n">allowed_inputs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">UID</span><span class="p">],</span> <span class="n">context</span><span class="p">:</span> <span class="n">AuthedServiceContext</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+    <span class="c1"># relative</span>
+    <span class="kn">from</span> <span class="nn">...service.action.action_object</span> <span class="kn">import</span> <span class="n">TwinMode</span>
+
+    <span class="n">action_service</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="s2">&quot;actionservice&quot;</span><span class="p">)</span>
+    <span class="n">code_inputs</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># When we are retrieving the code from the database, we need to use the node&#39;s</span>
+    <span class="c1"># verify key as the credentials. This is because when we approve the code, we</span>
+    <span class="c1"># we allow the private data to be used only for this specific code.</span>
+    <span class="c1"># but we are not modifying the permissions of the private data</span>
+
+    <span class="n">root_context</span> <span class="o">=</span> <span class="n">AuthedServiceContext</span><span class="p">(</span>
+        <span class="n">node</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="p">,</span> <span class="n">credentials</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">verify_key</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span> <span class="o">==</span> <span class="n">NodeType</span><span class="o">.</span><span class="n">DOMAIN</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">var_name</span><span class="p">,</span> <span class="n">arg_id</span> <span class="ow">in</span> <span class="n">allowed_inputs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">kwarg_value</span> <span class="o">=</span> <span class="n">action_service</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">context</span><span class="o">=</span><span class="n">root_context</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="n">arg_id</span><span class="p">,</span> <span class="n">twin_mode</span><span class="o">=</span><span class="n">TwinMode</span><span class="o">.</span><span class="n">NONE</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">kwarg_value</span><span class="o">.</span><span class="n">is_err</span><span class="p">():</span>
+                <span class="k">return</span> <span class="n">kwarg_value</span>
+            <span class="n">code_inputs</span><span class="p">[</span><span class="n">var_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwarg_value</span><span class="o">.</span><span class="n">ok</span><span class="p">()</span>
+
+    <span class="k">elif</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span> <span class="o">==</span> <span class="n">NodeType</span><span class="o">.</span><span class="n">ENCLAVE</span><span class="p">:</span>
+        <span class="n">dict_object</span> <span class="o">=</span> <span class="n">action_service</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="n">root_context</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="n">code_item_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dict_object</span><span class="o">.</span><span class="n">is_err</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">dict_object</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_object</span><span class="o">.</span><span class="n">ok</span><span class="p">()</span><span class="o">.</span><span class="n">base_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">code_inputs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Invalid Node Type for Code Submission:</span><span class="si">{</span><span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">Ok</span><span class="p">(</span><span class="n">code_inputs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">allowed_ids_only</span><span class="p">(</span>
+    <span class="n">allowed_inputs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">UID</span><span class="p">],</span>
+    <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="n">context</span><span class="p">:</span> <span class="n">AuthedServiceContext</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">UID</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span> <span class="o">==</span> <span class="n">NodeType</span><span class="o">.</span><span class="n">DOMAIN</span><span class="p">:</span>
+        <span class="n">node_view</span> <span class="o">=</span> <span class="n">NodeView</span><span class="p">(</span>
+            <span class="n">node_name</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">verify_key</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">signing_key</span><span class="o">.</span><span class="n">verify_key</span>
+        <span class="p">)</span>
+        <span class="n">allowed_inputs</span> <span class="o">=</span> <span class="n">allowed_inputs</span><span class="p">[</span><span class="n">node_view</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span> <span class="o">==</span> <span class="n">NodeType</span><span class="o">.</span><span class="n">ENCLAVE</span><span class="p">:</span>
+        <span class="n">base_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">allowed_inputs</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">base_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">allowed_inputs</span> <span class="o">=</span> <span class="n">base_dict</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Invalid Node Type for Code Submission:</span><span class="si">{</span><span class="n">context</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">node_type</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+    <span class="n">filtered_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">allowed_inputs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">UID</span><span class="p">):</span>
+                <span class="n">uid</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">uid</span> <span class="o">!=</span> <span class="n">allowed_inputs</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Input </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> not in allowed </span><span class="si">{</span><span class="n">allowed_inputs</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="n">filtered_kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">filtered_kwargs</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">ExactMatch</span><span class="p">(</span><span class="n">InputPolicy</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;ExactMatch&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="k">def</span> <span class="nf">filter_kwargs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">context</span><span class="p">:</span> <span class="n">AuthedServiceContext</span><span class="p">,</span> <span class="n">code_item_id</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">allowed_inputs</span> <span class="o">=</span> <span class="n">allowed_ids_only</span><span class="p">(</span>
+            <span class="n">allowed_inputs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">inputs</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span>
+        <span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">retrieve_from_db</span><span class="p">(</span>
+            <span class="n">code_item_id</span><span class="o">=</span><span class="n">code_item_id</span><span class="p">,</span> <span class="n">allowed_inputs</span><span class="o">=</span><span class="n">allowed_inputs</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">OutputHistory</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;OutputHistory&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">output_time</span><span class="p">:</span> <span class="n">DateTime</span>
+    <span class="n">outputs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">UID</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">UID</span><span class="p">]]]</span>
+    <span class="n">executing_user_verify_key</span><span class="p">:</span> <span class="n">SyftVerifyKey</span>
+
+
+<span class="k">class</span> <span class="nc">OutputPolicy</span><span class="p">(</span><span class="n">Policy</span><span class="p">):</span>
+    <span class="c1"># version</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;OutputPolicy&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">output_history</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">OutputHistory</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">output_kwargs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">node_uid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">apply_output</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">NodeServiceContext</span><span class="p">,</span>
+        <span class="n">outputs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="n">output_uids</span> <span class="o">=</span> <span class="n">filter_only_uids</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">output_uids</span><span class="p">,</span> <span class="n">UID</span><span class="p">):</span>
+            <span class="n">output_uids</span> <span class="o">=</span> <span class="p">[</span><span class="n">output_uids</span><span class="p">]</span>
+        <span class="n">history</span> <span class="o">=</span> <span class="n">OutputHistory</span><span class="p">(</span>
+            <span class="n">output_time</span><span class="o">=</span><span class="n">DateTime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+            <span class="n">outputs</span><span class="o">=</span><span class="n">output_uids</span><span class="p">,</span>
+            <span class="n">executing_user_verify_key</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">credentials</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">outputs</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_kwargs</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">OutputPolicyExecuteCount</span><span class="p">(</span><span class="n">OutputPolicy</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;OutputPolicyExecuteCount&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="nf">apply_output</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">NodeServiceContext</span><span class="p">,</span>
+        <span class="n">outputs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">apply_output</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">outputs</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">outputs</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">valid</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">SyftSuccess</span><span class="p">,</span> <span class="n">SyftError</span><span class="p">]:</span>
+        <span class="n">is_valid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span>
+        <span class="k">if</span> <span class="n">is_valid</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">SyftSuccess</span><span class="p">(</span>
+                <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Policy is still valid. count: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2"> &lt; limit: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">SyftError</span><span class="p">(</span>
+            <span class="n">message</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Policy is no longer valid. count: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="si">}</span><span class="s2"> &gt;= limit: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">public_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">limit</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span><span class="p">}</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">OutputPolicyExecuteOnce</span><span class="p">(</span><span class="n">OutputPolicyExecuteCount</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;OutputPolicyExecuteOnce&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="n">SingleExecutionExactOutput</span> <span class="o">=</span> <span class="n">OutputPolicyExecuteOnce</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CustomPolicy</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="c1"># capture the init_kwargs transparently</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">init_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+        <span class="k">return</span> <span class="n">obj</span>
+
+
+<span class="n">recursive_serde_register_type</span><span class="p">(</span><span class="n">CustomPolicy</span><span class="p">)</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">CustomOutputPolicy</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CustomPolicy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">apply_output</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">NodeServiceContext</span><span class="p">,</span>
+        <span class="n">outputs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">outputs</span>
+
+
+<span class="k">class</span> <span class="nc">UserOutputPolicy</span><span class="p">(</span><span class="n">OutputPolicy</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;UserOutputPolicy&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">UserInputPolicy</span><span class="p">(</span><span class="n">InputPolicy</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;UserInputPolicy&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">CustomInputPolicy</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">CustomPolicy</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">UserPolicy</span><span class="p">(</span><span class="n">Policy</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;UserPolicy&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">UID</span>
+    <span class="n">node_uid</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">user_verify_key</span><span class="p">:</span> <span class="n">SyftVerifyKey</span>
+    <span class="n">raw_code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">parsed_code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">signature</span><span class="p">:</span> <span class="n">inspect</span><span class="o">.</span><span class="n">Signature</span>
+    <span class="n">class_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">unique_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">code_hash</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">byte_code</span><span class="p">:</span> <span class="n">PyCodeObject</span>
+    <span class="n">status</span><span class="p">:</span> <span class="n">UserPolicyStatus</span> <span class="o">=</span> <span class="n">UserPolicyStatus</span><span class="o">.</span><span class="n">SUBMITTED</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">byte_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PyCodeObject</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">compile_byte_code</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parsed_code</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">policy_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_code</span>
+
+    <span class="k">def</span> <span class="nf">apply_output</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">context</span><span class="p">:</span> <span class="n">NodeServiceContext</span><span class="p">,</span>
+        <span class="n">outputs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">outputs</span>
+
+
+<span class="k">def</span> <span class="nf">new_getfile</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+
+    <span class="c1"># Lookup by parent module (as in current inspect)</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="s2">&quot;__module__&quot;</span><span class="p">):</span>
+        <span class="n">object_</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">object</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">object_</span><span class="p">,</span> <span class="s2">&quot;__file__&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">object_</span><span class="o">.</span><span class="vm">__file__</span>
+
+    <span class="c1"># If parent module is __main__, lookup by methods (NEW)</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">member</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">inspect</span><span class="o">.</span><span class="n">isfunction</span><span class="p">(</span><span class="n">member</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="nb">object</span><span class="o">.</span><span class="vm">__qualname__</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">member</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="n">member</span><span class="o">.</span><span class="vm">__qualname__</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getfile</span><span class="p">(</span><span class="n">member</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Source for </span><span class="si">{!r}</span><span class="s2"> not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">object</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">get_code_from_class</span><span class="p">(</span><span class="n">policy</span><span class="p">):</span>
+    <span class="n">klasses</span> <span class="o">=</span> <span class="p">[</span><span class="n">inspect</span><span class="o">.</span><span class="n">getmro</span><span class="p">(</span><span class="n">policy</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>  <span class="c1">#</span>
+    <span class="n">whole_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">klass</span> <span class="ow">in</span> <span class="n">klasses</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_interpreter_jupyter</span><span class="p">():</span>
+            <span class="c1"># third party</span>
+            <span class="kn">from</span> <span class="nn">IPython.core.magics.code</span> <span class="kn">import</span> <span class="n">extract_symbols</span>
+
+            <span class="n">cell_code</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">linecache</span><span class="o">.</span><span class="n">getlines</span><span class="p">(</span><span class="n">new_getfile</span><span class="p">(</span><span class="n">klass</span><span class="p">)))</span>
+            <span class="n">class_code</span> <span class="o">=</span> <span class="n">extract_symbols</span><span class="p">(</span><span class="n">cell_code</span><span class="p">,</span> <span class="n">klass</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">class_code</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">klass</span><span class="p">)</span>
+        <span class="n">whole_str</span> <span class="o">+=</span> <span class="n">class_code</span>
+    <span class="k">return</span> <span class="n">whole_str</span>
+
+
+<span class="nd">@serializable</span><span class="p">()</span>
+<span class="k">class</span> <span class="nc">SubmitUserPolicy</span><span class="p">(</span><span class="n">Policy</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;SubmitUserPolicy&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">class_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">input_kwargs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PyCodeObject</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">compile_restricted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;exec&quot;</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_obj</span><span class="p">(</span><span class="n">policy_obj</span><span class="p">:</span> <span class="n">CustomPolicy</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubmitUserPolicy</span><span class="p">:</span>
+        <span class="n">user_class</span> <span class="o">=</span> <span class="n">policy_obj</span><span class="o">.</span><span class="vm">__class__</span>
+        <span class="n">init_f_code</span> <span class="o">=</span> <span class="n">user_class</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__code__</span>
+        <span class="k">return</span> <span class="n">SubmitUserPolicy</span><span class="p">(</span>
+            <span class="n">code</span><span class="o">=</span><span class="n">get_code_from_class</span><span class="p">(</span><span class="n">user_class</span><span class="p">),</span>
+            <span class="n">class_name</span><span class="o">=</span><span class="n">user_class</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+            <span class="n">input_kwargs</span><span class="o">=</span><span class="n">init_f_code</span><span class="o">.</span><span class="n">co_varnames</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="n">init_f_code</span><span class="o">.</span><span class="n">co_argcount</span><span class="p">],</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">hash_code</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">]</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;raw_code&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">code</span>
+    <span class="n">code_hash</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;code_hash&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">code_hash</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">generate_unique_class_name</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="c1"># TODO: Do we need to check if the initial name contains underscores?</span>
+    <span class="n">code_hash</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;code_hash&quot;</span><span class="p">]</span>
+    <span class="n">service_class_name</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;class_name&quot;</span><span class="p">]</span>
+    <span class="n">unique_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">service_class_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">context</span><span class="o">.</span><span class="n">credentials</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">code_hash</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;unique_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unique_name</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">compile_byte_code</span><span class="p">(</span><span class="n">parsed_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PyCodeObject</span><span class="p">]:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">compile</span><span class="p">(</span><span class="n">parsed_code</span><span class="p">,</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;exec&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: to compile byte code&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">process_class_code</span><span class="p">(</span><span class="n">raw_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">raw_code</span><span class="p">)</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">GlobalsVisitor</span><span class="p">()</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">body</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ast</span><span class="o">.</span><span class="n">ClassDef</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="s2">&quot;Class code should only contain the Class definition for your policy&quot;</span>
+        <span class="p">)</span>
+    <span class="n">old_class</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">old_class</span><span class="o">.</span><span class="n">bases</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">old_class</span><span class="o">.</span><span class="n">bases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attr</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span>
+        <span class="n">CustomInputPolicy</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+        <span class="n">CustomOutputPolicy</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+    <span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Class code should either implement </span><span class="si">{</span><span class="n">CustomInputPolicy</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;or </span><span class="si">{</span><span class="n">CustomOutputPolicy</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># TODO: changes the bases</span>
+    <span class="n">old_class</span><span class="o">.</span><span class="n">bases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attr</span> <span class="o">=</span> <span class="n">old_class</span><span class="o">.</span><span class="n">bases</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
+
+    <span class="n">serializable_name</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">Name</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s2">&quot;sy.serializable&quot;</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="n">ast</span><span class="o">.</span><span class="n">Load</span><span class="p">())</span>
+    <span class="n">serializable_decorator</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">Call</span><span class="p">(</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">serializable_name</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">keywords</span><span class="o">=</span><span class="p">[],</span>
+    <span class="p">)</span>
+
+    <span class="n">new_class</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># TODO add this manually</span>
+    <span class="k">for</span> <span class="n">stmt</span> <span class="ow">in</span> <span class="n">new_class</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="n">ast</span><span class="o">.</span><span class="n">FunctionDef</span><span class="p">)</span> <span class="ow">and</span> <span class="n">stmt</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;__init__&quot;</span><span class="p">:</span>
+            <span class="n">stmt</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;__user_init__&quot;</span>
+
+    <span class="c1"># change the module that the code will reference</span>
+    <span class="c1"># this is required for the @serializable to mount it in the right path for serde</span>
+    <span class="n">new_line</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;__module__ = &quot;syft.user&quot;&#39;</span><span class="p">)</span>
+    <span class="n">new_class</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_line</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">new_line</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;__canonical_name__ = &quot;</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s1">&quot;&#39;</span><span class="p">)</span>
+    <span class="n">new_class</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_line</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">new_line</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;__version__ = 1&quot;</span><span class="p">)</span>
+    <span class="n">new_class</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_line</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">new_class</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">class_name</span>
+    <span class="n">new_class</span><span class="o">.</span><span class="n">decorator_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">serializable_decorator</span><span class="p">]</span>
+    <span class="n">new_body</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">new_body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">ast</span><span class="o">.</span><span class="n">ImportFrom</span><span class="p">(</span>
+            <span class="n">module</span><span class="o">=</span><span class="s2">&quot;__future__&quot;</span><span class="p">,</span>
+            <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;annotations&quot;</span><span class="p">,</span> <span class="n">asname</span><span class="o">=</span><span class="s2">&quot;annotations&quot;</span><span class="p">)],</span>
+            <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">new_body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">Import</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;syft&quot;</span><span class="p">,</span> <span class="n">asname</span><span class="o">=</span><span class="s2">&quot;sy&quot;</span><span class="p">)],</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">typing_types</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Any&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Callable&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ClassVar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Dict&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;List&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Optional&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Set&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Tuple&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Type&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">typing_type</span> <span class="ow">in</span> <span class="n">typing_types</span><span class="p">:</span>
+        <span class="n">new_body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">ast</span><span class="o">.</span><span class="n">ImportFrom</span><span class="p">(</span>
+                <span class="n">module</span><span class="o">=</span><span class="s2">&quot;typing&quot;</span><span class="p">,</span>
+                <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">ast</span><span class="o">.</span><span class="n">alias</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">typing_type</span><span class="p">,</span> <span class="n">asname</span><span class="o">=</span><span class="n">typing_type</span><span class="p">)],</span>
+                <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="n">new_body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_class</span><span class="p">)</span>
+    <span class="n">module</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">Module</span><span class="p">(</span><span class="n">new_body</span><span class="p">,</span> <span class="n">type_ignores</span><span class="o">=</span><span class="p">[])</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">unparse</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;failed to unparse&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">e</span>
+
+
+<span class="k">def</span> <span class="nf">check_class_code</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="c1"># TODO: define the proper checking for this case based on the ideas from UserCode</span>
+    <span class="c1"># check for no globals</span>
+    <span class="c1"># check for Policy template -&gt; __init__, apply_output, public_state</span>
+    <span class="c1"># parse init signature</span>
+    <span class="c1"># check dangerous libraries, maybe compile_restricted already does that</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">processed_code</span> <span class="o">=</span> <span class="n">process_class_code</span><span class="p">(</span>
+            <span class="n">raw_code</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;raw_code&quot;</span><span class="p">],</span>
+            <span class="n">class_name</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;unique_name&quot;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;parsed_code&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">processed_code</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">e</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">compile_code</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">byte_code</span> <span class="o">=</span> <span class="n">compile_byte_code</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;parsed_code&quot;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">byte_code</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="s2">&quot;Unable to compile byte code from parsed code. &quot;</span>
+            <span class="o">+</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;parsed_code&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="k">def</span> <span class="nf">add_credentials_for_key</span><span class="p">(</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">add_credentials</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">credentials</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+    <span class="k">return</span> <span class="n">add_credentials</span>
+
+
+<span class="k">def</span> <span class="nf">generate_signature</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">TransformContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransformContext</span><span class="p">:</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="n">Parameter</span><span class="o">.</span><span class="n">POSITIONAL_OR_KEYWORD</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;input_kwargs&quot;</span><span class="p">]</span>
+    <span class="p">]</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">Signature</span><span class="p">(</span><span class="n">parameters</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">context</span><span class="o">.</span><span class="n">output</span><span class="p">[</span><span class="s2">&quot;signature&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sig</span>
+    <span class="k">return</span> <span class="n">context</span>
+
+
+<span class="nd">@transform</span><span class="p">(</span><span class="n">SubmitUserPolicy</span><span class="p">,</span> <span class="n">UserPolicy</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">submit_policy_code_to_user_code</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Callable</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">generate_id</span><span class="p">,</span>
+        <span class="n">hash_code</span><span class="p">,</span>
+        <span class="n">generate_unique_class_name</span><span class="p">,</span>
+        <span class="n">generate_signature</span><span class="p">,</span>
+        <span class="n">check_class_code</span><span class="p">,</span>
+        <span class="c1"># compile_code, # don&#39;t compile until approved</span>
+        <span class="n">add_credentials_for_key</span><span class="p">(</span><span class="s2">&quot;user_verify_key&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">add_class_to_user_module</span><span class="p">(</span><span class="n">klass</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="n">unique_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
+    <span class="n">klass</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">=</span> <span class="s2">&quot;syft.user&quot;</span>
+    <span class="n">klass</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="n">unique_name</span>
+    <span class="c1"># syft absolute</span>
+    <span class="kn">import</span> <span class="nn">syft</span> <span class="k">as</span> <span class="nn">sy</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sy</span><span class="p">,</span> <span class="s2">&quot;user&quot;</span><span class="p">):</span>
+        <span class="n">user_module</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s2">&quot;syft&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">user_module</span>
+    <span class="n">user_module</span> <span class="o">=</span> <span class="n">sy</span><span class="o">.</span><span class="n">user</span>
+    <span class="nb">setattr</span><span class="p">(</span><span class="n">user_module</span><span class="p">,</span> <span class="n">unique_name</span><span class="p">,</span> <span class="n">klass</span><span class="p">)</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s2">&quot;syft&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">user_module</span>
+    <span class="k">return</span> <span class="n">klass</span>
+
+
+<span class="k">def</span> <span class="nf">execute_policy_code</span><span class="p">(</span><span class="n">user_policy</span><span class="p">:</span> <span class="n">UserPolicy</span><span class="p">):</span>
+    <span class="n">stdout_</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span>
+    <span class="n">stderr_</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stdout</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+        <span class="n">stderr</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
+
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">stdout</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">stderr</span>
+
+        <span class="n">class_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user_policy</span><span class="o">.</span><span class="n">unique_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">class_name</span> <span class="ow">in</span> <span class="n">user_policy</span><span class="o">.</span><span class="n">__object_version_registry__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">policy_class</span> <span class="o">=</span> <span class="n">user_policy</span><span class="o">.</span><span class="n">__object_version_registry__</span><span class="p">[</span><span class="n">class_name</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">exec</span><span class="p">(</span><span class="n">user_policy</span><span class="o">.</span><span class="n">byte_code</span><span class="p">)</span>  <span class="c1"># nosec</span>
+            <span class="n">policy_class</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">user_policy</span><span class="o">.</span><span class="n">unique_name</span><span class="p">)</span>  <span class="c1"># nosec</span>
+
+        <span class="n">policy_class</span> <span class="o">=</span> <span class="n">add_class_to_user_module</span><span class="p">(</span><span class="n">policy_class</span><span class="p">,</span> <span class="n">user_policy</span><span class="o">.</span><span class="n">unique_name</span><span class="p">)</span>
+
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">stdout_</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">stderr_</span>
+
+        <span class="k">return</span> <span class="n">policy_class</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;execute_byte_code failed&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">stderr_</span><span class="p">)</span>
+
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">stdout_</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">stderr_</span>
+
+
+<span class="k">def</span> <span class="nf">load_policy_code</span><span class="p">(</span><span class="n">user_policy</span><span class="p">:</span> <span class="n">UserPolicy</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">policy_class</span> <span class="o">=</span> <span class="n">execute_policy_code</span><span class="p">(</span><span class="n">user_policy</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">policy_class</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception loading code. </span><span class="si">{</span><span class="n">user_policy</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">init_policy</span><span class="p">(</span><span class="n">user_policy</span><span class="p">:</span> <span class="n">UserPolicy</span><span class="p">,</span> <span class="n">init_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
+    <span class="n">policy_class</span> <span class="o">=</span> <span class="n">load_policy_code</span><span class="p">(</span><span class="n">user_policy</span><span class="p">)</span>
+    <span class="n">policy_object</span> <span class="o">=</span> <span class="n">policy_class</span><span class="p">()</span>
+    <span class="n">policy_object</span><span class="o">.</span><span class="n">__user_init__</span><span class="p">(</span><span class="o">**</span><span class="n">init_args</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">policy_object</span>
+</pre></div>
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Openmined Community.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

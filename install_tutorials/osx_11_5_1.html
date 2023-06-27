@@ -323,24 +323,24 @@ proceed to Step 4.</p>
 <ul>
 <li><p>Step 4.2: Check to make sure conda is properly installed</p>
 <p>In your freshly opened Terminal window, type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda --v
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--v
 </pre></div>
 </div>
 <p>This should print something like “conda 4.10.1”. If instead says “conda not found”,
 return to Step 3 and re-install conda.</p>
 </li>
 <li><p>Step 4.3: Update Conda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update conda --y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>update<span class="w"> </span>conda<span class="w"> </span>--y
 </pre></div>
 </div>
 </li>
 <li><p>Step 4.4: Create conda virtual environment with Python 3.9</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n syft_env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 --y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>syft_env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9<span class="w"> </span>--y
 </pre></div>
 </div>
 </li>
 <li><p>Step 4.5: Activate conda environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate syft_env
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>syft_env
 </pre></div>
 </div>
 <p>When you run this command, you’ll see the word ‘syft_env’ in your terminal to indicate that you’re
@@ -354,7 +354,7 @@ window, just re-run this step (4.5) and you’ll be ready to start again!</p>
 <h2>Step 5: Install Necessary Python Packages<a class="headerlink" href="#step-5-install-necessary-python-packages" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Step 5.0: If you closed your Terminal window since Step 4, open a new Terminal application window and run the following.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate syft_env
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>syft_env
 </pre></div>
 </div>
 <p>If your Terminal window is still open from Step 4, you can skip this step and proceed directly to step 5.1.</p>
@@ -363,16 +363,16 @@ window, just re-run this step (4.5) and you’ll be ready to start again!</p>
 <p>Within our virtual environment, we’re going to use the ‘pip’ package manager to install all of our
 necessary python libraries. But before we do, we need to make sure we’re running the latest version of pip.
 You can do so by running the following command.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --upgrade pip
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </pre></div>
 </div>
 </li>
 <li><p>Step 5.2: Install Jupyter Lab</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyterlab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab
 </pre></div>
 </div>
 <p>If you encounter an error when running this command, try the following instead:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge jupyterlab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>jupyterlab
 </pre></div>
 </div>
 </li>
@@ -380,18 +380,18 @@ You can do so by running the following command.</p>
 <p>For the python package in step 5,4, you’ll need to have git installed.
 Most modern macOS machines come with git already installed, but if the following
 command doesn’t work for you…</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
 </pre></div>
 </div>
 <p>…then follow git’s installation instructions for macOS here: <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
 </li>
 <li><p>Step 5.4: Install Hagrid</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U hagrid
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>hagrid
 </pre></div>
 </div>
 </li>
 <li><p>Step 5.5: Install Syft</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U syft --pre
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>syft
 </pre></div>
 </div>
 </li>
@@ -401,7 +401,7 @@ command doesn’t work for you…</p>
 <h2>Step 6: Install Docker<a class="headerlink" href="#step-6-install-docker" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>Step 6.0: If you are using Apple MacOS M1 device, install Rosetta2 prior to installing Docker:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>softwareupdate --install-rosetta
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>softwareupdate<span class="w"> </span>--install-rosetta
 </pre></div>
 </div>
 </li>
@@ -460,8 +460,8 @@ command doesn’t work for you…</p>
 <ul>
 <li><p>Step 8.1: Launch Hagrid</p>
 <p>Just to make sure our installation is correct and working. Open a new terminal and run the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate syft_env
-hagrid launch <span class="nb">test</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>syft_env
+hagrid<span class="w"> </span>launch<span class="w"> </span><span class="nb">test</span>
 </pre></div>
 </div>
 <p>Wait several minutes. You should see LOTS of logging. The logging will occasionally hang during downloads. If your
@@ -473,8 +473,8 @@ internet is slow you’ll need to be patient. The logging should eventually stop
 </li>
 <li><p>Step 8.2: Launch Juptyer Lab</p>
 <p>With hagrid still running, open a new terminal (Command-N if you have Terminal selected) and run the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate syft_env
-jupyter lab
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>syft_env
+jupyter<span class="w"> </span>lab
 </pre></div>
 </div>
 <p>A new browser window should open up.</p>
@@ -498,9 +498,9 @@ a dialog box pops up saying “Do you want to terminate running processes in thi
 </li>
 <li><p>Step 8.6: Land Hagrid</p>
 <p>Open a new terminal window and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate syft_env
-hagrid land <span class="nb">test</span>
-conda deactivate syft_env
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>syft_env
+hagrid<span class="w"> </span>land<span class="w"> </span><span class="nb">test</span>
+conda<span class="w"> </span>deactivate<span class="w"> </span>syft_env
 </pre></div>
 </div>
 </li>

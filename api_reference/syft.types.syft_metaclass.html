@@ -1,0 +1,1000 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>syft.types.syft_metaclass &#8212; PySyft  documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/pysyft.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="syft.types.syft_object" href="syft.types.syft_object.html" />
+    <link rel="prev" title="syft.types.grid_url" href="syft.types.grid_url.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../developer_guide/index.html">
+  Contributor Guidelines
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../deployment/glossary.html">
+  Glossary
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syft.capnp.html">
+   syft.capnp package
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.client.html">
+   syft.client
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.api.html">
+     syft.client.api
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.client.html">
+     syft.client.client
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.connection.html">
+     syft.client.connection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.deploy.html">
+     syft.client.deploy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.registry.html">
+     syft.client.registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.search.html">
+     syft.client.search
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.client.user_settings.html">
+     syft.client.user_settings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="syft.external.html">
+   syft.external
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.node.html">
+   syft.node
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.credentials.html">
+     syft.node.credentials
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.domain.html">
+     syft.node.domain
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.gateway.html">
+     syft.node.gateway
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.node.html">
+     syft.node.node
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.routes.html">
+     syft.node.routes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.run.html">
+     syft.node.run
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.server.html">
+     syft.node.server
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.worker.html">
+     syft.node.worker
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.node.worker_settings.html">
+     syft.node.worker_settings
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.serde.html">
+   syft.serde
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.array.html">
+     syft.serde.array
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.arrow.html">
+     syft.serde.arrow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.capnp.html">
+     syft.serde.capnp
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.deserialize.html">
+     syft.serde.deserialize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.lib_permissions.html">
+     syft.serde.lib_permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.lib_service_registry.html">
+     syft.serde.lib_service_registry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.mock.html">
+     syft.serde.mock
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.recursive.html">
+     syft.serde.recursive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.recursive_primitives.html">
+     syft.serde.recursive_primitives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.serializable.html">
+     syft.serde.serializable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.serialize.html">
+     syft.serde.serialize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.signature.html">
+     syft.serde.signature
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.serde.third_party.html">
+     syft.serde.third_party
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.service.html">
+   syft.service
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.action.html">
+     syft.service.action
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_data_empty.html">
+       syft.service.action.action_data_empty
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_graph.html">
+       syft.service.action.action_graph
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_graph_service.html">
+       syft.service.action.action_graph_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_object.html">
+       syft.service.action.action_object
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_permissions.html">
+       syft.service.action.action_permissions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_service.html">
+       syft.service.action.action_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_store.html">
+       syft.service.action.action_store
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.action_types.html">
+       syft.service.action.action_types
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.numpy.html">
+       syft.service.action.numpy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.pandas.html">
+       syft.service.action.pandas
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.plan.html">
+       syft.service.action.plan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.action.verification.html">
+       syft.service.action.verification
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.code.html">
+     syft.service.code
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.code_parse.html">
+       syft.service.code.code_parse
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.unparse.html">
+       syft.service.code.unparse
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code.html">
+       syft.service.code.user_code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code_parse.html">
+       syft.service.code.user_code_parse
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code_service.html">
+       syft.service.code.user_code_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.code.user_code_stash.html">
+       syft.service.code.user_code_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.service.context.html">
+     syft.service.context
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.data_subject.html">
+     syft.service.data_subject
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject.html">
+       syft.service.data_subject.data_subject
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject_member.html">
+       syft.service.data_subject.data_subject_member
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject_member_service.html">
+       syft.service.data_subject.data_subject_member_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.data_subject.data_subject_service.html">
+       syft.service.data_subject.data_subject_service
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.dataset.html">
+     syft.service.dataset
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.dataset.dataset.html">
+       syft.service.dataset.dataset
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.dataset.dataset_service.html">
+       syft.service.dataset.dataset_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.dataset.dataset_stash.html">
+       syft.service.dataset.dataset_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.message.html">
+     syft.service.message
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.message.message_service.html">
+       syft.service.message.message_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.message.message_stash.html">
+       syft.service.message.message_stash
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.message.messages.html">
+       syft.service.message.messages
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.policy.html">
+     syft.service.policy
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.policy.policy.html">
+       syft.service.policy.policy
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.policy.policy_service.html">
+       syft.service.policy.policy_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.policy.user_policy_stash.html">
+       syft.service.policy.user_policy_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.project.html">
+     syft.service.project
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.project.project.html">
+       syft.service.project.project
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.project.project_service.html">
+       syft.service.project.project_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.project.project_stash.html">
+       syft.service.project.project_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.request.html">
+     syft.service.request
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.request.request.html">
+       syft.service.request.request
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.request.request_service.html">
+       syft.service.request.request_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.request.request_stash.html">
+       syft.service.request.request_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.service.response.html">
+     syft.service.response
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.service.service.html">
+     syft.service.service
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="syft.service.user.html">
+     syft.service.user
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+    <label for="toctree-checkbox-13">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.roles.html">
+       syft.service.user.roles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user.html">
+       syft.service.user.user
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user_roles.html">
+       syft.service.user.user_roles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user_service.html">
+       syft.service.user.user_service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="syft.service.user.user_stash.html">
+       syft.service.user.user_stash
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.store.html">
+   syft.store
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.dict_document_store.html">
+     syft.store.dict_document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.document_store.html">
+     syft.store.document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.kv_document_store.html">
+     syft.store.kv_document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.linked_obj.html">
+     syft.store.linked_obj
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.locks.html">
+     syft.store.locks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.mongo_client.html">
+     syft.store.mongo_client
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.mongo_codecs.html">
+     syft.store.mongo_codecs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.mongo_document_store.html">
+     syft.store.mongo_document_store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.store.sqlite_document_store.html">
+     syft.store.sqlite_document_store
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="syft.types.html">
+   syft.types
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.base.html">
+     syft.types.base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.datetime.html">
+     syft.types.datetime
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.grid_url.html">
+     syft.types.grid_url
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     syft.types.syft_metaclass
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.syft_object.html">
+     syft.types.syft_object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.transforms.html">
+     syft.types.transforms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.twin_object.html">
+     syft.types.twin_object
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.types.uid.html">
+     syft.types.uid
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="syft.util.html">
+   syft.util
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.autoreload.html">
+     syft.util.autoreload
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.colors.html">
+     syft.util.colors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.decorators.html">
+     syft.util.decorators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.experimental_flags.html">
+     syft.util.experimental_flags
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.filterwarnings.html">
+     syft.util.filterwarnings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.fonts.html">
+     syft.util.fonts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.jax_settings.html">
+     syft.util.jax_settings
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.logger.html">
+     syft.util.logger
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.markdown.html">
+     syft.util.markdown
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.options.html">
+     syft.util.options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.schema.html">
+     syft.util.schema
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.telemetry.html">
+     syft.util.telemetry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.trace_decorator.html">
+     syft.util.trace_decorator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.util.html">
+     syft.util.util
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="syft.util.version_compare.html">
+     syft.util.version_compare
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+
+<nav id="bd-toc-nav">
+    
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-syft.types.syft_metaclass">
+<span id="syft-types-syft-metaclass"></span><h1>syft.types.syft_metaclass<a class="headerlink" href="#module-syft.types.syft_metaclass" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Empty</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#syft.types.syft_metaclass.PartialModelMetaclass" title="syft.types.syft_metaclass.PartialModelMetaclass"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PartialModelMetaclass</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="syft.types.syft_metaclass.PartialModelMetaclass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">syft.types.syft_metaclass.</span></span><span class="sig-name descname"><span class="pre">PartialModelMetaclass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/syft/types/syft_metaclass.html#PartialModelMetaclass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#syft.types.syft_metaclass.PartialModelMetaclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.ModelMetaclass</span></code></p>
+</dd></dl>
+
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="syft.types.grid_url.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">syft.types.grid_url</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="syft.types.syft_object.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">syft.types.syft_object</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Openmined Community.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

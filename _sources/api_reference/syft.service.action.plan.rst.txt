@@ -1,0 +1,36 @@
+syft.service.action.plan
+========================
+
+.. automodule:: syft.service.action.plan
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build_plan_inputs
+      planify
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Plan
+   
+   
+
+   
+   
+   
+
+
+

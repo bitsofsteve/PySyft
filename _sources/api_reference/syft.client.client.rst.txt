@@ -1,0 +1,42 @@
+syft.client.client
+==================
+
+.. automodule:: syft.client.client
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      connect
+      login
+      register
+      upgrade_tls
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      HTTPConnection
+      PythonConnection
+      Routes
+      SyftClient
+      SyftClientSessionCache
+   
+   
+
+   
+   
+   
+
+
+

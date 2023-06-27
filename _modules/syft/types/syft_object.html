@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>syft.types.syft_object &#8212; PySyft  documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/pysyft.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../../index.html">
+  <img src="../../../_static/logo.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../getting_started/index.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../api_reference/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../developer_guide/index.html">
+  Contributor Guidelines
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../deployment/glossary.html">
+  Glossary
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../resources/index.html">
+  Resources
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../guides/index.html">
+  How-to Guides
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/OpenMined/PySyft" rel="noopener" target="_blank" title="GitHub">
+            <span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/openminedorg" rel="noopener" target="_blank" title="Twitter">
+            <span><i class="fab fa-twitter-square"></i></span>
+            <label class="sr-only">Twitter</label>
+          </a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <h1>Source code for syft.types.syft_object</h1><div class="highlight"><pre>
+<span></span><span class="c1"># stdlib</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Set</span>
+<span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha256</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">Signature</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">ClassVar</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">KeysView</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Mapping</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Sequence</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Type</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="c1"># third party</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pydantic</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">EmailStr</span>
+<span class="kn">from</span> <span class="nn">pydantic.fields</span> <span class="kn">import</span> <span class="n">Undefined</span>
+<span class="kn">from</span> <span class="nn">result</span> <span class="kn">import</span> <span class="n">OkErr</span>
+<span class="kn">from</span> <span class="nn">typeguard</span> <span class="kn">import</span> <span class="n">check_type</span>
+
+<span class="c1"># relative</span>
+<span class="kn">from</span> <span class="nn">..node.credentials</span> <span class="kn">import</span> <span class="n">SyftVerifyKey</span>
+<span class="kn">from</span> <span class="nn">..serde.recursive_primitives</span> <span class="kn">import</span> <span class="n">recursive_serde_register_type</span>
+<span class="kn">from</span> <span class="nn">..serde.serialize</span> <span class="kn">import</span> <span class="n">_serialize</span> <span class="k">as</span> <span class="n">serialize</span>
+<span class="kn">from</span> <span class="nn">..util.autoreload</span> <span class="kn">import</span> <span class="n">autoreload_enabled</span>
+<span class="kn">from</span> <span class="nn">..util.markdown</span> <span class="kn">import</span> <span class="n">as_markdown_python_code</span>
+<span class="kn">from</span> <span class="nn">..util.notebook_ui.notebook_addons</span> <span class="kn">import</span> <span class="n">create_table_template</span>
+<span class="kn">from</span> <span class="nn">..util.util</span> <span class="kn">import</span> <span class="n">aggressive_set_attr</span>
+<span class="kn">from</span> <span class="nn">..util.util</span> <span class="kn">import</span> <span class="n">full_name_with_qualname</span>
+<span class="kn">from</span> <span class="nn">..util.util</span> <span class="kn">import</span> <span class="n">get_qualname_for</span>
+<span class="kn">from</span> <span class="nn">.syft_metaclass</span> <span class="kn">import</span> <span class="n">Empty</span>
+<span class="kn">from</span> <span class="nn">.syft_metaclass</span> <span class="kn">import</span> <span class="n">PartialModelMetaclass</span>
+<span class="kn">from</span> <span class="nn">.uid</span> <span class="kn">import</span> <span class="n">UID</span>
+
+<span class="n">IntStr</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span>
+<span class="n">AbstractSetIntStr</span> <span class="o">=</span> <span class="n">Set</span><span class="p">[</span><span class="n">IntStr</span><span class="p">]</span>
+<span class="n">MappingIntStrAny</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IntStr</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+
+
+<span class="n">SYFT_OBJECT_VERSION_1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">SYFT_OBJECT_VERSION_2</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">supported_object_versions</span> <span class="o">=</span> <span class="p">[</span><span class="n">SYFT_OBJECT_VERSION_1</span><span class="p">,</span> <span class="n">SYFT_OBJECT_VERSION_2</span><span class="p">]</span>
+
+<span class="n">HIGHEST_SYFT_OBJECT_VERSION</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">supported_object_versions</span><span class="p">)</span>
+<span class="n">LOWEST_SYFT_OBJECT_VERSION</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">supported_object_versions</span><span class="p">)</span>
+
+
+<span class="c1"># These attributes are dynamically added based on node/client</span>
+<span class="c1"># that is interaction with the SyftObject</span>
+<span class="n">DYNAMIC_SYFT_ATTRIBUTES</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;syft_node_location&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;syft_client_verify_key&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">SyftHashableObject</span><span class="p">:</span>
+    <span class="n">__hash_exclude_attrs__</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sha256__</span><span class="p">(),</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;big&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__sha256__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__hash_exclude_attrs__</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">DYNAMIC_SYFT_ATTRIBUTES</span><span class="p">)</span>
+        <span class="n">_bytes</span> <span class="o">=</span> <span class="n">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to_bytes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">for_hashing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sha256</span><span class="p">(</span><span class="n">_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">hash</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__sha256__</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">SyftBaseObject</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">,</span> <span class="n">SyftHashableObject</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">arbitrary_types_allowed</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">__canonical_name__</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># the name which doesn&#39;t change even when there are multiple classes</span>
+    <span class="n">__version__</span><span class="p">:</span> <span class="nb">int</span>  <span class="c1"># data is always versioned</span>
+
+    <span class="n">syft_node_location</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">UID</span><span class="p">]</span>
+    <span class="n">syft_client_verify_key</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SyftVerifyKey</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">Context</span><span class="p">(</span><span class="n">SyftBaseObject</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">SyftObjectRegistry</span><span class="p">:</span>
+    <span class="n">__object_version_registry__</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="s2">&quot;SyftObject&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">__object_transform_registry__</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Callable</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">__init_subclass__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init_subclass__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;__canonical_name__&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="s2">&quot;__version__&quot;</span><span class="p">):</span>
+            <span class="n">mapping_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="n">__canonical_name__</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span>
+
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">mapping_string</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__object_version_registry__</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="n">autoreload_enabled</span><span class="p">()</span>
+            <span class="p">):</span>
+                <span class="n">current_cls</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__object_version_registry__</span><span class="p">[</span><span class="n">mapping_string</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">cls</span> <span class="o">==</span> <span class="n">current_cls</span><span class="p">:</span>
+                    <span class="c1"># same class so noop</span>
+                    <span class="k">return</span> <span class="kc">None</span>
+
+                <span class="c1"># user code is reinitialized which means it might have a new address</span>
+                <span class="c1"># in memory so for that we can just skip</span>
+                <span class="k">if</span> <span class="s2">&quot;syft.user&quot;</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__module__</span><span class="p">:</span>
+                    <span class="c1"># this happens every time we reload the user code</span>
+                    <span class="k">return</span> <span class="kc">None</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># this shouldn&#39;t happen and is usually a mistake of reusing the</span>
+                    <span class="c1"># same __canonical_name__ and __version__ in two classes</span>
+                    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Duplicate mapping for </span><span class="si">{</span><span class="n">mapping_string</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># only if the cls has not been registered do we want to register it</span>
+                <span class="bp">cls</span><span class="o">.</span><span class="n">__object_version_registry__</span><span class="p">[</span><span class="n">mapping_string</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">versioned_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="s2">&quot;SyftObject&quot;</span><span class="p">]]:</span>
+        <span class="n">mapping_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">mapping_string</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__object_version_registry__</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__object_version_registry__</span><span class="p">[</span><span class="n">mapping_string</span><span class="p">]</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">add_transform</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">klass_from</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">version_from</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">klass_to</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">version_to</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">method</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mapping_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">klass_from</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">version_from</span><span class="si">}</span><span class="s2">_x_</span><span class="si">{</span><span class="n">klass_to</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">version_to</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="bp">cls</span><span class="o">.</span><span class="n">__object_transform_registry__</span><span class="p">[</span><span class="n">mapping_string</span><span class="p">]</span> <span class="o">=</span> <span class="n">method</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">get_transform</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">type_from</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="s2">&quot;SyftObject&quot;</span><span class="p">],</span> <span class="n">type_to</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="s2">&quot;SyftObject&quot;</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">type_from_mro</span> <span class="ow">in</span> <span class="n">type_from</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">type_from_mro</span><span class="p">,</span> <span class="n">SyftObject</span><span class="p">):</span>
+                <span class="n">klass_from</span> <span class="o">=</span> <span class="n">type_from_mro</span><span class="o">.</span><span class="n">__canonical_name__</span>
+                <span class="n">version_from</span> <span class="o">=</span> <span class="n">type_from_mro</span><span class="o">.</span><span class="n">__version__</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">klass_from</span> <span class="o">=</span> <span class="n">type_from_mro</span><span class="o">.</span><span class="vm">__name__</span>
+                <span class="n">version_from</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">type_to_mro</span> <span class="ow">in</span> <span class="n">type_to</span><span class="o">.</span><span class="n">mro</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">type_to_mro</span><span class="p">,</span> <span class="n">SyftBaseObject</span><span class="p">):</span>
+                    <span class="n">klass_to</span> <span class="o">=</span> <span class="n">type_to_mro</span><span class="o">.</span><span class="n">__canonical_name__</span>
+                    <span class="n">version_to</span> <span class="o">=</span> <span class="n">type_to_mro</span><span class="o">.</span><span class="n">__version__</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">klass_to</span> <span class="o">=</span> <span class="n">type_to_mro</span><span class="o">.</span><span class="vm">__name__</span>
+                    <span class="n">version_to</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="n">mapping_string</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">klass_from</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">version_from</span><span class="si">}</span><span class="s2">_x_</span><span class="si">{</span><span class="n">klass_to</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">version_to</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">mapping_string</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__object_transform_registry__</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__object_transform_registry__</span><span class="p">[</span><span class="n">mapping_string</span><span class="p">]</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;No mapping found for: </span><span class="si">{</span><span class="n">type_from</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">type_to</span><span class="si">}</span><span class="s2"> in&quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;the registry: </span><span class="si">{</span><span class="bp">cls</span><span class="o">.</span><span class="n">__object_transform_registry__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+
+<span class="n">print_type_cache</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">SyftObject</span><span class="p">(</span><span class="n">SyftBaseObject</span><span class="p">,</span> <span class="n">SyftObjectRegistry</span><span class="p">):</span>
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;SyftObject&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="k">class</span> <span class="nc">Config</span><span class="p">:</span>
+        <span class="n">arbitrary_types_allowed</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># all objects have a UID</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">UID</span>
+
+    <span class="c1"># # move this to transforms</span>
+    <span class="nd">@pydantic</span><span class="o">.</span><span class="n">root_validator</span><span class="p">(</span><span class="n">pre</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">make_id</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">values</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">id_field</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__fields__</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="s2">&quot;id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">values</span> <span class="ow">and</span> <span class="n">id_field</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_field</span><span class="o">.</span><span class="n">type_</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">values</span>
+
+    <span class="n">__attr_searchable__</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span>
+        <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># keys which can be searched in the ORM</span>
+    <span class="n">__attr_unique__</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># the unique keys for the particular Collection the objects will be stored in</span>
+    <span class="n">__serde_overrides__</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span>
+        <span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Callable</span><span class="p">]</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># List of attributes names which require a serde override.</span>
+    <span class="n">__owner__</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="n">__repr_attrs__</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># show these in html repr collections</span>
+    <span class="n">__attr_custom_repr__</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span>
+        <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># show these in html repr of an object</span>
+
+    <span class="k">def</span> <span class="nf">__syft_get_funcs__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Signature</span><span class="p">]]:</span>
+        <span class="n">funcs</span> <span class="o">=</span> <span class="n">print_type_cache</span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">funcs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">funcs</span>
+
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="n">obj</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">attr</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="s2">&quot;SyftObject&quot;</span> <span class="ow">in</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;__qualname__&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="nb">callable</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+                <span class="ow">and</span> <span class="ow">not</span> <span class="n">attr</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)</span>
+            <span class="p">):</span>
+                <span class="n">sig</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+                <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">attr</span><span class="p">,</span> <span class="n">sig</span><span class="p">))</span>
+
+        <span class="n">print_type_cache</span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)]</span> <span class="o">=</span> <span class="n">funcs</span>
+        <span class="k">return</span> <span class="n">funcs</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fqn</span> <span class="o">=</span> <span class="n">full_name_with_qualname</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">fqn</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_repr_debug_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="n">get_qualname_for</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="n">_repr_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;class </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;__fields__&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">fields</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">DYNAMIC_SYFT_ATTRIBUTES</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="s2">&quot;&lt;Missing&gt;&quot;</span><span class="p">)</span>
+            <span class="n">value_type</span> <span class="o">=</span> <span class="n">full_name_with_qualname</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
+            <span class="n">value_type</span> <span class="o">=</span> <span class="n">value_type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;builtins.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value_type</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">_repr_str</span>
+
+    <span class="k">def</span> <span class="nf">_repr_markdown_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wrap_as_python</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">s_indent</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="n">indent</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="n">get_qualname_for</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__attr_custom_repr__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__attr_custom_repr__</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__repr_attrs__</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__repr_attrs__</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;__fields__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="s2">&quot;id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">fields</span>
+
+        <span class="n">dynam_attrs</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">DYNAMIC_SYFT_ATTRIBUTES</span><span class="p">)</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fields</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dynam_attrs</span><span class="p">]</span>
+        <span class="n">_repr_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s_indent</span><span class="si">}</span><span class="s2">class </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span>
+            <span class="c1"># if it&#39;s a compound string</span>
+            <span class="k">if</span> <span class="s2">&quot;.&quot;</span> <span class="ow">in</span> <span class="n">attr</span><span class="p">:</span>
+                <span class="c1"># break it into it&#39;s bits &amp; fetch the attr</span>
+                <span class="k">for</span> <span class="n">_attr</span> <span class="ow">in</span> <span class="n">attr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">_attr</span><span class="p">,</span> <span class="s2">&quot;&lt;Missing&gt;&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="s2">&quot;&lt;Missing&gt;&quot;</span><span class="p">)</span>
+
+            <span class="n">value_type</span> <span class="o">=</span> <span class="n">full_name_with_qualname</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">attr</span><span class="p">))</span>
+            <span class="n">value_type</span> <span class="o">=</span> <span class="n">value_type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;builtins.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="c1"># If the object has a special representation when nested we will use that instead</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;__repr_syft_nested__&quot;</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">__repr_syft_nested__</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="p">[</span>
+                    <span class="n">elem</span><span class="o">.</span><span class="n">__repr_syft_nested__</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="s2">&quot;__repr_syft_nested__&quot;</span><span class="p">)</span>
+                    <span class="k">else</span> <span class="n">elem</span>
+                    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">value</span>
+                <span class="p">]</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&quot;&#39;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span>
+            <span class="n">_repr_str</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s_indent</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value_type</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="c1"># _repr_str += &quot;\n&quot;</span>
+        <span class="c1"># fqn = full_name_with_qualname(type(self))</span>
+        <span class="c1"># _repr_str += f&#39;fqn = &quot;{fqn}&quot;\n&#39;</span>
+        <span class="c1"># _repr_str += f&quot;mro = {[t.__name__ for t in type(self).mro()]}&quot;</span>
+
+        <span class="c1"># _repr_str += &quot;\n\ncallables = [\n&quot;</span>
+        <span class="c1"># for func, sig in self.__syft_get_funcs__():</span>
+        <span class="c1">#     _repr_str += f&quot;  {func}{sig}: pass\n&quot;</span>
+        <span class="c1"># _repr_str += f&quot;]&quot;</span>
+        <span class="c1"># return _repr_str</span>
+        <span class="k">if</span> <span class="n">wrap_as_python</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">as_markdown_python_code</span><span class="p">(</span><span class="n">_repr_str</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_repr_str</span>
+
+    <span class="c1"># allows splatting with **</span>
+    <span class="k">def</span> <span class="nf">keys</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">KeysView</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+
+    <span class="c1"># allows splatting with **</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_upgrade_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">latest</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;SyftObject&quot;</span><span class="p">:</span>
+        <span class="n">constructor</span> <span class="o">=</span> <span class="n">SyftObjectRegistry</span><span class="o">.</span><span class="n">versioned_class</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__canonical_name__</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__version__</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">constructor</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># should we do some kind of recursive upgrades?</span>
+            <span class="n">upgraded</span> <span class="o">=</span> <span class="n">constructor</span><span class="o">.</span><span class="n">_from_previous_version</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">latest</span><span class="p">:</span>
+                <span class="n">upgraded</span> <span class="o">=</span> <span class="n">upgraded</span><span class="o">.</span><span class="n">_upgrade_version</span><span class="p">(</span><span class="n">latest</span><span class="o">=</span><span class="n">latest</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">upgraded</span>
+
+    <span class="c1"># transform from one supported type to another</span>
+    <span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projection</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Context</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="c1"># 🟡 TODO 19: Could we do an mro style inheritence conversion? Risky?</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="n">SyftObjectRegistry</span><span class="o">.</span><span class="n">get_transform</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">projection</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">exclude_none</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">exclude_empty</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;`SyftObject.to_dict` is deprecated and will be removed in a future version&quot;</span><span class="p">,</span>
+            <span class="ne">PendingDeprecationWarning</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># 🟡 TODO 18: Remove to_dict and replace usage with transforms etc</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">exclude_none</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">exclude_empty</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dict</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_dict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># exclude dynamically added syft attributes</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">DYNAMIC_SYFT_ATTRIBUTES</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">exclude_empty</span> <span class="ow">and</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Empty</span><span class="p">:</span>
+                    <span class="n">new_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+                <span class="k">if</span> <span class="n">exclude_none</span> <span class="ow">and</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">new_dict</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+            <span class="k">return</span> <span class="n">new_dict</span>
+
+    <span class="k">def</span> <span class="nf">dict</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">include</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;AbstractSetIntStr&quot;</span><span class="p">,</span> <span class="s2">&quot;MappingIntStrAny&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">exclude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s2">&quot;AbstractSetIntStr&quot;</span><span class="p">,</span> <span class="s2">&quot;MappingIntStrAny&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">by_alias</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">skip_defaults</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">exclude_unset</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">exclude_defaults</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">exclude_none</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">exclude</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">exclude</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">DYNAMIC_SYFT_ATTRIBUTES</span><span class="p">:</span>
+            <span class="n">exclude</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dict</span><span class="p">(</span>
+            <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span>
+            <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">,</span>
+            <span class="n">by_alias</span><span class="o">=</span><span class="n">by_alias</span><span class="p">,</span>
+            <span class="n">skip_defaults</span><span class="o">=</span><span class="n">skip_defaults</span><span class="p">,</span>
+            <span class="n">exclude_unset</span><span class="o">=</span><span class="n">exclude_unset</span><span class="p">,</span>
+            <span class="n">exclude_defaults</span><span class="o">=</span><span class="n">exclude_defaults</span><span class="p">,</span>
+            <span class="n">exclude_none</span><span class="o">=</span><span class="n">exclude_none</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_syft_set_validate_private_attrs_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Validate and set private attributes</span>
+        <span class="c1"># https://github.com/pydantic/pydantic/issues/2105</span>
+        <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">decl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__private_attributes__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">decl</span><span class="o">.</span><span class="n">get_default</span><span class="p">())</span>
+            <span class="n">var_annotation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__annotations__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">attr</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Undefined</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">decl</span><span class="o">.</span><span class="n">default_factory</span><span class="p">:</span>
+                    <span class="c1"># If the value is defined via PrivateAttr with default factory</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">decl</span><span class="o">.</span><span class="n">default_factory</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">var_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># Otherwise validate value against the variable annotation</span>
+                    <span class="n">check_type</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">var_annotation</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># check if the private is optional</span>
+                <span class="n">is_optional_attr</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">var_annotation</span><span class="p">,</span> <span class="s2">&quot;__args__&quot;</span><span class="p">,</span> <span class="p">[])</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">is_optional_attr</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="se">\n</span><span class="s2"> field required (type=value_error.missing)&quot;</span>
+                    <span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_syft_set_validate_private_attrs_</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
+
+    <span class="c1"># TODO: Check why Pydantic is removing the __hash__ method during inheritance</span>
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__sha256__</span><span class="p">(),</span> <span class="n">byteorder</span><span class="o">=</span><span class="s2">&quot;big&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_syft_keys_types_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">]:</span>
+        <span class="n">kt_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">,</span> <span class="p">[]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__fields__</span><span class="p">:</span>
+                <span class="n">type_</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">__fields__</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">type_</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">):</span>
+                        <span class="n">type_</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="vm">__annotations__</span><span class="p">[</span><span class="s2">&quot;return&quot;</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Failed to get attribute from key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> type for </span><span class="si">{</span><span class="bp">cls</span><span class="si">}</span><span class="s2"> storage. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">e</span>
+            <span class="c1"># EmailStr seems to be lost every time the value is set even with a validator</span>
+            <span class="c1"># this means the incoming type is str so our validators fail</span>
+
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">type_</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span> <span class="ow">and</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">type_</span><span class="p">,</span> <span class="n">EmailStr</span><span class="p">):</span>
+                <span class="n">type_</span> <span class="o">=</span> <span class="nb">str</span>
+            <span class="n">kt_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">type_</span>
+        <span class="k">return</span> <span class="n">kt_dict</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_syft_unique_keys_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_syft_keys_types_dict</span><span class="p">(</span><span class="s2">&quot;__attr_unique__&quot;</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">_syft_searchable_keys_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_syft_keys_types_dict</span><span class="p">(</span><span class="s2">&quot;__attr_searchable__&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">short_qual_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># If the name is a qualname of formax a.b.c.d we will only get d</span>
+    <span class="c1"># otherwise this will leave it like it is</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">short_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">:</span> <span class="n">UID</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">uid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">uid</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="p">)[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">list_dict_repr_html</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">max_check</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">items_checked</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">has_syft</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">extra_fields</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+        <span class="n">is_homogenous</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]))</span> <span class="o">==</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">items_checked</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">items_checked</span> <span class="o">&gt;</span> <span class="n">max_check</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="s2">&quot;mro&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">:</span>
+                <span class="n">mro</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;mro&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">type</span><span class="p">:</span>
+                <span class="n">mro</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">mro</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mro</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;syft&quot;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">mro</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="n">has_syft</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">extra_fields</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;__repr_attrs__&quot;</span><span class="p">,</span> <span class="p">[])</span>
+                <span class="k">break</span>
+        <span class="k">if</span> <span class="n">has_syft</span><span class="p">:</span>
+            <span class="c1"># third party</span>
+            <span class="n">first_value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">is_homogenous</span><span class="p">:</span>
+                <span class="n">cls_name</span> <span class="o">=</span> <span class="n">first_value</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cls_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+            <span class="n">cols</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="c1"># unpack dict</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">cols</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                    <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+                <span class="c1"># get id</span>
+                <span class="n">id_</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">id_</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">cols</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">id_</span><span class="p">),</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;clipboard&quot;</span><span class="p">})</span>
+
+                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">:</span>
+                    <span class="n">t</span> <span class="o">=</span> <span class="n">full_name_with_qualname</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">t</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                        <span class="n">t</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">is_homogenous</span><span class="p">:</span>
+                    <span class="n">cols</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+                <span class="c1"># if has _coll_repr_</span>
+                <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&quot;_coll_repr_&quot;</span><span class="p">):</span>
+                    <span class="n">ret_val</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">_coll_repr_</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="s2">&quot;id&quot;</span> <span class="ow">in</span> <span class="n">ret_val</span><span class="p">:</span>
+                        <span class="k">del</span> <span class="n">ret_val</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ret_val</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                        <span class="n">cols</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret_val</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">extra_fields</span><span class="p">:</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">item</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="n">attrs</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+                            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">attrs</span><span class="p">):</span>
+                                <span class="c1"># find indexing like abc[1]</span>
+                                <span class="n">res</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;\[[+-]?\d+\]&quot;</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+                                <span class="n">has_index</span> <span class="o">=</span> <span class="kc">False</span>
+                                <span class="k">if</span> <span class="n">res</span><span class="p">:</span>
+                                    <span class="n">has_index</span> <span class="o">=</span> <span class="kc">True</span>
+                                    <span class="n">index_str</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+                                    <span class="n">index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+                                        <span class="n">index_str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+                                    <span class="p">)</span>
+                                    <span class="n">attr</span> <span class="o">=</span> <span class="n">attr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">index_str</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+                                <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="n">has_index</span><span class="p">:</span>
+                                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+                                <span class="c1"># If the object has a special representation when nested we will use that instead</span>
+                                <span class="k">if</span> <span class="p">(</span>
+                                    <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">&quot;__repr_syft_nested__&quot;</span><span class="p">)</span>
+                                    <span class="ow">and</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+                                <span class="p">):</span>
+                                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">__repr_syft_nested__</span><span class="p">()</span>
+                                <span class="k">if</span> <span class="p">(</span>
+                                    <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+                                    <span class="ow">and</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+                                    <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+                                    <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;__repr_syft_nested__&quot;</span><span class="p">)</span>
+                                <span class="p">):</span>
+                                    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span>
+                                        <span class="n">x</span><span class="o">.</span><span class="n">__repr_syft_nested__</span><span class="p">()</span>
+                                        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;__repr_syft_nested__&quot;</span><span class="p">)</span>
+                                        <span class="k">else</span> <span class="n">x</span>
+                                        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span>
+                                    <span class="p">]</span>
+                            <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;n/a&quot;</span>
+
+                        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                            <span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="n">cols</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;created_at&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;created_at&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="c1"># if custom_repr:</span>
+            <span class="n">table_icon</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;icon&quot;</span><span class="p">):</span>
+                <span class="n">table_icon</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">icon</span>
+            <span class="c1"># this is a list of dicts</span>
+            <span class="k">return</span> <span class="n">create_table_template</span><span class="p">(</span>
+                <span class="n">df</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">),</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cls_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">table_icon</span><span class="o">=</span><span class="n">table_icon</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;error representing </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> of objects. </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># stdlib</span>
+    <span class="kn">import</span> <span class="nn">html</span>
+
+    <span class="k">return</span> <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">())</span>
+
+
+<span class="c1"># give lists and dicts a _repr_html_ if they contain SyftObject&#39;s</span>
+<span class="n">aggressive_set_attr</span><span class="p">(</span><span class="nb">type</span><span class="p">([]),</span> <span class="s2">&quot;_repr_html_&quot;</span><span class="p">,</span> <span class="n">list_dict_repr_html</span><span class="p">)</span>
+<span class="n">aggressive_set_attr</span><span class="p">(</span><span class="nb">type</span><span class="p">({}),</span> <span class="s2">&quot;_repr_html_&quot;</span><span class="p">,</span> <span class="n">list_dict_repr_html</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">StorableObjectType</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">to</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">projection</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Context</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="c1"># 🟡 TODO 19: Could we do an mro style inheritence conversion? Risky?</span>
+        <span class="n">transform</span> <span class="o">=</span> <span class="n">SyftObjectRegistry</span><span class="o">.</span><span class="n">get_transform</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">projection</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="PartialSyftObject"><a class="viewcode-back" href="../../../api_reference/syft.types.syft_object.html#syft.types.syft_object.PartialSyftObject">[docs]</a><span class="k">class</span> <span class="nc">PartialSyftObject</span><span class="p">(</span><span class="n">SyftObject</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">PartialModelMetaclass</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Syft Object to which partial arguments can be provided.&quot;&quot;&quot;</span>
+
+    <span class="n">__canonical_name__</span> <span class="o">=</span> <span class="s2">&quot;PartialSyftObject&quot;</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">SYFT_OBJECT_VERSION_1</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># Filter out Empty values from args and kwargs</span>
+        <span class="n">args_</span><span class="p">,</span> <span class="n">kwargs_</span> <span class="o">=</span> <span class="p">(),</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">arg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Empty</span><span class="p">:</span>
+                <span class="n">args_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Empty</span><span class="p">:</span>
+                <span class="n">kwargs_</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args_</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs_</span><span class="p">)</span>
+
+        <span class="n">fields_with_default</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_field_name</span><span class="p">,</span> <span class="n">_field</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fields__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">_field</span><span class="o">.</span><span class="n">default</span> <span class="ow">or</span> <span class="n">_field</span><span class="o">.</span><span class="n">allow_none</span><span class="p">:</span>
+                <span class="n">fields_with_default</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">_field_name</span><span class="p">)</span>
+
+        <span class="c1"># Fields whose values are set via a validator hook</span>
+        <span class="n">fields_set_via_validator</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">_field_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__validators__</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">_field</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fields__</span><span class="p">[</span><span class="n">_field_name</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">_field_name</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># Since all fields are None, only allow None</span>
+                <span class="c1"># where either none is allowed or default is None</span>
+                <span class="k">if</span> <span class="n">_field</span><span class="o">.</span><span class="n">allow_none</span> <span class="ow">or</span> <span class="n">_field</span><span class="o">.</span><span class="n">default</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">fields_set_via_validator</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_field</span><span class="p">)</span>
+
+        <span class="c1"># Exclude unset fields</span>
+        <span class="n">unset_fields</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__fields__</span><span class="p">)</span>
+            <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__fields_set__</span><span class="p">)</span>
+            <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">fields_set_via_validator</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="n">empty_fields</span> <span class="o">=</span> <span class="n">unset_fields</span> <span class="o">-</span> <span class="n">fields_with_default</span>
+        <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="n">empty_fields</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">Empty</span></div>
+
+
+<span class="n">recursive_serde_register_type</span><span class="p">(</span><span class="n">PartialSyftObject</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">attach_attribute_to_syft_object</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">attr_dict</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+    <span class="n">box_to_result_type</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="ow">in</span> <span class="n">OkErr</span><span class="p">:</span>
+        <span class="n">box_to_result_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span>
+
+    <span class="n">single_entity</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">is_tuple</span> <span class="o">=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="n">iterable_keys</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">iterable_keys</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">iterable_keys</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span><span class="p">]</span>
+        <span class="n">single_entity</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">iterable_keys</span><span class="p">:</span>
+        <span class="n">_object</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="c1"># if object is SyftBaseObject,</span>
+        <span class="c1"># then attach the value to the attribute</span>
+        <span class="c1"># on the object</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_object</span><span class="p">,</span> <span class="n">SyftBaseObject</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">attr_name</span><span class="p">,</span> <span class="n">attr_value</span> <span class="ow">in</span> <span class="n">attr_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">_object</span><span class="p">,</span> <span class="n">attr_name</span><span class="p">,</span> <span class="n">attr_value</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">_object</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">updated_attr</span> <span class="o">=</span> <span class="n">attach_attribute_to_syft_object</span><span class="p">(</span><span class="n">attr</span><span class="p">,</span> <span class="n">attr_dict</span><span class="p">)</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">_object</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">updated_attr</span><span class="p">)</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_object</span>
+
+    <span class="n">wrapped_result</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">single_entity</span> <span class="k">else</span> <span class="n">result</span>
+    <span class="n">wrapped_result</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">wrapped_result</span><span class="p">)</span> <span class="k">if</span> <span class="n">is_tuple</span> <span class="k">else</span> <span class="n">wrapped_result</span>
+    <span class="k">if</span> <span class="n">box_to_result_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">wrapped_result</span> <span class="o">=</span> <span class="n">box_to_result_type</span><span class="p">(</span><span class="n">wrapped_result</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapped_result</span>
+</pre></div>
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2021, Openmined Community.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.3.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
